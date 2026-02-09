@@ -4,19 +4,18 @@ A Rust library and CLI for working with the SEC EDGAR API. Look up companies, pu
 
 ## Install
 
-Add it to your project:
-
-```
-cargo add edgar-lib
-```
-
-Or build the CLI:
+Clone the repo and build:
 
 ```
 cargo build --release
 ```
 
-The binary is called `edgar`.
+The CLI binary is at `target/release/edgar`. To use it as a library in another project, add a git dependency to your `Cargo.toml`:
+
+```toml
+[dependencies]
+edgar-lib = { git = "https://github.com/phiraml/edgar-rust-api.git" }
+```
 
 ## Library usage
 
