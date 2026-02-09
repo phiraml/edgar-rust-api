@@ -1,0 +1,4010 @@
+[
+  {
+    "key": "OtherNonOperatingIncome|us-gaap|OtherNonoperatingExpense",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "OtherNonoperatingExpense is an expense item, not income. It doesn't map to a primary StandardMetric; it would be part of PretaxIncome calculation but is not itself a line item."
+  },
+  {
+    "key": "NetIncomeToCommon|us-gaap|EffectiveIncomeTaxRateReconciliationMinorityInterestIncomeExpense",
+    "decision": "none",
+    "category": "disclosure",
+    "reason": "This is a tax reconciliation detail expressed as a percentage, not a primary financial statement metric."
+  },
+  {
+    "key": "SharesOutstandingBasic|us-gaap|CommonStockSharesIssued",
+    "decision": "none",
+    "category": "disclosure",
+    "reason": "Shares issued is a historical/authorized measure, not shares currently outstanding."
+  },
+  {
+    "key": "FinancingCashFlow|us-gaap|us-gaap:ProceedsFromRepaymentsOfSecuredDebt",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Proceeds from repayments of secured debt is a component of investing cash flow related to debt collection, not primary financing cash flow."
+  },
+  {
+    "key": "IncomeTaxExpense|us-gaap|IncomeTaxReconciliationTaxCreditsResearch",
+    "decision": "none",
+    "category": "disclosure",
+    "reason": "Tax reconciliation items are detailed disclosures, not primary IncomeTaxExpense metric."
+  },
+  {
+    "key": "DividendsPaid|us-gaap|us-gaap:PreferredStockDividendRatePercentage",
+    "decision": "none",
+    "category": "disclosure",
+    "reason": "Preferred stock dividend rate is a percentage/disclosure item, not actual dividends paid."
+  },
+  {
+    "key": "InterestIncome|us-gaap|InterestReceivableCurrent",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Interest receivable is a balance sheet asset account, not interest income which is an income statement metric."
+  },
+  {
+    "key": "AccountsPayable|us-gaap|IncreaseDecreaseInAccountsPayableAndAccruedLiabilities",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "This is a cash flow working capital change, not a balance sheet level for accounts payable."
+  },
+  {
+    "key": "OtherCurrentLiabilities|us-gaap|IncreaseDecreaseInAccountsPayableAndAccruedLiabilities",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "This is a cash flow working capital change, not a balance sheet liability level."
+  },
+  {
+    "key": "PremiumsEarned|us-gaap|PremiumsAndOtherReceivablesNet",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Premiums and other receivables is a balance sheet asset, not the income statement PremiumsEarned metric."
+  },
+  {
+    "key": "ProvisionForCreditLosses|us-gaap|SupplementalInformationForPropertyCasualtyInsuranceUnderwritersReservesForUnpaidClaimsAndClaimsAdjustmentExpense",
+    "decision": "none",
+    "category": "disclosure",
+    "reason": "This is a supplemental insurance schedule disclosure item, not a primary financial metric."
+  },
+  {
+    "key": "OperatingCashFlow|us-gaap|RepaymentsOfLongTermDebt",
+    "decision": "map",
+    "correct_metric": "FinancingCashFlow",
+    "reason": "Repayments of long-term debt are financing activities (outflows) within financing cash flow."
+  },
+  {
+    "key": "IntangibleAssets|us-gaap|FiniteLivedIntangibleAssetsAmortizationExpenseAfterYearFive",
+    "decision": "none",
+    "category": "disclosure",
+    "reason": "Expected future amortization is a disclosure note, not a balance sheet IntangibleAssets value."
+  },
+  {
+    "key": "DepreciationAmortization|us-gaap|FiniteLivedIntangibleAssetsAmortizationExpenseAfterYearFive",
+    "decision": "none",
+    "category": "disclosure",
+    "reason": "Expected future amortization is a forward-looking disclosure, not actual DepreciationAmortization expense."
+  },
+  {
+    "key": "Goodwill|us-gaap|DeferredTaxAssetsGoodwillAndIntangibleAssets",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Deferred tax assets related to goodwill is a tax accounting item, not the primary Goodwill metric."
+  },
+  {
+    "key": "CommonStock|us-gaap|us-gaap:CommonStockParOrStatedValuePerShare",
+    "decision": "none",
+    "category": "disclosure",
+    "reason": "Par value per share is a disclosure detail, not the CommonStock account balance."
+  },
+  {
+    "key": "IntangibleAssets|ifrs-full|IncreaseDecreaseThroughTransfersIntangibleAssetsOtherThanGoodwill",
+    "decision": "none",
+    "category": "disclosure",
+    "reason": "Transfers/movements of intangible assets is a note disclosure, not the balance sheet IntangibleAssets level."
+  },
+  {
+    "key": "IntangibleAssets|ifrs-full|IncreaseDecreaseThroughTransfersIntangibleAssetsOtherThanGoodwill",
+    "decision": "none",
+    "category": "disclosure",
+    "reason": "Transfers/movements of intangible assets is a note disclosure, not the balance sheet IntangibleAssets level."
+  },
+  {
+    "key": "TotalStockholdersEquity|us-gaap|VariableInterestEntityOwnershipPercentage",
+    "decision": "none",
+    "category": "disclosure",
+    "reason": "Variable interest entity ownership percentage is a disclosure item, not a primary equity metric."
+  },
+  {
+    "key": "SharesOutstandingBasic|us-gaap|CommonStockDividendsShares",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Dividend shares is not shares outstanding; it's the quantity of shares on which dividends were paid."
+  },
+  {
+    "key": "OtherCurrentLiabilities|us-gaap|IncreaseDecreaseInOtherAccruedLiabilities",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "This is a cash flow working capital adjustment, not a balance sheet liability level."
+  },
+  {
+    "key": "SharesOutstandingBasic|us-gaap|CommonStockSharesAuthorized",
+    "decision": "none",
+    "category": "disclosure",
+    "reason": "Shares authorized is a disclosure item, not shares actually outstanding."
+  },
+  {
+    "key": "ResearchAndDevelopment|us-gaap|ShareBasedCompensation",
+    "decision": "subcomponent",
+    "correct_metric": "OperatingExpenses",
+    "category": "subcomponent",
+    "reason": "Share-based compensation is a noncash operating expense component that could be part of multiple operating expense categories."
+  },
+  {
+    "key": "OtherNonCurrentAssets|us-gaap|us-gaap:BusinessCombinationConsiderationTransferred1",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Business combination consideration transferred is a transaction-specific disclosure, not an asset balance."
+  },
+  {
+    "key": "OtherCurrentLiabilities|us-gaap|IncreaseDecreaseInAccruedLiabilities",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "This is a cash flow working capital adjustment, not a balance sheet liability level."
+  },
+  {
+    "key": "ResearchAndDevelopment|us-gaap|ShareBasedCompensationArrangementByShareBasedPaymentAwardFairValueAssumptionsExpectedDividendRate",
+    "decision": "none",
+    "category": "fair_value_assumption",
+    "reason": "Expected dividend rate is a fair value assumption input, not a financial statement line item"
+  },
+  {
+    "key": "OtherCurrentAssets|us-gaap|BusinessAcquisitionPurchasePriceAllocationCurrentAssetsPrepaidExpenseAndOtherAssets",
+    "decision": "none",
+    "category": "disclosure_schedule",
+    "reason": "Business acquisition purchase price allocation detail; deprecated tag for acquisition schedule information"
+  },
+  {
+    "key": "OtherNonOperatingIncome|ifrs-full|ifrs-full:IncomeArisingFromExplorationForAndEvaluationOfMineralResources",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Income from mineral exploration/evaluation is specialized operating activity, not a standard non-operating income category"
+  },
+  {
+    "key": "NetIncomeToCommon|us-gaap|IncomeTaxReconciliationMinorityInterestIncomeExpense",
+    "decision": "none",
+    "category": "reconciliation_item",
+    "reason": "Tax reconciliation component for noncontrolling interest; used in disclosure schedules, not a primary income statement line"
+  },
+  {
+    "key": "SharesOutstandingBasic|us-gaap|CommonStockSharesHeldInEmployeeTrustShares",
+    "decision": "none",
+    "category": "treasury_stock",
+    "reason": "Shares held in employee trust are treasury stock disclosure, not outstanding shares"
+  },
+  {
+    "key": "IncomeTaxExpense|us-gaap|us-gaap:IncomeTaxReconciliationDeductions",
+    "decision": "none",
+    "category": "reconciliation_item",
+    "reason": "Income tax reconciliation deductions are disclosure components, not the primary tax expense line"
+  },
+  {
+    "key": "ShortTermDebt|us-gaap|us-gaap:ProceedsFromOtherDebt",
+    "decision": "none",
+    "category": "cash_flow_activity",
+    "reason": "Proceeds from debt is a financing cash flow activity, not a balance sheet debt amount"
+  },
+  {
+    "key": "OtherNonCurrentAssets|us-gaap|AreaOfRealEstateProperty",
+    "decision": "none",
+    "category": "disclosure_metric",
+    "reason": "Area of real estate property is a physical measurement/disclosure, not a financial statement amount"
+  },
+  {
+    "key": "OtherNonCurrentLiabilities|us-gaap|EquityMethodInvestmentSummarizedFinancialInformationNoncurrentLiabilities",
+    "decision": "none",
+    "category": "disclosure_schedule",
+    "reason": "Equity method investment summarized financial information is a disclosure detail, not a balance sheet liability"
+  },
+  {
+    "key": "OtherNonOperatingIncome|us-gaap|GoodwillImpairmentLoss",
+    "decision": "none",
+    "category": "impairment_charge",
+    "reason": "Goodwill impairment loss is an operating charge, not non-operating income"
+  },
+  {
+    "key": "ResearchAndDevelopment|us-gaap|us-gaap:DefinedContributionPlanMaximumAnnualContributionsPerEmployeePercent",
+    "decision": "none",
+    "category": "plan_parameter",
+    "reason": "Defined contribution plan maximum contribution limit is a plan parameter/disclosure, not R&D expense"
+  },
+  {
+    "key": "ShortTermDebt|us-gaap|us-gaap:ShortTermDebtInterestRateIncrease",
+    "decision": "none",
+    "category": "rate_disclosure",
+    "reason": "Interest rate increase is a rate disclosure, not a balance sheet debt amount"
+  },
+  {
+    "key": "InvestingCashFlow|us-gaap|us-gaap:PaymentsForProceedsFromOtherInvestingActivities",
+    "decision": "map",
+    "correct_metric": "InvestingCashFlow",
+    "reason": "Payments for/proceeds from other investing activities are components of investing cash flow"
+  },
+  {
+    "key": "ResearchAndDevelopment|us-gaap|ShareBasedCompensationArrangementByShareBasedPaymentAwardFairValueAssumptionsWeightedAverageExpectedDividend",
+    "decision": "none",
+    "category": "fair_value_assumption",
+    "reason": "Expected dividend assumption is a fair value modeling input, not a financial statement line"
+  },
+  {
+    "key": "NetIncomeToCommon|us-gaap|IncomeLossAttributableToNoncontrollingInterest",
+    "decision": "none",
+    "category": "noncontrolling_interest",
+    "reason": "Noncontrolling interest is a separate allocation, not net income attributable to common stockholders"
+  },
+  {
+    "key": "Goodwill|us-gaap|DeferredTaxLiabilitiesGoodwillAndIntangibleAssetsIntangibleAssets",
+    "decision": "none",
+    "category": "tax_disclosure",
+    "reason": "Deferred tax liability schedule detail; tax-related disclosure, not goodwill value"
+  },
+  {
+    "key": "InterestExpense|us-gaap|InvestmentIncomeInvestmentExpense",
+    "decision": "none",
+    "category": "mixed_income",
+    "reason": "Investment income/expense includes both interest and non-interest components; net figure, not specifically interest expense"
+  },
+  {
+    "key": "OtherCurrentLiabilities|us-gaap|PreferredStockDividendRatePercentage",
+    "decision": "none",
+    "category": "rate_disclosure",
+    "reason": "Preferred stock dividend rate percentage is a rate disclosure, not a current liability amount"
+  },
+  {
+    "key": "OtherNonOperatingIncome|us-gaap|ImpairmentOfIntangibleAssetsExcludingGoodwill",
+    "decision": "none",
+    "category": "impairment_charge",
+    "reason": "Intangible asset impairment is an operating charge, not non-operating income"
+  },
+  {
+    "key": "AccountsPayable|us-gaap|IncreaseDecreaseInAccountsPayable",
+    "decision": "none",
+    "category": "working_capital_change",
+    "reason": "Change in accounts payable is a cash flow adjustment, not the balance sheet payable amount"
+  },
+  {
+    "key": "CurrentPortionLongTermDebt|us-gaap|us-gaap:LongTermDebtAndCapitalLeaseObligationsMaturitiesRepaymentsOfPrincipalInYearTwo",
+    "decision": "none",
+    "category": "maturity_schedule",
+    "reason": "Long-term debt maturity schedule detail; disclosure of future payments, not current portion"
+  },
+  {
+    "key": "OperatingCashFlow|us-gaap|us-gaap:FinanceLeasePrincipalPayments",
+    "decision": "none",
+    "category": "financing_activity",
+    "reason": "Finance lease principal payments are financing cash flow, not operating cash flow"
+  },
+  {
+    "key": "ResearchAndDevelopment|us-gaap|FairValueAssumptionsExpectedDividendRate",
+    "decision": "none",
+    "category": "fair_value_assumption",
+    "reason": "Expected dividend rate is a fair value modeling assumption, not a financial statement line"
+  },
+  {
+    "key": "CommonStock|us-gaap|us-gaap:ProceedsFromIssuanceOrSaleOfEquity",
+    "decision": "none",
+    "category": "cash_flow_activity",
+    "reason": "Proceeds from equity issuance is a financing cash flow activity, not a balance sheet stock account"
+  },
+  {
+    "key": "OperatingCashFlow|ifrs-full|ifrs-full:InterestPaidClassifiedAsOperatingActivities",
+    "decision": "map",
+    "correct_metric": "OperatingCashFlow",
+    "reason": "Interest paid classified as operating activities is a direct component of operating cash flow"
+  },
+  {
+    "key": "InterestIncome|ifrs-full|ifrs-full:DividendsReceived",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Dividends received is a cash flow item, not a primary income statement measure; incorrectly classified as InterestIncome"
+  },
+  {
+    "key": "OtherNonCurrentAssets|ifrs-full|ShareOfProfitLossOfAssociatesAccountedForUsingEquityMethod",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Equity method investment income is typically reported in OtherNonOperatingIncome or as a component of net income, not a balance sheet asset"
+  },
+  {
+    "key": "InterestIncome|ifrs-full|DividendsReceived",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Dividends received is a cash flow/investing activity, not a primary income statement metric"
+  },
+  {
+    "key": "OperatingCashFlow|us-gaap|InterestPaid",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "InterestPaid is a cash flow item used in operating activities, not itself a primary cash flow statement line item"
+  },
+  {
+    "key": "Inventory|us-gaap|us-gaap:IncreaseDecreaseInInventory",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Change in inventory is a working capital adjustment in cash flow, not inventory balance itself"
+  },
+  {
+    "key": "InterestExpense|us-gaap|us-gaap:InterestCostsCapitalized",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Capitalized interest is an adjustment to interest expense and asset valuation, not a primary metric"
+  },
+  {
+    "key": "InterestIncome|us-gaap|IncomeLossFromEquityMethodInvestmentsNetOfDividendsOrDistributions",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Equity method investment income is other non-operating income, not InterestIncome"
+  },
+  {
+    "key": "OtherNonCurrentLiabilities|us-gaap|CommonStockCapitalSharesReservedForFutureIssuance",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Reserved shares disclosure item, not a liability metric"
+  },
+  {
+    "key": "AccountsReceivable|srt|FinancingReceivableNonaccrualToOutstandingPercent",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "This is a percentage/ratio disclosure item, not a financial statement balance"
+  },
+  {
+    "key": "IntangibleAssets|us-gaap|DeferredTaxAssetsGoodwillAndIntangibleAssets",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Deferred tax assets are a separate balance sheet item, not intangible assets"
+  },
+  {
+    "key": "OtherCurrentLiabilities|us-gaap|us-gaap:LettersOfCreditOutstandingAmount",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Letters of credit are off-balance sheet commitments, not a primary current liability"
+  },
+  {
+    "key": "ProvisionForCreditLosses|us-gaap|SupplementalInformationForPropertyCasualtyInsuranceUnderwritersCurrentYearClaimsAndClaimsAdjustmentExpense",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Insurance claim expenses are operational expenses, not credit loss provisions for banks"
+  },
+  {
+    "key": "InterestExpense|us-gaap|us-gaap:DefinedBenefitPlanInterestCost",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Pension/defined benefit plan interest cost is a component of pension expense, not a primary InterestExpense metric"
+  },
+  {
+    "key": "EarningsPerShareDiluted|us-gaap|us-gaap:IncomeLossFromDiscontinuedOperationsNetOfTaxPerBasicAndDilutedShare",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Discontinued operations per share is a separate metric, not comparable to ongoing EPS"
+  },
+  {
+    "key": "DividendsPaid|us-gaap|PaymentsOfCapitalDistribution",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Capital distributions are return of capital, distinct from dividends on common stock"
+  },
+  {
+    "key": "ShareRepurchases|us-gaap|ProceedsFromRepurchaseOfEquity",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Proceeds from repurchase are negative share repurchases (reverse transaction), not a primary metric"
+  },
+  {
+    "key": "OtherNonOperatingIncome|us-gaap|ImpairmentOfIntangibleAssetsIndefinitelivedExcludingGoodwill",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Impairment charges are non-cash operating expenses, not non-operating income"
+  },
+  {
+    "key": "LongTermDebt|us-gaap|us-gaap:LiabilitiesOfDisposalGroupIncludingDiscontinuedOperation",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Disposal group liabilities are balance sheet items related to discontinued operations, not debt"
+  },
+  {
+    "key": "ShortTermInvestments|ifrs-full|ShorttermDepositsNotClassifiedAsCashEquivalents",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Short-term deposits explicitly excluded from cash equivalents, so not ShortTermInvestments by definition"
+  },
+  {
+    "key": "AccountsReceivable|ifrs-full|AdjustmentsForDecreaseIncreaseInTradeAccountReceivable",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Changes in receivables are working capital adjustments in cash flow, not the balance itself"
+  },
+  {
+    "key": "OtherNonCurrentAssets|ifrs-full|ifrs-full:NoncurrentAssets",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Noncurrent assets is a broad aggregated category, not a specific StandardMetric"
+  },
+  {
+    "key": "OtherNonOperatingIncome|ifrs-full|ExpectedDividendAsPercentageShareOptionsGranted",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Expected dividend as percentage is a stock option valuation input, not a financial metric"
+  },
+  {
+    "key": "IntangibleAssets|us-gaap|DeferredTaxLiabilitiesGoodwillAndIntangibleAssetsIntangibleAssets",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Deferred tax liabilities are separate from intangible assets themselves"
+  },
+  {
+    "key": "OtherNonCurrentLiabilities|us-gaap|IncreaseDecreaseInOtherNoncurrentLiabilities",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Changes in liabilities are cash flow adjustments, not the balance sheet liability itself"
+  },
+  {
+    "key": "Inventory|us-gaap|us-gaap:FinancingReceivableRecordedInvestmentNonaccrualStatus",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Financing receivable status disclosure is a ratio/classification item, not a balance sheet measure"
+  },
+  {
+    "key": "AccumulatedOtherComprehensiveIncome|us-gaap|us-gaap:ComprehensiveIncomeNetOfTax",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "ComprehensiveIncomeNetOfTax is a flow measure, not a balance sheet item. AccumulatedOtherComprehensiveIncome is the stock account. This tag represents periodic comprehensive income, not a standard metric mapping."
+  },
+  {
+    "key": "OperatingCashFlow|us-gaap|us-gaap:RepaymentsOfNotesPayable",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "RepaymentsOfNotesPayable is a financing cash flow activity, not operating cash flow. It's a debt repayment line item."
+  },
+  {
+    "key": "IncomeTaxExpense|us-gaap|IncomeTaxesReceivable",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "IncomeTaxesReceivable is a balance sheet receivable asset, not an income statement expense item."
+  },
+  {
+    "key": "AccountsReceivable|us-gaap|IncomeTaxesReceivable",
+    "decision": "subcomponent",
+    "correct_metric": "OtherCurrentAssets",
+    "category": "subcomponent",
+    "reason": "Income Taxes Receivable is a current asset but not typical accounts receivable. It's better classified as OtherCurrentAssets."
+  },
+  {
+    "key": "OtherNonCurrentAssets|us-gaap|DeferredTaxAssetsPropertyPlantAndEquipment",
+    "decision": "map",
+    "correct_metric": "OtherNonCurrentAssets",
+    "reason": "Deferred Tax Assets are non-current assets that don't fit other specific categories, properly mapped to OtherNonCurrentAssets."
+  },
+  {
+    "key": "DividendsPaid|us-gaap|DividendsPayableCurrentAndNoncurrent",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "DividendsPayableCurrentAndNoncurrent is a liability (accrued expense), not a cash flow payment item. DividendsPaid is the cash outflow."
+  },
+  {
+    "key": "CommonStock|us-gaap|us-gaap:StockIssuedDuringPeriodValueShareBasedCompensationGross",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Stock issued for share-based compensation is not CommonStock value; it's a disclosure or equity transaction detail."
+  },
+  {
+    "key": "AccountsReceivable|us-gaap|us-gaap:PremiumsReceivableAtCarryingValue",
+    "decision": "subcomponent",
+    "correct_metric": "AccountsReceivable",
+    "category": "subcomponent",
+    "reason": "Premiums Receivable is a sector-specific form of receivables (insurance industry), part of AccountsReceivable."
+  },
+  {
+    "key": "ShortTermDebt|us-gaap|us-gaap:EarlyRepaymentOfSeniorDebt",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "EarlyRepaymentOfSeniorDebt is a financing cash flow activity and debt transaction, not a balance sheet debt classification."
+  },
+  {
+    "key": "CommonStock|us-gaap|us-gaap:StockIssuedDuringPeriodValueStockOptionsExercised",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Stock issued from option exercises is not CommonStock value on the balance sheet; it's a transaction detail."
+  },
+  {
+    "key": "DepreciationAmortization|us-gaap|us-gaap:DividendsShareBasedCompensationCash",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "DividendsShareBasedCompensationCash is a financing/compensation activity, not depreciation or amortization."
+  },
+  {
+    "key": "CommonStock|us-gaap|us-gaap:ProceedsFromIssuanceOfCommonStock",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "ProceedsFromIssuanceOfCommonStock is a financing cash flow, not the CommonStock balance sheet value."
+  },
+  {
+    "key": "AccountsReceivable|us-gaap|StockholdersEquityNoteSubscriptionsReceivable",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Subscriptions Receivable is an equity-related receivable disclosure item, not a standard accounts receivable metric."
+  },
+  {
+    "key": "ShortTermDebt|us-gaap|ShortTermDebtWeightedAverageInterestRate",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Weighted average interest rate is a rate/percentage disclosure, not a balance sheet amount."
+  },
+  {
+    "key": "OtherNonOperatingIncome|ifrs-full|ExpectedDividendShareOptionsGranted",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Expected Dividend on Share Options is a valuation input or disclosure for compensation, not operating income or financial metric."
+  },
+  {
+    "key": "ShareRepurchases|us-gaap|StockIssuedDuringPeriodValueTreasuryStockReissued",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Stock issued from treasury stock reissuance is not a share repurchase; it's the opposite (equity issuance)."
+  },
+  {
+    "key": "ShareRepurchases|us-gaap|us-gaap:ProceedsFromSaleOfTreasuryStock",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Proceeds from treasury stock sales are financing cash inflows, not share repurchases (which are outflows)."
+  },
+  {
+    "key": "OtherNonCurrentAssets|us-gaap|FairValueMeasurementWithUnobservableInputsReconciliationRecurringBasisAssetGainLossIncludedInOtherComprehensiveIncomeLoss",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Fair value measurement reconciliation and gains/losses are disclosure schedules, not primary financial metrics."
+  },
+  {
+    "key": "OperatingCashFlow|us-gaap|us-gaap:OperatingLeasesFutureMinimumPaymentsDue",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Operating lease future payments is a disclosure obligation, not an operating cash flow activity in the period."
+  },
+  {
+    "key": "LongTermDebt|us-gaap|us-gaap:DebtInstrumentInterestRateStatedPercentage",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Stated interest rate on debt instruments is a rate/percentage disclosure, not a balance sheet amount."
+  },
+  {
+    "key": "IncomeTaxExpense|us-gaap|IncomeTaxesPaidNet",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Income taxes paid (net) is a cash flow activity, not an income statement expense accrual."
+  },
+  {
+    "key": "AccountsPayable|us-gaap|IncreaseDecreaseInAccountsPayableTrade",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Changes in accounts payable are working capital reconciling items in cash flow statements, not balance sheet amounts."
+  },
+  {
+    "key": "DepreciationAmortization|us-gaap|AccumulatedDepreciationDepletionAndAmortizationPropertyPlantAndEquipment",
+    "decision": "subcomponent",
+    "correct_metric": "PropertyPlantEquipment",
+    "category": "subcomponent",
+    "reason": "Accumulated depreciation is a contra-asset account that reduces gross PP&E, part of the PP&E net value."
+  },
+  {
+    "key": "ShortTermInvestments|us-gaap|us-gaap:DebtSecuritiesAvailableForSaleAmortizedCostNoncurrent",
+    "decision": "map",
+    "correct_metric": "OtherNonCurrentAssets",
+    "reason": "Available-for-sale debt securities at non-current maturity should be classified as non-current investments, which map to OtherNonCurrentAssets."
+  },
+  {
+    "key": "CommonStock|us-gaap|us-gaap:ProceedsFromContributedCapital",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Proceeds from contributed capital is a financing cash flow, not the CommonStock balance sheet value."
+  },
+  {
+    "key": "ShortTermDebt|us-gaap|ShortTermDebtWeightedAverageInterestRateOverTime",
+    "decision": "none",
+    "category": "rate/percentage",
+    "reason": "Weighted average interest rate is a rate metric, not a balance sheet measure of debt amount"
+  },
+  {
+    "key": "SharesOutstandingBasic|us-gaap|AntidilutiveSecuritiesExcludedFromComputationOfEarningsPerShareAmount",
+    "decision": "none",
+    "category": "disclosure",
+    "reason": "Antidilutive securities excluded is a disclosure item related to EPS calculation, not shares outstanding"
+  },
+  {
+    "key": "OtherNonCurrentAssets|us-gaap|OperatingLeaseWeightedAverageDiscountRatePercent",
+    "decision": "none",
+    "category": "rate/percentage",
+    "reason": "Weighted average discount rate is a rate metric, not an asset value"
+  },
+  {
+    "key": "OperatingExpenses|us-gaap|us-gaap:PaymentsForRent",
+    "decision": "none",
+    "category": "cash flow",
+    "reason": "Payments for rent is a cash flow activity, typically part of operating cash flow, not an operating expense accrual"
+  },
+  {
+    "key": "ShareRepurchases|us-gaap|PaymentsForRepurchaseOfRedeemableNoncontrollingInterest",
+    "decision": "none",
+    "category": "financing",
+    "reason": "Repurchase of noncontrolling interest is a financing activity distinct from share repurchases"
+  },
+  {
+    "key": "CapitalExpenditures|us-gaap|BusinessAcquisitionCostOfAcquiredEntityCashPaid",
+    "decision": "none",
+    "category": "acquisition",
+    "reason": "Business acquisition cash paid is part of investing activities related to M&A, not capital expenditures"
+  },
+  {
+    "key": "OtherNonCurrentLiabilities|us-gaap|BusinessAcquisitionPurchasePriceAllocationNoncurrentLiabilities",
+    "decision": "none",
+    "category": "disclosure",
+    "reason": "Purchase price allocation schedule item for acquired liabilities, not an operating liability"
+  },
+  {
+    "key": "CurrentPortionLongTermDebt|us-gaap|LongTermDebtMaturitiesRepaymentsOfPrincipalInYearFour",
+    "decision": "none",
+    "category": "disclosure",
+    "reason": "Debt maturity schedule item (Year Four future payment), not a current liability"
+  },
+  {
+    "key": "CurrentPortionLongTermDebt|us-gaap|us-gaap:OperatingLeasesFutureMinimumPaymentsDueCurrent",
+    "decision": "none",
+    "category": "disclosure",
+    "reason": "Operating lease future minimum payments is a disclosed schedule item, not a current debt liability"
+  },
+  {
+    "key": "AccumulatedOtherComprehensiveIncome|us-gaap|us-gaap:ComprehensiveIncomeNetOfTax",
+    "decision": "none",
+    "category": "income statement",
+    "reason": "Comprehensive income is an income statement measure, not accumulated other comprehensive income (balance sheet)"
+  },
+  {
+    "key": "DividendsPaid|us-gaap|DividendsPayableAmount",
+    "decision": "none",
+    "category": "balance sheet",
+    "reason": "Dividends payable is a current liability accrual, not cash dividends paid (cash flow)"
+  },
+  {
+    "key": "ShortTermDebt|us-gaap|ShorttermDebtAverageOutstandingAmount",
+    "decision": "none",
+    "category": "average balance",
+    "reason": "Average outstanding amount is a weighted average balance metric, not a point-in-time balance sheet measure"
+  },
+  {
+    "key": "InterestIncome|us-gaap|DividendIncomeOperating",
+    "decision": "none",
+    "category": "income statement",
+    "reason": "Dividend income is part of NonInterestIncome for financial institutions or OtherNonOperatingIncome, not InterestIncome"
+  },
+  {
+    "key": "LongTermDebt|us-gaap|us-gaap:RepaymentsOfRelatedPartyDebt",
+    "decision": "none",
+    "category": "cash flow",
+    "reason": "Repayments of debt is a financing cash flow activity, not a debt balance"
+  },
+  {
+    "key": "AccountsReceivable|ifrs-full|AdjustmentsForDecreaseIncreaseInTradeAndOtherReceivables",
+    "decision": "none",
+    "category": "working capital adjustment",
+    "reason": "Changes in receivables is a working capital adjustment in cash flow, not an accounts receivable balance"
+  },
+  {
+    "key": "IntangibleAssets|ifrs-full|AdditionsOtherThanThroughBusinessCombinationsIntangibleAssetsOtherThanGoodwill",
+    "decision": "none",
+    "category": "capital additions",
+    "reason": "Additions to intangible assets is a capital expenditure activity, not the asset balance itself"
+  },
+  {
+    "key": "OperatingCashFlow|us-gaap|us-gaap:ProceedsFromSaleMaturityAndCollectionsOfInvestments",
+    "decision": "none",
+    "category": "investing activity",
+    "reason": "Proceeds from sale/maturity of investments is an investing cash flow, not operating cash flow"
+  },
+  {
+    "key": "CashAndEquivalents|us-gaap|us-gaap:CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalentsAtEndOfPeriodIncludingDisposalGroupAndDiscontinuedOperations",
+    "decision": "none",
+    "category": "restricted assets",
+    "reason": "Restricted cash is typically disclosed separately and may not be part of operational cash and equivalents"
+  },
+  {
+    "key": "OtherNonCurrentLiabilities|ifrs-full|RemainingContractualUndiscountedCashOutflowsInflowsThatAriseFromContractsWithinScopeOfIFRS17ThatAreLiabilities",
+    "decision": "none",
+    "category": "disclosure",
+    "reason": "Undiscounted cash flows for IFRS 17 insurance liabilities is a disclosure schedule, not a balance sheet liability"
+  },
+  {
+    "key": "PropertyPlantEquipment|ifrs-full|TransferFromToInventoriesAndOwnerOccupiedPropertyInvestmentProperty",
+    "decision": "none",
+    "category": "reclassification",
+    "reason": "Transfer between inventory and investment property is a reclassification/disclosure, not PP&E"
+  },
+  {
+    "key": "OtherNonCurrentLiabilities|ifrs-full|NoncurrentAssetsOrDisposalGroupsClassifiedAsHeldForSaleOrAsHeldForDistributionToOwners",
+    "decision": "none",
+    "category": "disclosure",
+    "reason": "Assets held for sale/distribution is a separate classification, not an operating noncurrent liability"
+  },
+  {
+    "key": "ShareRepurchases|ifrs-full|ReverseRepurchaseAgreementsAndCashCollateralOnSecuritiesBorrowed",
+    "decision": "none",
+    "category": "financing",
+    "reason": "Reverse repurchase agreements are financing transactions with collateral, not share repurchases"
+  },
+  {
+    "key": "OtherNonCurrentLiabilities|ifrs-full|NonderivativeFinancialLiabilitiesUndiscountedCashFlows",
+    "decision": "none",
+    "category": "disclosure",
+    "reason": "Undiscounted cash flows for nonderivative liabilities is a fair value disclosure, not an operating liability"
+  },
+  {
+    "key": "TotalStockholdersEquity|ifrs-full|ProportionOfVotingPowerHeldInAssociate",
+    "decision": "none",
+    "category": "disclosure",
+    "reason": "Proportion of voting power in associates is an ownership disclosure, not stockholders' equity"
+  },
+  {
+    "key": "NetIncomeToCommon|us-gaap|BusinessAcquisitionProFormaNetIncomeLoss",
+    "decision": "none",
+    "category": "pro forma",
+    "reason": "Pro forma net income is hypothetical/disclosure for acquisitions, not actual reported net income"
+  },
+  {
+    "key": "DepreciationAmortization|us-gaap|us-gaap:AccumulatedDepreciationDepletionAndAmortizationPropertyPlantAndEquipment",
+    "decision": "none",
+    "category": "balance_sheet_detail",
+    "reason": "Accumulated depreciation is a contra-asset account, not a standalone metric; it adjusts PPE valuation"
+  },
+  {
+    "key": "OtherCurrentAssets|us-gaap|IncreaseDecreaseInDividendsReceivable",
+    "decision": "none",
+    "category": "cash_flow_working_capital",
+    "reason": "Working capital change in receivables; operating cash flow adjustment, not a balance sheet line item"
+  },
+  {
+    "key": "DividendsPaid|us-gaap|us-gaap:StockDividendsShares",
+    "decision": "none",
+    "category": "equity_transaction",
+    "reason": "Stock dividends are equity transactions affecting share count, not cash dividends"
+  },
+  {
+    "key": "CommonStock|us-gaap|us-gaap:PaymentsOfStockIssuanceCosts",
+    "decision": "none",
+    "category": "financing_cost",
+    "reason": "Stock issuance costs are financing activities, not a primary balance sheet account"
+  },
+  {
+    "key": "AccountsPayable|us-gaap|IncreaseDecreaseInOtherAccountsPayableAndAccruedLiabilities",
+    "decision": "none",
+    "category": "cash_flow_working_capital",
+    "reason": "Working capital change in payables; operating cash flow adjustment, not a balance sheet line item"
+  },
+  {
+    "key": "AccountsReceivable|us-gaap|us-gaap:NotesReceivableNet",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Notes receivable is a distinct asset from trade accounts receivable"
+  },
+  {
+    "key": "CashAndEquivalents|us-gaap|us-gaap:CashAndCashEquivalentsFairValueDisclosure",
+    "decision": "none",
+    "category": "fair_value_disclosure",
+    "reason": "Fair value disclosure tag; not the primary measure of cash"
+  },
+  {
+    "key": "ShortTermDebt|us-gaap|us-gaap:ProceedsFromLinesOfCredit",
+    "decision": "none",
+    "category": "cash_flow_financing",
+    "reason": "Proceeds from credit lines are financing cash flows, not balance sheet debt value"
+  },
+  {
+    "key": "AccountsReceivable|us-gaap|CommonStockShareSubscribedButUnissuedSubscriptionsReceivable",
+    "decision": "none",
+    "category": "equity_subscription",
+    "reason": "Subscriptions receivable is a contra-equity item related to stock issuance, not trade receivables"
+  },
+  {
+    "key": "ResearchAndDevelopment|us-gaap|us-gaap:ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsNonvestedWeightedAverageGrantDateFairValue",
+    "decision": "none",
+    "category": "compensation_disclosure",
+    "reason": "Share-based compensation fair value is a disclosure metric, not an income statement line"
+  },
+  {
+    "key": "OtherNonCurrentAssets|srt|FutureNetCashFlowsRelatingToProvedOilAndGasReservesDevelopmentCosts",
+    "decision": "none",
+    "category": "asset_valuation",
+    "reason": "Future cash flows from reserves is a valuation input, not a financial statement asset"
+  },
+  {
+    "key": "InterestIncome|us-gaap|EquityMethodInvestmentDividendsOrDistributions",
+    "decision": "none",
+    "category": "investing_cash_flow",
+    "reason": "Equity method investment distributions are investing cash flows, not interest income"
+  },
+  {
+    "key": "OtherCurrentLiabilities|us-gaap|us-gaap:CommitmentsAndContingencies",
+    "decision": "none",
+    "category": "disclosure",
+    "reason": "Commitments and contingencies is a disclosure item, not a liability line"
+  },
+  {
+    "key": "SharesOutstandingBasic|us-gaap|ShareBasedCompensationSharesAuthorizedUnderStockOptionPlansExercisePriceRangeUpperRangeLimit",
+    "decision": "none",
+    "category": "compensation_disclosure",
+    "reason": "Exercise price range limits are compensation plan metrics, not share counts"
+  },
+  {
+    "key": "LongTermDebt|us-gaap|us-gaap:EarlyRepaymentOfSeniorDebt",
+    "decision": "none",
+    "category": "cash_flow_financing",
+    "reason": "Early debt repayment is a financing cash flow, not debt balance"
+  },
+  {
+    "key": "ShortTermInvestments|us-gaap|AvailableForSaleSecuritiesFairValueDisclosure",
+    "decision": "none",
+    "category": "fair_value_disclosure",
+    "reason": "Fair value disclosure tag; not the primary measure of investments"
+  },
+  {
+    "key": "ShortTermDebt|us-gaap|ShortTermDebtPercentageBearingFixedInterestRate",
+    "decision": "none",
+    "category": "debt_characterization",
+    "reason": "Interest rate percentage is a debt characteristic, not the debt amount"
+  },
+  {
+    "key": "OperatingCashFlow|us-gaap|us-gaap:IncreaseDecreaseInNotesPayableCurrent",
+    "decision": "none",
+    "category": "cash_flow_working_capital",
+    "reason": "Change in notes payable is a working capital adjustment in operating cash flows"
+  },
+  {
+    "key": "OtherNonCurrentLiabilities|us-gaap|IncreaseDecreaseInOtherNoncurrentLiabilities",
+    "decision": "none",
+    "category": "cash_flow_working_capital",
+    "reason": "Change in noncurrent liabilities is a non-operating working capital adjustment"
+  },
+  {
+    "key": "LongTermDebt|us-gaap|us-gaap:RepaymentsOfDebt",
+    "decision": "none",
+    "category": "cash_flow_financing",
+    "reason": "Debt repayments are financing cash flows, not balance sheet debt values"
+  },
+  {
+    "key": "DividendsPerShare|us-gaap|EarningsPerShareBasicDistributed",
+    "decision": "map",
+    "correct_metric": "EarningsPerShareBasic",
+    "reason": "Basic EPS distributed is a variant of basic earnings per share"
+  },
+  {
+    "key": "DividendsPerShare|us-gaap|EarningsPerShareBasicDistributed",
+    "decision": "map",
+    "correct_metric": "EarningsPerShareBasic",
+    "reason": "Basic EPS distributed is a variant of basic earnings per share"
+  },
+  {
+    "key": "OtherNonCurrentAssets|ifrs-full|ifrs-full:AdditionsToRightofuseAssets",
+    "decision": "none",
+    "category": "cash_flow_investing",
+    "reason": "Right-of-use asset additions are capital expenditures, not balance sheet asset values"
+  },
+  {
+    "key": "IncomeTaxExpense|us-gaap|us-gaap:IncomeTaxReconciliationNondeductibleExpense",
+    "decision": "none",
+    "category": "tax_reconciliation",
+    "reason": "Tax reconciliation items are disclosure details, not the tax expense amount"
+  },
+  {
+    "key": "CurrentPortionLongTermDebt|us-gaap|LongTermDebtMaturitiesRepaymentsOfPrincipalInRollingYearTwoAndThree",
+    "decision": "none",
+    "category": "debt_schedule",
+    "reason": "Debt maturity schedules are disclosure details, not balance sheet liability values"
+  },
+  {
+    "key": "DepreciationAmortization|us-gaap|us-gaap:FlightEquipmentAccumulatedDepreciation",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "FlightEquipmentAccumulatedDepreciation is a balance sheet contra-asset account, not an income statement depreciation/amortization expense line item"
+  },
+  {
+    "key": "CommonStock|us-gaap|us-gaap:IssuanceOfStockAndWarrantsForServicesOrClaims",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "IssuanceOfStockAndWarrantsForServicesOrClaims is a cash flow transaction, not a balance sheet stock account balance"
+  },
+  {
+    "key": "OtherCurrentLiabilities|us-gaap|us-gaap:IncreaseDecreaseInAccruedInterestReceivableNet",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "IncreaseDecreaseInAccruedInterestReceivableNet is a working capital adjustment in cash flow, not a liability"
+  },
+  {
+    "key": "OperatingCashFlow|us-gaap|us-gaap:RepaymentsOfShortTermDebt",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "RepaymentsOfShortTermDebt is a financing cash flow activity, not an operating cash flow"
+  },
+  {
+    "key": "OperatingCashFlow|us-gaap|us-gaap:DebtInstrumentPeriodicPaymentPrincipal",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "DebtInstrumentPeriodicPaymentPrincipal is a financing cash flow activity, not an operating cash flow"
+  },
+  {
+    "key": "SellingGeneralAdmin|us-gaap|GeneralAndAdministrativeExpenseRatio",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "GeneralAndAdministrativeExpenseRatio is a calculated ratio/percentage, not a primary financial statement metric"
+  },
+  {
+    "key": "IncomeTaxExpense|us-gaap|DeferredIncomeTaxAssetsNet",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "DeferredIncomeTaxAssetsNet is a balance sheet asset, not an income statement tax expense"
+  },
+  {
+    "key": "ShortTermDebt|us-gaap|ShorttermDebtMaximumAmountOutstandingDuringPeriod",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "ShorttermDebtMaximumAmountOutstandingDuringPeriod is a disclosure metric, not the period-end balance"
+  },
+  {
+    "key": "LongTermDebt|us-gaap|LongTermDebtPercentageBearingFixedInterestRate",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "LongTermDebtPercentageBearingFixedInterestRate is a rate/percentage disclosure, not a debt amount"
+  },
+  {
+    "key": "OperatingCashFlow|us-gaap|us-gaap:LoansAndLeasesReceivableRelatedPartiesProceeds",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "LoansAndLeasesReceivableRelatedPartiesProceeds is an investing activity, not an operating cash flow"
+  },
+  {
+    "key": "OperatingCashFlow|us-gaap|LoansAndLeasesReceivableRelatedPartiesProceeds",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "LoansAndLeasesReceivableRelatedPartiesProceeds is an investing activity, not an operating cash flow"
+  },
+  {
+    "key": "IncomeTaxExpense|us-gaap|IncomeTaxesPaid",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "IncomeTaxesPaid is a cash flow payment, not the income tax expense accrual"
+  },
+  {
+    "key": "DividendsPerShare|us-gaap|us-gaap:DistributionsPerGeneralPartnershipUnitOutstanding",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "DistributionsPerGeneralPartnershipUnitOutstanding relates to partnership units, not common stock dividends per share"
+  },
+  {
+    "key": "TotalAssets|dei|dei:EntityPublicFloat",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "EntityPublicFloat is a market capitalization disclosure, not a financial statement metric"
+  },
+  {
+    "key": "OtherNonOperatingIncome|us-gaap|GoodwillWrittenOffRelatedToSaleOfBusinessUnit",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "GoodwillWrittenOffRelatedToSaleOfBusinessUnit is a goodwill impairment/charge, not non-operating income"
+  },
+  {
+    "key": "PropertyPlantEquipment|us-gaap|us-gaap:OperatingLeaseRightOfUseAsset",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "OperatingLeaseRightOfUseAsset is a separate balance sheet asset category under ASC 842, not PP&E"
+  },
+  {
+    "key": "TotalStockholdersEquity|us-gaap|us-gaap:StatutoryAccountingPracticesStatutoryCapitalAndSurplusBalance",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "StatutoryAccountingPracticesStatutoryCapitalAndSurplusBalance is a statutory accounting metric, not GAAP stockholders' equity"
+  },
+  {
+    "key": "CommonStock|us-gaap|us-gaap:PreferredStockSharesOutstanding",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "PreferredStockSharesOutstanding is a separate equity class, not common stock"
+  },
+  {
+    "key": "OtherCurrentLiabilities|us-gaap|us-gaap:TemporaryEquityCarryingAmountAttributableToParent",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "TemporaryEquityCarryingAmountAttributableToParent is a temporary equity account, not a current liability"
+  },
+  {
+    "key": "ShareRepurchases|us-gaap|PaymentsForRepurchaseOfWarrants",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "PaymentsForRepurchaseOfWarrants are warrant repurchases, not common stock repurchases"
+  },
+  {
+    "key": "SharesOutstandingBasic|us-gaap|CommonStockParOrStatedValuePerShare",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "CommonStockParOrStatedValuePerShare is a per-share par value, not shares outstanding"
+  },
+  {
+    "key": "CommonStock|us-gaap|us-gaap:CommonStockSharesIssued",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "CommonStockSharesIssued is a shares issued metric, not the common stock balance account"
+  },
+  {
+    "key": "OtherNonCurrentLiabilities|us-gaap|TemporaryEquityDividendsAdjustment",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "TemporaryEquityDividendsAdjustment is a temporary equity adjustment, not a non-current liability"
+  },
+  {
+    "key": "CommonStock|us-gaap|us-gaap:SharesIssuedPricePerShare",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "SharesIssuedPricePerShare is a per-share price disclosure, not a common stock balance"
+  },
+  {
+    "key": "ResearchAndDevelopment|us-gaap|us-gaap:ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsNonvestedIntrinsicValue",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsNonvestedIntrinsicValue is a fair value disclosure, not an R&D expense"
+  },
+  {
+    "key": "AccumulatedOtherComprehensiveIncome|us-gaap|us-gaap:ComprehensiveIncomeNetOfTax",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "ComprehensiveIncomeNetOfTax is a comprehensive income statement item, not a balance sheet component"
+  },
+  {
+    "key": "IncomeTaxExpense|us-gaap|IncomeTaxReconciliationDeductionsDividends",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Tax reconciliation deduction details are disclosure items, not a primary financial statement metric"
+  },
+  {
+    "key": "OtherCurrentAssets|us-gaap|us-gaap:InvestmentsFairValueDisclosure",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Fair value disclosure tag is a disclosure item, not a balance sheet line item"
+  },
+  {
+    "key": "CommonStock|us-gaap|StockIssuedDuringPeriodSharesTreasuryStockReissued",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Treasury stock share transactions are equity account details, not a primary metric"
+  },
+  {
+    "key": "InterestExpense|us-gaap|us-gaap:InvestmentInterestRatePaidInCash",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Interest paid in cash is a cash flow detail, not an accrual income statement metric"
+  },
+  {
+    "key": "LongTermDebt|us-gaap|us-gaap:RepaymentsOfOtherLongTermDebt",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Repayments of debt is a cash flow activity, not a balance sheet stock measure"
+  },
+  {
+    "key": "CommonStock|us-gaap|us-gaap:PreferredStockSharesOutstanding",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Preferred stock shares outstanding is a separate equity class disclosure, not common stock"
+  },
+  {
+    "key": "ProvisionForCreditLosses|us-gaap|LoansAndLeasesReceivableImpairedCommitmentToLend",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Troubled debt restructuring commitment is a financing receivable detail, not provision for credit losses"
+  },
+  {
+    "key": "OtherNonOperatingIncome|ifrs-full|ImpairmentLossRecognisedInProfitOrLossIntangibleAssetsAndGoodwill",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Impairment loss is typically an operating expense or non-operating loss, not a standard metric line item"
+  },
+  {
+    "key": "OtherNonCurrentLiabilities|ifrs-full|ifrs-full:ProportionOfOwnershipInterestsHeldByNoncontrollingInterests",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Noncontrolling interests proportion is a disclosure item, not a primary liability metric"
+  },
+  {
+    "key": "ShortTermInvestments|us-gaap|MarketableSecuritiesNoncurrent",
+    "decision": "map",
+    "correct_metric": "ShortTermInvestments",
+    "reason": "Noncurrent marketable securities should be mapped to longer-term investments, but label indicates 'Noncurrent' so this is actually outside current assets"
+  },
+  {
+    "key": "ShortTermInvestments|us-gaap|MarketableSecuritiesNoncurrent",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Noncurrent marketable securities don't fit ShortTermInvestments; should be OtherNonCurrentAssets"
+  },
+  {
+    "key": "DividendsPaid|us-gaap|us-gaap:CommonStockDividendsShares",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Common stock dividends shares is a share count metric, not cash dividends paid"
+  },
+  {
+    "key": "OtherNonCurrentLiabilities|us-gaap|PreferredStockSharesOutstanding",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Preferred stock shares outstanding is a disclosure metric, not a liability"
+  },
+  {
+    "key": "OtherNonOperatingIncome|us-gaap|OtherTaxExpenseBenefit",
+    "decision": "map",
+    "correct_metric": "IncomeTaxExpense",
+    "reason": "Other tax expense/benefit is part of income tax expense on the income statement"
+  },
+  {
+    "key": "CapitalExpenditures|us-gaap|us-gaap:PaymentsForPurchaseOfOtherAssets1",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Payments for purchase of other assets is not standard capital expenditures"
+  },
+  {
+    "key": "CurrentPortionLongTermDebt|us-gaap|AvailableForSaleSecuritiesCurrent",
+    "decision": "map",
+    "correct_metric": "ShortTermInvestments",
+    "reason": "Available-for-sale securities classified as current are short-term investments"
+  },
+  {
+    "key": "CommonStock|us-gaap|us-gaap:ProceedsFromStockPlans",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Proceeds from stock plans is a financing cash flow detail, not common stock on balance sheet"
+  },
+  {
+    "key": "OtherNonCurrentAssets|us-gaap|EquityMethodInvestmentSummarizedFinancialInformationNoncurrentAssets",
+    "decision": "map",
+    "correct_metric": "OtherNonCurrentAssets",
+    "reason": "Equity method investment noncurrent assets are other non-current assets"
+  },
+  {
+    "key": "LongTermDebt|us-gaap|us-gaap:LineOfCreditFacilityMaximumBorrowingCapacity",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Maximum borrowing capacity is a disclosure detail, not a balance sheet liability amount"
+  },
+  {
+    "key": "DepreciationAmortization|us-gaap|us-gaap:ShareBasedCompensationArrangementByShareBasedPaymentAwardFairValueAssumptionsExpectedDividendRate",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Stock-based compensation fair value assumptions are disclosure items, not depreciation/amortization"
+  },
+  {
+    "key": "RetainedEarnings|us-gaap|StatutoryAccountingPracticesStatutoryAmountAvailableForDividendPaymentsWithoutRegulatoryApproval",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Statutory amount available for dividends is a disclosure, not retained earnings balance"
+  },
+  {
+    "key": "DividendsPaid|us-gaap|us-gaap:StatutoryAccountingPracticesStatutoryAmountAvailableForDividendPaymentsWithoutRegulatoryApproval",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Statutory amount available for dividends is a disclosure, not cash dividends paid"
+  },
+  {
+    "key": "OtherNonCurrentLiabilities|us-gaap|us-gaap:TemporaryEquityParOrStatedValuePerShare",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Temporary equity per share is a disclosure item, not a liability metric"
+  },
+  {
+    "key": "InterestExpense|us-gaap|us-gaap:PaymentsOfDebtExtinguishmentCosts",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Debt extinguishment costs are typically one-time charges, not interest expense"
+  },
+  {
+    "key": "ShortTermDebt|us-gaap|ProceedsFromRepaymentsOfNotesPayable",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Proceeds from repayments of notes payable is a financing activity detail, not a balance sheet stock measure"
+  },
+  {
+    "key": "DividendsPaid|us-gaap|us-gaap:TemporaryEquityDividendsAdjustment",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Temporary equity adjustments are not a direct measure of dividends paid; they are accounting adjustments for redeemable equity instruments"
+  },
+  {
+    "key": "InterestExpense|us-gaap|InterestCreditedToPolicyholdersAccountBalances",
+    "decision": "subcomponent",
+    "correct_metric": "InterestExpense",
+    "category": "subcomponent",
+    "reason": "Interest credited to policyholders is a component of total interest expense for insurance companies"
+  },
+  {
+    "key": "OtherCurrentLiabilities|us-gaap|us-gaap:SupplementalInformationForPropertyCasualtyInsuranceUnderwritersReservesForUnpaidClaimsAndClaimsAdjustmentExpense",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "This is a supplemental disclosure/schedule item for insurance reserves, not a direct balance sheet line item"
+  },
+  {
+    "key": "Inventory|us-gaap|PercentageOfWeightedAverageCostInventory",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "This is a percentage/rate metric, not a monetary measure of inventory"
+  },
+  {
+    "key": "SharesOutstandingDiluted|us-gaap|DilutiveSecurities",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "This is an effect/adjustment metric related to EPS calculation, not a shares outstanding measure"
+  },
+  {
+    "key": "CurrentPortionLongTermDebt|us-gaap|BusinessCombinationRecognizedIdentifiableAssetsAcquiredAndLiabilitiesAssumedNoncurrentLiabilitiesLongTermDebt",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "This is a business combination acquisition accounting detail; the acquired debt should not be mapped as current portion"
+  },
+  {
+    "key": "AccountsReceivable|us-gaap|us-gaap:ImpairedFinancingReceivableRecordedInvestment",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "This is a non-accrual or impaired receivable disclosure, not a standard accounts receivable measure"
+  },
+  {
+    "key": "DividendsPaid|ifrs-full|ifrs-full:DividendPayables",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Dividend payables is a liability account, not dividends actually paid in cash"
+  },
+  {
+    "key": "NetIncome|us-gaap|us-gaap:BusinessAcquisitionsProFormaNetIncomeLoss",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Pro forma net income is a supplemental/pro forma metric, not actual reported net income"
+  },
+  {
+    "key": "OtherCurrentAssets|us-gaap|IncreaseDecreaseInRecoverablePropertyDamageCosts",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "This is a specific operating liability adjustment for insurance claims recovery, not a general current asset"
+  },
+  {
+    "key": "PretaxIncome|us-gaap|IncomeTaxReconciliationIncomeTaxExpenseBenefitAtFederalStatutoryIncomeTaxRate",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "This is a tax reconciliation rate/percentage metric, not pretax income"
+  },
+  {
+    "key": "ResearchAndDevelopment|us-gaap|us-gaap:ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsGrantsInPeriodGross",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Share-based compensation grants is not a line item allocation to R&D; it's a separate disclosure"
+  },
+  {
+    "key": "OtherNonCurrentAssets|srt|IncreaseDecreaseInEstimatedFutureDevelopmentCosts",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "This is a change/flow metric for estimated costs, not a non-current asset balance"
+  },
+  {
+    "key": "OtherNonCurrentAssets|us-gaap|us-gaap:BusinessCombinationAcquisitionRelatedCosts",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Business acquisition costs are typically expensed or capitalized separately; not a standard non-current asset"
+  },
+  {
+    "key": "NetIncomeToCommon|us-gaap|us-gaap:UndistributedEarningsLossAllocatedToParticipatingSecuritiesBasic",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "This is an allocation/adjustment for participating securities, not net income to common shareholders"
+  },
+  {
+    "key": "OtherNonCurrentLiabilities|ifrs-full|BondsIssuedUndiscountedCashFlows",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Undiscounted cash flows is a fair value disclosure item, not a balance sheet liability measure"
+  },
+  {
+    "key": "OtherCurrentLiabilities|us-gaap|IncreaseDecreaseInIncomeTaxesPayableNetOfIncomeTaxesReceivable",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "This is a working capital change from the cash flow statement, not a current liability balance"
+  },
+  {
+    "key": "OperatingCashFlow|us-gaap|us-gaap:EarlyRepaymentOfSeniorDebt",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Early debt repayment is a financing activity, not an operating cash flow"
+  },
+  {
+    "key": "ShortTermDebt|ifrs-full|BankBorrowingsUndiscountedCashFlows",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Undiscounted cash flows is a fair value disclosure, not an actual debt balance"
+  },
+  {
+    "key": "CommonStock|us-gaap|us-gaap:CommonStockSharesIssued",
+    "decision": "map",
+    "correct_metric": "CommonStock",
+    "reason": "Shares issued directly relates to common stock outstanding and par value"
+  },
+  {
+    "key": "PropertyPlantEquipment|srt|RealEstateFederalIncomeTaxBasis",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "This is a tax basis disclosure for real estate; not a GAAP book value measure"
+  },
+  {
+    "key": "DividendsPerShare|us-gaap|us-gaap:SharePrice",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Share price is a market metric, not dividends per share"
+  },
+  {
+    "key": "ResearchAndDevelopment|us-gaap|ShareBasedCompensationArrangementByShareBasedPaymentAwardFairValueAssumptionsExpectedDividendPayments",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "This is a fair value assumption detail for share-based compensation, not R&D expense"
+  },
+  {
+    "key": "DividendsPerShare|us-gaap|us-gaap:ShareBasedCompensationArrangementByShareBasedPaymentAwardFairValueAssumptionsExpectedDividendPayments",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "This is a fair value assumption for share-based awards, not actual dividends per share"
+  },
+  {
+    "key": "OtherCurrentLiabilities|us-gaap|IncreaseDecreaseInPropertyAndOtherTaxesPayable",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "This is a working capital change from the cash flow statement, not a current liability balance"
+  },
+  {
+    "key": "Revenue|us-gaap|RevenuesNetOfInterestExpense",
+    "decision": "none",
+    "category": "derived_metric",
+    "reason": "Net of Interest Expense is a calculated/derived metric, not a primary statement line item"
+  },
+  {
+    "key": "CurrentPortionLongTermDebt|us-gaap|LongTermDebtMaturitiesRepaymentsOfPrincipalAfterYearFive",
+    "decision": "none",
+    "category": "disclosure_item",
+    "reason": "Maturity schedule detail; disclosure of debt maturities, not a balance sheet amount"
+  },
+  {
+    "key": "DepreciationAmortization|us-gaap|us-gaap:AccumulatedDepreciationDepletionAndAmortizationPropertyPlantAndEquipmentPeriodIncreaseDecrease",
+    "decision": "none",
+    "category": "balance_sheet_detail",
+    "reason": "Accumulated depreciation is a contra-asset account detail, not DepreciationAmortization which is an income statement expense"
+  },
+  {
+    "key": "DividendsPerShare|us-gaap|us-gaap:ProceedsFromStockOptionsExercised",
+    "decision": "none",
+    "category": "cash_flow_detail",
+    "reason": "Proceeds from stock options are financing cash flow detail, not an earnings per share metric"
+  },
+  {
+    "key": "OperatingCashFlow|us-gaap|us-gaap:RepaymentsOfLongTermDebt",
+    "decision": "map",
+    "correct_metric": "FinancingCashFlow",
+    "reason": "Repayment of long-term debt is a financing cash flow activity"
+  },
+  {
+    "key": "OtherCurrentLiabilities|us-gaap|DistributionMadeToLimitedPartnerCashDistributionsDeclared",
+    "decision": "none",
+    "category": "equity_distribution",
+    "reason": "Distribution to limited partners is an equity transaction disclosure, not a liability"
+  },
+  {
+    "key": "OtherNonCurrentAssets|us-gaap|us-gaap:VariableInterestEntityNonconsolidatedCarryingAmountAssetsAndLiabilitiesNet",
+    "decision": "none",
+    "category": "disclosure_item",
+    "reason": "VIE carrying amount is a consolidation/disclosure detail, not a balance sheet line item"
+  },
+  {
+    "key": "OtherNonCurrentAssets|us-gaap|OtherAssetsFairValueDisclosure",
+    "decision": "none",
+    "category": "fair_value_disclosure",
+    "reason": "Fair value disclosure item, explicitly labeled as such; not a balance sheet amount"
+  },
+  {
+    "key": "OtherCurrentLiabilities|us-gaap|us-gaap:TimeDeposits100000OrMore",
+    "decision": "none",
+    "category": "deposit_detail",
+    "reason": "Time deposit detail by size; deposit classification detail, not a primary liability"
+  },
+  {
+    "key": "LongTermDebt|us-gaap|DebtWeightedAverageInterestRate",
+    "decision": "none",
+    "category": "rate_metric",
+    "reason": "Weighted average interest rate is a percentage/rate metric, not a debt amount"
+  },
+  {
+    "key": "OtherNonOperatingIncome|us-gaap|us-gaap:ImpairmentOfOngoingProject",
+    "decision": "none",
+    "category": "expense_item",
+    "reason": "Impairment of ongoing project is an expense item, not non-operating income"
+  },
+  {
+    "key": "IncomeTaxExpense|us-gaap|us-gaap:EffectiveIncomeTaxRateReconciliationAtFederalStatutoryIncomeTaxRate",
+    "decision": "none",
+    "category": "rate_reconciliation",
+    "reason": "Statutory tax rate reconciliation is a disclosure rate component, not an expense amount"
+  },
+  {
+    "key": "IncomeTaxExpense|us-gaap|EffectiveIncomeTaxRateReconciliationTaxCreditsResearch",
+    "decision": "none",
+    "category": "rate_reconciliation",
+    "reason": "Tax credit rate reconciliation is a percentage/disclosure component, not an expense amount"
+  },
+  {
+    "key": "CommonStock|us-gaap|TreasuryStockCarryingBasis",
+    "decision": "none",
+    "category": "equity_detail",
+    "reason": "Treasury stock carrying basis is an equity accounting detail, not common stock issuance"
+  },
+  {
+    "key": "ShortTermDebt|us-gaap|us-gaap:ConvertibleDebt",
+    "decision": "map",
+    "correct_metric": "LongTermDebt",
+    "reason": "Convertible debt is a form of long-term debt obligation"
+  },
+  {
+    "key": "IntangibleAssets|us-gaap|CapitalizedComputerSoftwareAccumulatedAmortization",
+    "decision": "none",
+    "category": "balance_sheet_detail",
+    "reason": "Accumulated amortization of software is a contra-asset detail, not intangible asset carrying value"
+  },
+  {
+    "key": "OtherNonCurrentAssets|srt|PreviouslyEstimatedDevelopmentCostsIncurred",
+    "decision": "none",
+    "category": "estimate_detail",
+    "reason": "Previously estimated costs is an accounting estimate detail, not an asset balance"
+  },
+  {
+    "key": "OtherNonOperatingIncome|srt|IncreaseDecreaseInFutureIncomeTaxExpenseEstimatesOnFutureCashFlowsRelatedToProvedOilAndGasReserves",
+    "decision": "none",
+    "category": "estimate_detail",
+    "reason": "Future tax estimate related to oil reserves is an estimate disclosure, not an operating item"
+  },
+  {
+    "key": "OtherNonCurrentLiabilities|us-gaap|us-gaap:NoncontrollingInterestIncreaseFromBusinessCombination",
+    "decision": "none",
+    "category": "equity_item",
+    "reason": "Noncontrolling interest from acquisition is a business combination detail, not a non-current liability"
+  },
+  {
+    "key": "TotalAssets|us-gaap|us-gaap:AssetsFairValueDisclosure",
+    "decision": "none",
+    "category": "fair_value_disclosure",
+    "reason": "Assets fair value disclosure is a footnote disclosure, not a total assets amount"
+  },
+  {
+    "key": "InterestExpense|us-gaap|us-gaap:PaymentsOfDebtIssuanceCosts",
+    "decision": "none",
+    "category": "cash_flow_detail",
+    "reason": "Payments of debt issuance costs are financing cash flow detail, not interest expense"
+  },
+  {
+    "key": "OperatingCashFlow|us-gaap|us-gaap:RepaymentsOfNotesPayable",
+    "decision": "map",
+    "correct_metric": "FinancingCashFlow",
+    "reason": "Repayment of notes payable is a financing cash flow activity"
+  },
+  {
+    "key": "OtherCurrentAssets|us-gaap|us-gaap:DebtSecuritiesAvailableForSaleAccruedInterestWriteoff",
+    "decision": "none",
+    "category": "fair_value_writeoff",
+    "reason": "Accrued interest writeoff is a fair value adjustment/loss detail, not a current asset"
+  },
+  {
+    "key": "OtherCurrentAssets|us-gaap|us-gaap:IncreaseDecreaseInPrepaidDeferredExpenseAndOtherAssets",
+    "decision": "subcomponent",
+    "correct_metric": "OperatingCashFlow",
+    "category": "subcomponent",
+    "reason": "Change in prepaid and deferred expenses is a working capital component of operating cash flow"
+  },
+  {
+    "key": "CommonStock|us-gaap|us-gaap:ProceedsFromContributionsFromAffiliates",
+    "decision": "none",
+    "category": "equity_transaction",
+    "reason": "Contributions from affiliates is a capital contribution disclosure, not common stock issuance"
+  },
+  {
+    "key": "OtherNonCurrentAssets|us-gaap|us-gaap:AssetsNoncurrent",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "AssetsNoncurrent is a balance sheet classification header, not a specific metric line item"
+  },
+  {
+    "key": "ShortTermInvestments|us-gaap|MarketableSecuritiesRestrictedNoncurrent",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Restricted securities are a fair value/disclosure item, not a primary balance sheet measure"
+  },
+  {
+    "key": "CommonStock|us-gaap|us-gaap:PaymentsRelatedToTaxWithholdingForShareBasedCompensation",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Tax withholding payments are cash flow transactions, not equity or asset line items"
+  },
+  {
+    "key": "PropertyPlantEquipment|us-gaap|PropertyPlantAndEquipmentGrossPeriodIncreaseDecrease",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Gross period increase/decrease is a movement schedule detail, not a primary balance sheet measure"
+  },
+  {
+    "key": "OtherCurrentAssets|us-gaap|RetailLandSalesDepositMethodPropertyCarryingValue",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Retail land sales deposit method is an industry-specific balance sheet detail, not a standardized metric"
+  },
+  {
+    "key": "OtherNonOperatingIncome|us-gaap|FiniteLivedIntangibleAssetsForeignCurrencyTranslationGainLoss",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Foreign currency translation is an accumulated comprehensive income item, not operating income"
+  },
+  {
+    "key": "OtherNonOperatingIncome|us-gaap|FiniteLivedIntangibleAssetsForeignCurrencyTranslationGainLoss",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Foreign currency translation is an accumulated comprehensive income item, not operating income"
+  },
+  {
+    "key": "CommonStock|us-gaap|us-gaap:StockIssuedDuringPeriodSharesNewIssues",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Stock issued shares count is a share activity detail, not a balance sheet value metric"
+  },
+  {
+    "key": "DividendsPerShare|us-gaap|us-gaap:ProceedsFromRepurchaseOfRedeemablePreferredStock",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Proceeds from preferred stock repurchase is a cash flow item, not per-share dividend data"
+  },
+  {
+    "key": "Inventory|us-gaap|DeferredTaxLiabilitiesDeferredExpenseCapitalizedInventoryCosts",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Deferred tax liability is a tax balance sheet item, not an inventory carrying value"
+  },
+  {
+    "key": "OtherNonOperatingIncome|us-gaap|DefinedBenefitPlanInterestCost",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Pension interest cost is part of compensation expense, not operating/non-operating income"
+  },
+  {
+    "key": "NetIncomeToCommon|us-gaap|BusinessAcquisitionsProFormaNetIncomeLoss",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Pro forma net income is a disclosure item, not an actual reported metric"
+  },
+  {
+    "key": "CommonStock|us-gaap|us-gaap:ConversionOfStockSharesConverted1",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Stock conversion share count is a share activity detail, not a balance sheet value"
+  },
+  {
+    "key": "LongTermDebt|us-gaap|us-gaap:LongTermDebtMaturitiesRepaymentsOfPrincipalInYearFive",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Debt maturity schedule is a debt disclosure detail, not the total long-term debt balance"
+  },
+  {
+    "key": "OtherCurrentAssets|us-gaap|NotesReceivableFairValueDisclosure",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Fair value disclosure is a non-financial measurement disclosure item"
+  },
+  {
+    "key": "OtherNonOperatingIncome|ifrs-full|AdjustmentsForImpairmentLossRecognisedInProfitOrLossGoodwill",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Impairment loss adjustment is an operating expense item, not other income"
+  },
+  {
+    "key": "OtherNonOperatingIncome|ifrs-full|ImpairmentLossRecognisedInProfitOrLossIntangibleAssetsOtherThanGoodwill",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Impairment loss on intangibles is an operating expense item, not other income"
+  },
+  {
+    "key": "OtherNonCurrentAssets|us-gaap|IncreaseDecreaseInOtherNoncurrentAssets",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Increase/decrease in other noncurrent assets is a cash flow movement, not a balance sheet carrying value"
+  },
+  {
+    "key": "ShareRepurchases|us-gaap|DebtInstrumentRepurchasedFaceAmount",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Debt repurchase face amount relates to debt retirement, not share repurchases"
+  },
+  {
+    "key": "ResearchAndDevelopment|us-gaap|ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsForfeituresAndExpirationsInPeriodWeightedAverageExercisePrice",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Share option forfeitures and exercise prices are valuation method details, not expense amounts"
+  },
+  {
+    "key": "OtherCurrentLiabilities|us-gaap|us-gaap:SecuritiesSoldUnderAgreementsToRepurchase",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Securities sold under repurchase agreements is a financing liability, not a general current liability"
+  },
+  {
+    "key": "OtherNonCurrentLiabilities|us-gaap|us-gaap:PreferredStockValue",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Preferred stock value is a stockholders equity component, not a non-current liability"
+  },
+  {
+    "key": "ResearchAndDevelopment|us-gaap|ShareBasedGoodsAndNonemployeeServicesTransactionValuationMethodExpectedDividendRate",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Expected dividend rate is a valuation assumption, not an expense or metric"
+  },
+  {
+    "key": "OperatingCashFlow|us-gaap|IncreaseDecreaseInNotesReceivableRelatedPartiesCurrent",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Changes in notes receivable are balance sheet movements, separate from operating cash flow items"
+  },
+  {
+    "key": "OperatingExpenses|us-gaap|us-gaap:ImpairmentOfLongLivedAssetsHeldForUse",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Impairment of long-lived assets is typically a non-operating loss, not recurring operating expense"
+  },
+  {
+    "key": "CommonStock|us-gaap|us-gaap:ProceedsFromIssuanceOfCommonStock",
+    "decision": "none",
+    "category": "cash_flow_activity",
+    "reason": "ProceedsFromIssuanceOfCommonStock is a financing cash flow activity, not a balance sheet stock account"
+  },
+  {
+    "key": "OtherCurrentAssets|us-gaap|DisposalGroupIncludingDiscontinuedOperationPrepaidAndOtherAssetsCurrent",
+    "decision": "subcomponent",
+    "correct_metric": "OtherCurrentAssets",
+    "category": "subcomponent",
+    "reason": "Prepaid and other assets of discontinued operations is a component of OtherCurrentAssets"
+  },
+  {
+    "key": "PropertyPlantEquipment|ifrs-full|TransferFromInvestmentPropertyUnderConstructionOrDevelopmentInvestmentProperty",
+    "decision": "none",
+    "category": "transfer_activity",
+    "reason": "This is a reclassification/transfer between investment property accounts, not a balance sheet line item"
+  },
+  {
+    "key": "TotalAssets|us-gaap|us-gaap:FairValueOfAssetsAcquired",
+    "decision": "none",
+    "category": "fair_value_disclosure",
+    "reason": "Fair value of assets acquired is a disclosure item related to business combinations, not a balance sheet asset"
+  },
+  {
+    "key": "CommonStock|us-gaap|us-gaap:StockIssuedDuringPeriodValueIssuedForNoncashConsiderations",
+    "decision": "none",
+    "category": "stock_issuance_detail",
+    "reason": "Stock issued for noncash consideration is a financing activity detail, not a balance sheet account"
+  },
+  {
+    "key": "DepreciationAmortization|us-gaap|FiniteLivedIntangibleAssetsAmortizationExpenseYearFive",
+    "decision": "none",
+    "category": "disclosure_schedule",
+    "reason": "Future amortization schedule item is a disclosure schedule, not actual amortization expense"
+  },
+  {
+    "key": "CommonStock|us-gaap|us-gaap:ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsExercisesInPeriodWeightedAverageExercisePrice",
+    "decision": "none",
+    "category": "share_activity_detail",
+    "reason": "Stock option exercise details are operational metrics, not balance sheet CommonStock"
+  },
+  {
+    "key": "InterestExpense|us-gaap|us-gaap:RedemptionPremium",
+    "decision": "none",
+    "category": "debt_issuance_cost",
+    "reason": "Redemption premium is a debt issuance cost/adjustment, not interest expense"
+  },
+  {
+    "key": "OtherNonOperatingIncome|us-gaap|us-gaap:EquityMethodInvestmentOtherThanTemporaryImpairment",
+    "decision": "none",
+    "category": "impairment_charge",
+    "reason": "Equity method investment impairment is typically an operating or nonoperating loss, not income"
+  },
+  {
+    "key": "CommonStock|us-gaap|us-gaap:CommonStockSharesIssued",
+    "decision": "none",
+    "category": "share_metric",
+    "reason": "CommonStockSharesIssued is a share count/per-share metric, not a balance sheet dollar amount"
+  },
+  {
+    "key": "OtherNonCurrentAssets|ifrs-full|PurchaseOfInterestsInAssociates",
+    "decision": "none",
+    "category": "investment_activity",
+    "reason": "Purchase of interests in associates is an investing cash flow activity, not a balance sheet asset"
+  },
+  {
+    "key": "OtherNonOperatingIncome|us-gaap|FairValueMeasurementWithUnobservableInputsReconciliationRecurringBasisAssetSales",
+    "decision": "none",
+    "category": "fair_value_disclosure",
+    "reason": "Fair value reconciliation with unobservable inputs is a disclosure schedule, not income"
+  },
+  {
+    "key": "OtherNonCurrentAssets|us-gaap|TaxBasisOfInvestmentsCostForIncomeTaxPurposes",
+    "decision": "none",
+    "category": "tax_disclosure",
+    "reason": "Tax basis of investments is a tax disclosure item, not a financial statement line"
+  },
+  {
+    "key": "OtherNonCurrentAssets|us-gaap|TaxBasisOfInvestmentsGrossUnrealizedDepreciation",
+    "decision": "none",
+    "category": "tax_disclosure",
+    "reason": "Unrealized depreciation on tax basis is a tax disclosure item, not a financial statement line"
+  },
+  {
+    "key": "AccumulatedOtherComprehensiveIncome|us-gaap|OtherComprehensiveIncomeLossBeforeTax",
+    "decision": "none",
+    "category": "income_statement_component",
+    "reason": "OCI before tax is an income statement line item, not a balance sheet accumulated balance"
+  },
+  {
+    "key": "OtherNonOperatingIncome|us-gaap|ImpairmentOfIntangibleAssetsIndefinitelivedExcludingGoodwill",
+    "decision": "none",
+    "category": "impairment_charge",
+    "reason": "Impairment charge is an operating or nonoperating loss, not income"
+  },
+  {
+    "key": "OtherCurrentLiabilities|us-gaap|FinanceLeaseLiability",
+    "decision": "subcomponent",
+    "correct_metric": "CurrentPortionLongTermDebt",
+    "category": "subcomponent",
+    "reason": "Finance lease liability current portion is part of short-term debt obligations"
+  },
+  {
+    "key": "ShortTermInvestments|us-gaap|SecuredDebtRepurchaseAgreements",
+    "decision": "none",
+    "category": "debt_instrument",
+    "reason": "Repurchase agreements are short-term financing instruments, not investments"
+  },
+  {
+    "key": "LongTermDebt|us-gaap|us-gaap:UnamortizedDebtIssuanceExpense",
+    "decision": "none",
+    "category": "debt_issuance_cost",
+    "reason": "Unamortized debt issuance expense is a contra-debt account, not the debt itself"
+  },
+  {
+    "key": "ShortTermDebt|us-gaap|us-gaap:FinanceLeaseLiabilityPaymentsRemainderOfFiscalYear",
+    "decision": "subcomponent",
+    "correct_metric": "CurrentPortionLongTermDebt",
+    "category": "subcomponent",
+    "reason": "Finance lease payments due in current period are part of current portion of long-term debt"
+  },
+  {
+    "key": "OtherCurrentLiabilities|us-gaap|us-gaap:InterestPayableCurrentAndNoncurrent",
+    "decision": "subcomponent",
+    "correct_metric": "OtherCurrentLiabilities",
+    "category": "subcomponent",
+    "reason": "Interest payable current portion is a component of OtherCurrentLiabilities"
+  },
+  {
+    "key": "TotalStockholdersEquity|us-gaap|AssetsNet",
+    "decision": "map",
+    "correct_metric": "TotalStockholdersEquity",
+    "reason": "Net Assets in fund accounting context represents total stockholders' equity"
+  },
+  {
+    "key": "OtherNonCurrentLiabilities|us-gaap|us-gaap:BusinessCombinationConsiderationTransferredOther1",
+    "decision": "none",
+    "category": "business_combination_detail",
+    "reason": "Consideration transferred in business combination is an acquisition activity detail, not a liability"
+  },
+  {
+    "key": "OtherNonOperatingIncome|us-gaap|us-gaap:OtherNonoperatingExpense",
+    "decision": "none",
+    "category": "operating_expense",
+    "reason": "Other nonoperating expense should be classified as OtherNonOperatingIncome (negative), but is better categorized as disclosure"
+  },
+  {
+    "key": "DividendsPerShare|us-gaap|us-gaap:DividendsPayableCurrent",
+    "decision": "subcomponent",
+    "correct_metric": "OtherCurrentLiabilities",
+    "category": "subcomponent",
+    "reason": "Dividends payable is a current liability component of OtherCurrentLiabilities, not a per-share metric"
+  },
+  {
+    "key": "OtherNonOperatingIncome|us-gaap|us-gaap:OtherExpenses",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "OtherExpenses is a non-specific expense category not mapping to a defined StandardMetric"
+  },
+  {
+    "key": "IntangibleAssets|ifrs-full|ImpairmentLossRecognisedInProfitOrLossIntangibleAssetsOtherThanGoodwill",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Impairment loss is an income statement item, not a balance sheet component of IntangibleAssets"
+  },
+  {
+    "key": "OtherCurrentAssets|us-gaap|ReceivablesFairValueDisclosure",
+    "decision": "none",
+    "category": "disclosure",
+    "reason": "Fair value disclosure is supplementary disclosure, not a primary financial statement line"
+  },
+  {
+    "key": "TotalStockholdersEquity|ifrs-full|ProportionOfOwnershipInterestInAssociate",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Ownership interest in associate is an equity investment component, not stockholders equity"
+  },
+  {
+    "key": "LongTermDebt|us-gaap|us-gaap:ProceedsFromRepaymentsOfDebt",
+    "decision": "none",
+    "category": "cashflow",
+    "reason": "Proceeds from debt repayment is a cash flow item, not a balance sheet debt balance"
+  },
+  {
+    "key": "CommonStock|us-gaap|us-gaap:ProceedsFromStockOptionsExercised",
+    "decision": "none",
+    "category": "cashflow",
+    "reason": "Proceeds from stock option exercises is a financing cash flow, not CommonStock balance"
+  },
+  {
+    "key": "CashAndEquivalents|us-gaap|us-gaap:CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalentsIncludingDisposalGroupAndDiscontinuedOperations",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Restricted cash is excluded from CashAndEquivalents primary measure"
+  },
+  {
+    "key": "EarningsPerShareBasic|us-gaap|us-gaap:DiscontinuedOperationIncomeLossFromDiscontinuedOperationNetOfTaxPerDilutedShare",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Discontinued operations per share is supplementary disclosure, not primary EPS measure"
+  },
+  {
+    "key": "AccountsReceivable|us-gaap|us-gaap:PremiumsReceivableAtCarryingValue",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Insurance premiums receivable is a specialized receivable, not typical AccountsReceivable"
+  },
+  {
+    "key": "OtherCurrentAssets|ifrs-full|CashTransferred",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Cash transferred is a specific transaction, not a balance sheet asset classification"
+  },
+  {
+    "key": "OtherCurrentLiabilities|us-gaap|CommonStockSharesSubscriptions",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Stock subscriptions are equity-related items, not current liabilities"
+  },
+  {
+    "key": "OtherNonCurrentLiabilities|us-gaap|DeferredTaxLiabilitiesPrepaidExpenses",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Deferred tax liabilities related to prepaid expenses is a tax allocation item, not a primary liability"
+  },
+  {
+    "key": "NetIncome|us-gaap|TemporaryEquityAccretionOfDividends",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Temporary equity accretion is an equity revaluation item, not an income statement line"
+  },
+  {
+    "key": "PropertyPlantEquipment|ifrs-full|InvestmentPropertyUnderConstructionOrDevelopment",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Investment property is a distinct asset class from PropertyPlantEquipment"
+  },
+  {
+    "key": "OperatingIncome|us-gaap|SalesTypeLeaseSellingProfitLoss",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Sales-type lease gain/loss is a specialized gain component, not operating income"
+  },
+  {
+    "key": "EarningsPerShareDiluted|us-gaap|AmountOfDilutiveSecuritiesStockOptionsAndRestrictiveStockUnits",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Dilutive securities impact is a per-share calculation component, not a primary EPS measure"
+  },
+  {
+    "key": "SharesOutstandingDiluted|us-gaap|AmountOfDilutiveSecuritiesStockOptionsAndRestrictiveStockUnits",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Dilutive securities impact is a per-share adjustment, not outstanding shares count"
+  },
+  {
+    "key": "CapitalExpenditures|us-gaap|AdditionsToOtherAssetsAmount",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Additions to other assets is a broader category, not CapitalExpenditures (PP&E focused)"
+  },
+  {
+    "key": "DividendsPerShare|us-gaap|us-gaap:TemporaryEquityAccretionToRedemptionValue",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Temporary equity accretion is an equity valuation adjustment, not DividendsPerShare"
+  },
+  {
+    "key": "OtherCurrentAssets|us-gaap|LossContingencyReceivableProceeds",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Loss contingency receivable proceeds is a specific settlement item, not a general current asset"
+  },
+  {
+    "key": "OtherNonCurrentLiabilities|us-gaap|us-gaap:MinorityInterest",
+    "decision": "subcomponent",
+    "correct_metric": "TotalLiabilities",
+    "category": "subcomponent",
+    "reason": "Minority interest is a component of total liabilities and equity, but not a primary non-current liability"
+  },
+  {
+    "key": "IncomeTaxExpense|ifrs-full|TemporaryDifferencesAssociatedWithInvestmentsInSubsidiariesBranchesAndAssociatesAndInterestsInJointVentures",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Temporary differences are deferred tax detail, not income tax expense itself"
+  },
+  {
+    "key": "OtherCurrentLiabilities|us-gaap|us-gaap:PaymentForContingentConsiderationLiabilityOperatingActivities",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Payment for contingent consideration is a cash flow, not a current liability balance"
+  },
+  {
+    "key": "OtherCurrentLiabilities|us-gaap|AccountsPayableAndAccruedLiabilitiesFairValueDisclosure",
+    "decision": "none",
+    "category": "disclosure",
+    "reason": "Fair value disclosure is supplementary disclosure, not a primary financial statement line"
+  },
+  {
+    "key": "Tier1CapitalRatio|us-gaap|TierOneRiskBasedCapital",
+    "decision": "map",
+    "correct_metric": "Tier1CapitalRatio",
+    "reason": "Tier One Risk-Based Capital is the primary measure for Tier1CapitalRatio metric"
+  },
+  {
+    "key": "OtherCurrentAssets|us-gaap|us-gaap:InvestmentsFairValueDisclosure",
+    "decision": "none",
+    "category": "fair_value_disclosure",
+    "reason": "Fair value disclosure tags are not primary financial statement measures"
+  },
+  {
+    "key": "FinancingCashFlow|us-gaap|us-gaap:PaymentsForProceedsFromShortTermInvestments",
+    "decision": "map",
+    "correct_metric": "InvestingCashFlow",
+    "reason": "Payments for/proceeds from short-term investments are investing activities, not financing activities"
+  },
+  {
+    "key": "OtherCurrentAssets|us-gaap|IncreaseDecreaseInPrepaidTaxes",
+    "decision": "none",
+    "category": "cash_flow_adjustment",
+    "reason": "Changes in prepaid taxes are working capital adjustments used in cash flow reconciliation, not balance sheet line items"
+  },
+  {
+    "key": "DividendsPerShare|us-gaap|us-gaap:TemporaryEquityRedemptionPricePerShare",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Temporary equity redemption price is a disclosure item about valuation assumptions, not a standard per-share metric"
+  },
+  {
+    "key": "CommonStock|us-gaap|us-gaap:PaymentsRelatedToTaxWithholdingForShareBasedCompensation",
+    "decision": "none",
+    "category": "cash_flow_activity",
+    "reason": "Tax withholding payments related to share-based compensation are financing cash flow adjustments, not equity line items"
+  },
+  {
+    "key": "SharesOutstandingDiluted|us-gaap|us-gaap:AntidilutiveSecuritiesExcludedFromComputationOfEarningsPerShareAmount",
+    "decision": "none",
+    "category": "earnings_per_share_disclosure",
+    "reason": "Antidilutive securities excluded are EPS computation disclosures, not a standard shares outstanding metric"
+  },
+  {
+    "key": "OtherCurrentAssets|us-gaap|us-gaap:AssetsOfDisposalGroupIncludingDiscontinuedOperation",
+    "decision": "none",
+    "category": "discontinued_operations",
+    "reason": "Assets of disposal groups are balance sheet subitems for discontinued operations, not a standard current asset metric"
+  },
+  {
+    "key": "CurrentPortionLongTermDebt|ifrs-full|ifrs-full:LeaseLiabilities",
+    "decision": "map",
+    "correct_metric": "OtherNonCurrentLiabilities",
+    "reason": "Operating lease liabilities are non-current liabilities that don't fit into debt categories"
+  },
+  {
+    "key": "ProvisionForCreditLosses|us-gaap|us-gaap:DebtSecuritiesAvailableForSaleAllowanceForCreditLoss",
+    "decision": "none",
+    "category": "fair_value_disclosure",
+    "reason": "Allowance for credit loss on debt securities is a valuation adjustment disclosure, not a provision metric"
+  },
+  {
+    "key": "OtherNonCurrentAssets|us-gaap|LoansReceivableFairValueDisclosure",
+    "decision": "none",
+    "category": "fair_value_disclosure",
+    "reason": "Fair value disclosure for loans receivable is not a standard balance sheet metric"
+  },
+  {
+    "key": "ShortTermDebt|us-gaap|LongtermCommercialPaperCurrentAndNoncurrent",
+    "decision": "map",
+    "correct_metric": "LongTermDebt",
+    "reason": "Long-term commercial paper belongs to long-term debt, not short-term debt"
+  },
+  {
+    "key": "Goodwill|us-gaap|us-gaap:GoodwillImpairmentLoss",
+    "decision": "none",
+    "category": "goodwill_impairment",
+    "reason": "Goodwill impairment loss is an income statement charge, not a balance sheet goodwill value"
+  },
+  {
+    "key": "OtherNonOperatingIncome|us-gaap|CashFlowHedgeGainLossReclassifiedToCostOfSalesNet",
+    "decision": "none",
+    "category": "derivative_disclosure",
+    "reason": "Cash flow hedge gains/losses reclassified to COGS are derivative accounting disclosures, not standard operating income"
+  },
+  {
+    "key": "CommonStock|us-gaap|us-gaap:ProceedsFromIssuanceOrSaleOfEquity",
+    "decision": "map",
+    "correct_metric": "FinancingCashFlow",
+    "reason": "Proceeds from issuance of equity are financing cash flow activities, not balance sheet stock value"
+  },
+  {
+    "key": "DividendsPerShare|us-gaap|us-gaap:DeferredRevenueCurrent",
+    "decision": "none",
+    "category": "liability_item",
+    "reason": "Deferred revenue current is a current liability, not a per-share metric"
+  },
+  {
+    "key": "OtherCurrentAssets|ifrs-full|OtherTangibleOrIntangibleAssetsTransferred",
+    "decision": "none",
+    "category": "transaction_item",
+    "reason": "Assets transferred in transactions are specific transaction items, not standard asset metrics"
+  },
+  {
+    "key": "OtherNonCurrentLiabilities|us-gaap|us-gaap:IncreaseDecreaseInDeferredLiabilities",
+    "decision": "none",
+    "category": "cash_flow_adjustment",
+    "reason": "Changes in deferred liabilities are working capital adjustments in cash flow statements, not balance sheet line items"
+  },
+  {
+    "key": "AccountsReceivable|us-gaap|us-gaap:ImpairedFinancingReceivableRecordedInvestment",
+    "decision": "none",
+    "category": "loan_valuation",
+    "reason": "Impaired financing receivable recorded investment is a valuation measurement, not a standard accounts receivable metric"
+  },
+  {
+    "key": "DividendsPerShare|us-gaap|us-gaap:FairValueAssumptionsExpectedDividendRate",
+    "decision": "none",
+    "category": "fair_value_assumption",
+    "reason": "Expected dividend rate is a valuation assumption for fair value calculations, not a dividends per share metric"
+  },
+  {
+    "key": "CapitalExpenditures|us-gaap|PaymentsToAcquireEquipmentOnLease",
+    "decision": "subcomponent",
+    "correct_metric": "CapitalExpenditures",
+    "category": "subcomponent",
+    "reason": "Payments to acquire equipment on lease are part of total capital expenditures"
+  },
+  {
+    "key": "InterestIncome|ifrs-full|DividendsReceivedFromInvestmentsAccountedForUsingEquityMethodClassifiedAsInvestingActivities",
+    "decision": "none",
+    "category": "investing_activity",
+    "reason": "Dividends received from equity method investments are investing cash flow, not interest income"
+  },
+  {
+    "key": "OtherNonCurrentLiabilities|ifrs-full|ifrs-full:IncreaseDecreaseThroughTransfersAndOtherChangesEquity",
+    "decision": "none",
+    "category": "equity_disclosure",
+    "reason": "Changes in equity through transfers are equity reconciliation items, not liability metrics"
+  },
+  {
+    "key": "OtherNonCurrentAssets|us-gaap|us-gaap:RelatedPartyTransactionAmountsOfTransaction",
+    "decision": "none",
+    "category": "disclosure_item",
+    "reason": "Related party transaction amounts are disclosure items, not standard balance sheet metrics"
+  },
+  {
+    "key": "InterestExpense|us-gaap|us-gaap:DebtInstrumentPeriodicPayment",
+    "decision": "none",
+    "category": "debt_term",
+    "reason": "Periodic payment terms of debt instruments are debt structure disclosures, not interest expense amounts"
+  },
+  {
+    "key": "DividendsPerShare|us-gaap|us-gaap:StockIssuedDuringPeriodValueStockDividend",
+    "decision": "none",
+    "category": "stock_dividend",
+    "reason": "Stock issued as dividends is a stock dividend transaction, not a cash dividends per share metric"
+  },
+  {
+    "key": "OtherCurrentLiabilities|us-gaap|us-gaap:ProceedsFromDepositsFromCustomers",
+    "decision": "none",
+    "category": "cash flow adjustment",
+    "reason": "Proceeds from deposits is a cash flow activity (financing), not a balance sheet liability amount"
+  },
+  {
+    "key": "CommonStock|us-gaap|us-gaap:SaleOfStockConsiderationReceivedOnTransaction",
+    "decision": "none",
+    "category": "transaction detail",
+    "reason": "This tags stock consideration received in a transaction, which is transaction-specific and not a primary balance sheet measure"
+  },
+  {
+    "key": "AccountsReceivable|us-gaap|us-gaap:LoansAndLeasesReceivableNetReportedAmount",
+    "decision": "map",
+    "correct_metric": "AccountsReceivable",
+    "reason": "Loans and leases receivable is a form of receivable asset for financial institutions"
+  },
+  {
+    "key": "CommonStock|us-gaap|us-gaap:ProceedsFromIssuanceOfConvertiblePreferredStock",
+    "decision": "none",
+    "category": "cash flow activity",
+    "reason": "Proceeds from issuance is a financing cash flow activity, not a balance sheet stock amount"
+  },
+  {
+    "key": "DepreciationAmortization|ifrs-full|ImpairmentLossRecognisedInProfitOrLossPropertyPlantAndEquipment",
+    "decision": "none",
+    "category": "non-recurring item",
+    "reason": "Impairment loss is a one-time charge, not a regular depreciation and amortization expense"
+  },
+  {
+    "key": "CurrentPortionLongTermDebt|us-gaap|LongTermDebtMaturingInYearsFourAndFive",
+    "decision": "map",
+    "correct_metric": "LongTermDebt",
+    "reason": "Debt maturing in years 4-5 is part of long-term debt, just a maturity schedule detail"
+  },
+  {
+    "key": "OtherCurrentAssets|us-gaap|BusinessCombinationRecognizedIdentifiableAssetsAcquiredAndLiabilitiesAssumedCurrentAssetsReceivables",
+    "decision": "none",
+    "category": "acquisition detail",
+    "reason": "Business combination asset detail is a transaction-specific disclosure, not a primary balance sheet measure"
+  },
+  {
+    "key": "PretaxIncome|us-gaap|IncomeTaxReconciliationRepatriationOfForeignEarnings",
+    "decision": "none",
+    "category": "tax reconciliation",
+    "reason": "Tax rate reconciliation items are disclosure details, not primary income statement components"
+  },
+  {
+    "key": "CapitalExpenditures|us-gaap|FiniteLivedIntangibleAssetsCostIncurredToRenewOrExtend",
+    "decision": "none",
+    "category": "non-cash asset cost",
+    "reason": "Cost incurred to renew intangibles is capitalized to the asset, not a capital expenditure cash outflow"
+  },
+  {
+    "key": "OtherCurrentAssets|us-gaap|BusinessAcquisitionPurchasePriceAllocationCurrentAssetsPrepaidExpenseAndOtherAssets",
+    "decision": "none",
+    "category": "acquisition detail",
+    "reason": "Business acquisition purchase price allocation is a transaction-specific disclosure, not a primary balance sheet measure"
+  },
+  {
+    "key": "InterestExpense|us-gaap|LongtermDebtWeightedAverageInterestRate",
+    "decision": "none",
+    "category": "rate/metric",
+    "reason": "Weighted average interest rate is a derived metric/rate, not a financial statement amount"
+  },
+  {
+    "key": "OtherNonCurrentLiabilities|us-gaap|StockOrUnitsAvailableForDistributions",
+    "decision": "none",
+    "category": "disclosure item",
+    "reason": "Stock available for distribution is a disclosure detail, not a primary liability measure"
+  },
+  {
+    "key": "OtherNonCurrentAssets|ifrs-full|NoncurrentInventories",
+    "decision": "map",
+    "correct_metric": "Inventory",
+    "reason": "Non-current inventory is still inventory, just classified as non-current"
+  },
+  {
+    "key": "OtherCurrentAssets|us-gaap|IncreaseDecreaseInPrepaidInsurance",
+    "decision": "none",
+    "category": "cash flow adjustment",
+    "reason": "Change in prepaid insurance is a working capital adjustment used in operating cash flow, not a balance sheet amount"
+  },
+  {
+    "key": "OtherCurrentAssets|us-gaap|IncreaseDecreaseInOtherCurrentAssetsAndLiabilitiesNet",
+    "decision": "none",
+    "category": "cash flow adjustment",
+    "reason": "This is a working capital adjustment for cash flow statement, not a primary balance sheet component"
+  },
+  {
+    "key": "OtherCurrentAssets|us-gaap|IncreaseDecreaseInOtherCurrentAssetsAndLiabilitiesNet",
+    "decision": "none",
+    "category": "cash flow adjustment",
+    "reason": "This is a working capital adjustment for cash flow statement, not a primary balance sheet component"
+  },
+  {
+    "key": "OtherNonCurrentLiabilities|ifrs-full|UndiscountedCashOutflowRequiredToRepurchaseDerecognisedFinancialAssets",
+    "decision": "none",
+    "category": "contingent obligation",
+    "reason": "Undiscounted cash outflow for repurchase of derecognized assets is a disclosure item, not a primary liability"
+  },
+  {
+    "key": "OtherNonCurrentLiabilities|ifrs-full|UndiscountedCashOutflowRequiredToRepurchaseDerecognisedFinancialAssets",
+    "decision": "none",
+    "category": "contingent obligation",
+    "reason": "Undiscounted cash outflow for repurchase of derecognized assets is a disclosure item, not a primary liability"
+  },
+  {
+    "key": "ShareRepurchases|ifrs-full|UndiscountedCashOutflowRequiredToRepurchaseDerecognisedFinancialAssets",
+    "decision": "none",
+    "category": "contingent obligation",
+    "reason": "Undiscounted cash outflow for repurchase is a disclosure item, not share repurchases (actual cash spent)"
+  },
+  {
+    "key": "NetIncome|us-gaap|InvestmentCompanyInvestmentIncomeLossFromOperationsPerShare",
+    "decision": "none",
+    "category": "per-share metric",
+    "reason": "Investment company income per share is a sector-specific per-share metric, not net income"
+  },
+  {
+    "key": "PretaxIncome|us-gaap|EffectiveIncomeTaxRateReconciliationForeignIncomeTaxRateDifferential",
+    "decision": "none",
+    "category": "rate/percentage",
+    "reason": "Effective tax rate reconciliation is a percentage/rate disclosure, not a primary income statement measure"
+  },
+  {
+    "key": "CommonStock|us-gaap|TreasuryStockPreferredValue",
+    "decision": "none",
+    "category": "equity detail",
+    "reason": "Treasury stock (preferred) is a contra-equity item, not common stock"
+  },
+  {
+    "key": "OtherNonCurrentLiabilities|us-gaap|DeferredTaxLiabilitiesGoodwillAndIntangibleAssetsGoodwill",
+    "decision": "none",
+    "category": "deferred tax detail",
+    "reason": "Deferred tax liabilities are a separate line item, not a primary liability classification"
+  },
+  {
+    "key": "OperatingCashFlow|us-gaap|IncreaseDecreaseInAccruedInterestReceivableNet",
+    "decision": "none",
+    "category": "cash flow adjustment",
+    "reason": "Change in accrued interest receivable is a working capital adjustment, not a primary operating activity"
+  },
+  {
+    "key": "ShortTermDebt|us-gaap|ShorttermDebtMaximumMonthendOutstandingAmount",
+    "decision": "none",
+    "category": "debt disclosure",
+    "reason": "Maximum outstanding amount is a debt disclosure detail, not the actual balance sheet amount"
+  },
+  {
+    "key": "ProvisionForCreditLosses|us-gaap|FinancingReceivableAllowanceForCreditLosses",
+    "decision": "none",
+    "category": "balance_sheet_contra_asset",
+    "reason": "Allowance for credit losses is a contra-asset account, not a provision expense metric"
+  },
+  {
+    "key": "PretaxIncome|us-gaap|EffectiveIncomeTaxRateContinuingOperations",
+    "decision": "none",
+    "category": "rate_percentage",
+    "reason": "This is a percentage rate, not a financial statement line item"
+  },
+  {
+    "key": "CommonStock|us-gaap|ProceedsFromSaleOfTreasuryStock",
+    "decision": "none",
+    "category": "equity_transaction",
+    "reason": "Treasury stock proceeds are an equity financing transaction, not a primary financial statement metric"
+  },
+  {
+    "key": "OtherNonCurrentAssets|us-gaap|FinanceLeaseWeightedAverageDiscountRatePercent",
+    "decision": "none",
+    "category": "rate_percentage",
+    "reason": "This is a weighted average discount rate percentage, a disclosure metric not a StandardMetric"
+  },
+  {
+    "key": "OperatingCashFlow|us-gaap|FinancingReceivableAllowanceForCreditLossesPeriodIncreaseDecrease",
+    "decision": "none",
+    "category": "period_change",
+    "reason": "Period changes in allowances are adjustments/reconciliations, not primary financial statement metrics"
+  },
+  {
+    "key": "OtherCurrentLiabilities|us-gaap|IncreaseDecreaseInDeferredRevenue",
+    "decision": "none",
+    "category": "cash_flow_adjustment",
+    "reason": "Changes in deferred revenue are operating cash flow adjustments, not a primary balance sheet or income statement metric"
+  },
+  {
+    "key": "ProvisionForCreditLosses|us-gaap|AllowanceForDoubtfulAccountsReceivableNoncurrent",
+    "decision": "none",
+    "category": "balance_sheet_contra_asset",
+    "reason": "Allowance for doubtful accounts is a contra-asset account, not a provision expense metric"
+  },
+  {
+    "key": "ShortTermDebt|us-gaap|ShortTermDebtPercentageBearingVariableInterestRate",
+    "decision": "none",
+    "category": "rate_percentage",
+    "reason": "This is a percentage composition metric, not a financial statement line item"
+  },
+  {
+    "key": "OtherNonCurrentAssets|us-gaap|EquityMethodInvestmentOwnershipPercentage",
+    "decision": "none",
+    "category": "rate_percentage",
+    "reason": "Ownership percentage is a disclosure metric, not a StandardMetric"
+  },
+  {
+    "key": "CapitalExpenditures|us-gaap|FutureNetCashFlowsRelatingToProvedOilAndGasReservesDevelopmentCosts",
+    "decision": "none",
+    "category": "disclosure_schedule",
+    "reason": "Future cash flows from proved reserves are supplementary oil and gas disclosure items, not a StandardMetric"
+  },
+  {
+    "key": "OtherNonCurrentAssets|us-gaap|FutureNetCashFlowsRelatingToProvedOilAndGasReservesCashInflows",
+    "decision": "none",
+    "category": "disclosure_schedule",
+    "reason": "Future cash flows are supplementary oil and gas reserve disclosures, not a StandardMetric"
+  },
+  {
+    "key": "OtherCurrentLiabilities|us-gaap|DividendsPayableAmountPerShare",
+    "decision": "none",
+    "category": "per_share_metric",
+    "reason": "Dividends payable per share is a per-share disclosure, not a primary balance sheet metric"
+  },
+  {
+    "key": "SellingGeneralAdmin|us-gaap|ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsNonvestedWeightedAverageGrantDateFairValue",
+    "decision": "none",
+    "category": "fair_value_disclosure",
+    "reason": "Share-based compensation fair value is a disclosure metric, not a primary income statement metric"
+  },
+  {
+    "key": "ShareRepurchases|us-gaap|StockDividendsShares",
+    "decision": "none",
+    "category": "equity_transaction",
+    "reason": "Stock dividends are equity transactions, distinct from share repurchases"
+  },
+  {
+    "key": "ShareRepurchases|us-gaap|DebtInstrumentRepurchaseAmount",
+    "decision": "none",
+    "category": "debt_transaction",
+    "reason": "Debt repurchases are financing activities, not share repurchases"
+  },
+  {
+    "key": "CommonStock|us-gaap|TreasuryStockNumberOfSharesHeld",
+    "decision": "none",
+    "category": "equity_disclosure",
+    "reason": "Treasury stock shares held is a disclosure metric, not a primary financial statement metric"
+  },
+  {
+    "key": "ResearchAndDevelopment|us-gaap|SharebasedCompensationArrangementBySharebasedPaymentAwardOptionsVestedWeightedAverageGrantDateFairValue",
+    "decision": "none",
+    "category": "fair_value_disclosure",
+    "reason": "Share-based compensation fair value is a disclosure metric, not a primary R&D expense"
+  },
+  {
+    "key": "InterestIncome|us-gaap|ProceedsFromInterestAndDividendsReceived",
+    "decision": "none",
+    "category": "cash_flow_component",
+    "reason": "Cash proceeds from interest/dividends are operating cash flow components, not primary income statement metrics"
+  },
+  {
+    "key": "ShortTermInvestments|us-gaap|SecuritiesForReverseRepurchaseAgreements",
+    "decision": "none",
+    "category": "balance_sheet_item",
+    "reason": "Securities for reverse repo agreements are financial instruments held for trading, not short-term investments"
+  },
+  {
+    "key": "OtherNonCurrentLiabilities|ifrs-full|ContractualCommitmentsForAcquisitionOfIntangibleAssets",
+    "decision": "none",
+    "category": "disclosure_commitment",
+    "reason": "Contractual commitments are disclosure items, not balance sheet liabilities"
+  },
+  {
+    "key": "DepreciationAmortization|us-gaap|FiniteLivedIntangibleAssetsAmortizationExpenseYearThree",
+    "decision": "none",
+    "category": "future_expense_schedule",
+    "reason": "Expected future amortization is a disclosure schedule, not current period depreciation/amortization"
+  },
+  {
+    "key": "IncomeTaxExpense|us-gaap|IncreaseDecreaseInDeferredIncomeTaxes",
+    "decision": "none",
+    "category": "cash_flow_adjustment",
+    "reason": "Deferred tax changes are operating cash flow adjustments, not income tax expense"
+  },
+  {
+    "key": "ShortTermDebt|us-gaap|ShortTermDebtInterestRateIncrease",
+    "decision": "none",
+    "category": "rate_change",
+    "reason": "Interest rate changes are disclosure metrics, not balance sheet line items"
+  },
+  {
+    "key": "OtherCurrentLiabilities|ifrs-full|TradeAndOtherPayablesUndiscountedCashFlows",
+    "decision": "none",
+    "category": "disclosure_schedule",
+    "reason": "Undiscounted cash flows of payables are disclosure items, not balance sheet metrics"
+  },
+  {
+    "key": "OtherCurrentLiabilities|ifrs-full|DividendsPayable",
+    "decision": "none",
+    "category": "balance_sheet_item",
+    "reason": "Dividends payable is a specific current liability, but classified as other current liabilities rather than a primary StandardMetric"
+  },
+  {
+    "key": "OtherNonOperatingIncome|us-gaap|ProductionTaxExpense",
+    "decision": "none",
+    "category": "operating_expense",
+    "reason": "Production Tax Expense is an operating cost, not other nonoperating income; doesn't fit standard metrics as a primary line item"
+  },
+  {
+    "key": "ExpenseRatio|us-gaap|InvestmentCompanyInvestmentIncomeLossRatio",
+    "decision": "none",
+    "category": "ratio_metric",
+    "reason": "Investment income loss ratio is a calculated ratio/percentage, not a primary financial statement measure"
+  },
+  {
+    "key": "OtherNonCurrentAssets|ifrs-full|RecoverableAmountOfAssetOrCashgeneratingUnit",
+    "decision": "none",
+    "category": "fair_value_disclosure",
+    "reason": "Recoverable amount of asset is an impairment/fair value disclosure item, not a balance sheet line item"
+  },
+  {
+    "key": "RetainedEarnings|us-gaap|TemporaryEquityNetIncome",
+    "decision": "none",
+    "category": "equity_component",
+    "reason": "Temporary equity net income is a specialized equity classification, not retained earnings"
+  },
+  {
+    "key": "InterestIncome|us-gaap|MortgageLoanRelatedToPropertySales1",
+    "decision": "none",
+    "category": "balance_sheet_item",
+    "reason": "Mortgage loan related to property sales is an asset/receivable, not interest income"
+  },
+  {
+    "key": "OtherNonCurrentLiabilities|us-gaap|OtherAccruedLiabilitiesCurrentAndNoncurrent",
+    "decision": "subcomponent",
+    "correct_metric": "TotalCurrentLiabilities",
+    "category": "subcomponent",
+    "reason": "Other accrued liabilities is typically a current liability component"
+  },
+  {
+    "key": "CommonStock|us-gaap|ProceedsFromRepurchaseOfRedeemablePreferredStock",
+    "decision": "none",
+    "category": "equity_transaction",
+    "reason": "Proceeds from redeemable preferred stock repurchase is a financing activity, not common stock"
+  },
+  {
+    "key": "OtherNonCurrentAssets|us-gaap|BusinessAcquisitionPurchasePriceAllocationNoncurrentAssets",
+    "decision": "none",
+    "category": "disclosure_item",
+    "reason": "Business acquisition purchase price allocation is a disclosure schedule, not a primary balance sheet metric"
+  },
+  {
+    "key": "OtherNonCurrentLiabilities|us-gaap|AmountAvailableForDividendDistributionWithApprovalFromRegulatoryAgencies",
+    "decision": "none",
+    "category": "disclosure_item",
+    "reason": "Amount available for dividend distribution is a regulatory disclosure, not a liability"
+  },
+  {
+    "key": "ShareRepurchases|us-gaap|StockIssuedDuringPeriodSharesDividendReinvestmentPlan",
+    "decision": "none",
+    "category": "equity_transaction",
+    "reason": "Stock issued through dividend reinvestment plan is not a share repurchase"
+  },
+  {
+    "key": "DividendsPerShare|us-gaap|PreferredStockDividendsPerShareDeclared",
+    "decision": "none",
+    "category": "preferred_equity",
+    "reason": "Preferred stock dividends per share is specific to preferred equity, not common dividends per share"
+  },
+  {
+    "key": "OtherNonCurrentAssets|us-gaap|CapitalLeasesFutureMinimumPaymentsReceivableCurrent",
+    "decision": "subcomponent",
+    "correct_metric": "AccountsReceivable",
+    "category": "subcomponent",
+    "reason": "Capital lease future minimum payments receivable is a receivable component"
+  },
+  {
+    "key": "AccumulatedOtherComprehensiveIncome|ifrs-full|ImpairmentLossRecognisedInOtherComprehensiveIncomeIntangibleAssetsOtherThanGoodwill",
+    "decision": "none",
+    "category": "impairment_disclosure",
+    "reason": "Impairment loss in other comprehensive income is a disclosure item, not accumulated OCI balance"
+  },
+  {
+    "key": "PropertyPlantEquipment|us-gaap|RealEstateHeldForDevelopmentAndSaleNet",
+    "decision": "subcomponent",
+    "correct_metric": "Inventory",
+    "category": "subcomponent",
+    "reason": "Real estate held for development and sale (net) is typically inventory or current asset"
+  },
+  {
+    "key": "PropertyPlantEquipment|us-gaap|RealEstateHeldForDevelopmentAndSale",
+    "decision": "subcomponent",
+    "correct_metric": "Inventory",
+    "category": "subcomponent",
+    "reason": "Real estate held for development and sale is typically inventory, not PP&E"
+  },
+  {
+    "key": "IncomeTaxExpense|us-gaap|AccruedIncomeTaxes",
+    "decision": "subcomponent",
+    "correct_metric": "OtherCurrentLiabilities",
+    "category": "subcomponent",
+    "reason": "Accrued income taxes payable is a current liability component"
+  },
+  {
+    "key": "OtherCurrentAssets|us-gaap|IncreaseDecreaseInPrepaidRoyalties",
+    "decision": "none",
+    "category": "cash_flow_item",
+    "reason": "Increase/decrease in prepaid royalties is a cash flow reconciliation item, not a balance sheet metric"
+  },
+  {
+    "key": "OtherCurrentAssets|us-gaap|SecurityOwnedAndPledgedAsCollateralAssociatedLiabilitiesFairValue",
+    "decision": "none",
+    "category": "fair_value_disclosure",
+    "reason": "Security owned and pledged as collateral fair value is a disclosure item, not an asset"
+  },
+  {
+    "key": "IncomeTaxExpense|us-gaap|IncreaseDecreaseInAccruedIncomeTaxesPayable",
+    "decision": "none",
+    "category": "cash_flow_item",
+    "reason": "Increase/decrease in accrued income taxes payable is a cash flow reconciliation item, not a statement measure"
+  },
+  {
+    "key": "InterestIncome|ifrs-full|DividendsReceivedClassifiedAsOperatingActivities",
+    "decision": "none",
+    "category": "cash_flow_item",
+    "reason": "Dividends received classified as operating activities is a cash flow component, not interest income"
+  },
+  {
+    "key": "IncomeTaxExpense|us-gaap|IncreaseDecreaseInIncomeTaxes",
+    "decision": "none",
+    "category": "cash_flow_item",
+    "reason": "Increase/decrease in income taxes is a cash flow reconciliation item, not a primary metric"
+  },
+  {
+    "key": "OtherNonCurrentLiabilities|ifrs-full|ContractualCommitmentsForAcquisitionOfPropertyPlantAndEquipment",
+    "decision": "none",
+    "category": "commitment_disclosure",
+    "reason": "Contractual commitments for PP&E are disclosure items, not liabilities"
+  },
+  {
+    "key": "OtherCurrentAssets|us-gaap|IncreaseDecreaseInAccruedInvestmentIncomeReceivable",
+    "decision": "none",
+    "category": "cash_flow_item",
+    "reason": "Increase/decrease in accrued investment income receivable is a cash flow reconciliation item"
+  },
+  {
+    "key": "CommonStock|us-gaap|StockIssuedDuringPeriodSharesPurchaseOfAssets",
+    "decision": "none",
+    "category": "equity_transaction",
+    "reason": "Stock issued for purchase of assets is not common stock outstanding"
+  },
+  {
+    "key": "ResearchAndDevelopment|us-gaap|DividendsShareBasedCompensation",
+    "decision": "none",
+    "category": "equity_compensation",
+    "reason": "Dividends on share-based compensation is a compensation expense component, not dividends paid"
+  },
+  {
+    "key": "AccountsReceivable|us-gaap|LoansReceivableCommercialDevelopment",
+    "decision": "subcomponent",
+    "correct_metric": "AccountsReceivable",
+    "category": "subcomponent",
+    "reason": "Commercial development loans receivable are a type of loans receivable, which are components of accounts receivable for financial institutions"
+  },
+  {
+    "key": "OtherCurrentAssets|ifrs-full|MaximumExposureToCreditRiskOfLoansOrReceivables",
+    "decision": "none",
+    "category": "disclosure",
+    "reason": "Maximum exposure to credit risk is a disclosure item, not a balance sheet line item"
+  },
+  {
+    "key": "IncomeTaxExpense|us-gaap|EffectiveIncomeTaxRateReconciliationDeductionsDividends",
+    "decision": "none",
+    "category": "disclosure",
+    "reason": "This is a tax rate reconciliation component showing deductions as a percent, not an actual expense amount"
+  },
+  {
+    "key": "OperatingExpenses|us-gaap|PropertyManagementFeePercentFee",
+    "decision": "none",
+    "category": "disclosure",
+    "reason": "Property management fee percentage is a disclosure rate/metric, not an operating expense line item"
+  },
+  {
+    "key": "CashAndEquivalents|ifrs-full|FinancialAssetsWithModifiedContractualCashFlowsWhileLossAllowanceMeasuredAtLifetimeExpectedCreditLossesForWhichLossAllowanceChangedDuringReportingPeriodTo12monthExpectedCreditLossesGrossCarryingAmount",
+    "decision": "none",
+    "category": "disclosure",
+    "reason": "This is a detailed categorization of financial assets with complex loss allowance tracking, not a balance sheet line item"
+  },
+  {
+    "key": "DepreciationAmortization|ifrs-full|AdjustmentsForImpairmentLossReversalOfImpairmentLossRecognisedInProfitOrLossPropertyPlantAndEquipment",
+    "decision": "none",
+    "category": "disclosure",
+    "reason": "This is a specific impairment reversal adjustment for PPE, which is a reconciliation component, not depreciation/amortization expense"
+  },
+  {
+    "key": "DepreciationAmortization|us-gaap|DeferredPolicyAcquisitionCostAmortizationExpenseEffectOfAdjustmentsToEstimatedGrossProfitOrEstimatedGrossMargin",
+    "decision": "none",
+    "category": "disclosure",
+    "reason": "This is an adjustment to deferred policy acquisition cost amortization, which is an insurance-specific disclosure, not general depreciation/amortization"
+  },
+  {
+    "key": "InterestIncome|ifrs-full|DividendsReceivedClassifiedAsInvestingActivities",
+    "decision": "none",
+    "category": "disclosure",
+    "reason": "This is a cash flow classification detail related to dividend receipts, not operating interest income"
+  },
+  {
+    "key": "RetainedEarnings|us-gaap|CumulativeDividends",
+    "decision": "none",
+    "category": "disclosure",
+    "reason": "Cumulative dividends is a disclosure metric, not retained earnings which represents accumulated net income"
+  },
+  {
+    "key": "OtherCurrentLiabilities|ifrs-full|FairValueOfAssociatedFinancialLiabilities",
+    "decision": "none",
+    "category": "disclosure",
+    "reason": "Fair value of associated financial liabilities is a disclosure/measurement basis detail, not a balance sheet liability"
+  },
+  {
+    "key": "PropertyPlantEquipment|srt|MortgageLoansOnRealEstateFederalIncomeTaxBasis1",
+    "decision": "none",
+    "category": "disclosure",
+    "reason": "This is a SEC schedule item showing federal income tax basis of mortgage loans, not PPE on the balance sheet"
+  },
+  {
+    "key": "PropertyPlantEquipment|us-gaap|PropertyPlantAndEquipmentAndFinanceLeaseRightOfUseAssetBeforeAccumulatedDepreciationAndAmortization",
+    "decision": "map",
+    "correct_metric": "PropertyPlantEquipment",
+    "reason": "This is the gross amount of PPE before accumulated depreciation, which is the standard way to present PPE on balance sheets"
+  },
+  {
+    "key": "OperatingCashFlow|us-gaap|CashFlowsBetweenSecuritizationSpecialPurposeEntitySPEAndTransferorProceedsFromCollectionsReinvestedInRevolvingPeriodSecuritizations",
+    "decision": "none",
+    "category": "disclosure",
+    "reason": "This is a securitization-specific cash flow detail between SPE and transferor, not operating cash flow"
+  },
+  {
+    "key": "EarningsPerShareDiluted|us-gaap|NewAccountingPronouncementOrChangeInAccountingPrincipleEffectOfChangeOnDilutedEarningsPerShare",
+    "decision": "none",
+    "category": "disclosure",
+    "reason": "This is the effect of accounting changes on EPS, which is a disclosure item, not actual diluted EPS"
+  },
+  {
+    "key": "EarningsPerShareDiluted|us-gaap|NewAccountingPronouncementOrChangeInAccountingPrincipleEffectOfChangeOnDilutedEarningsPerShare",
+    "decision": "none",
+    "category": "disclosure",
+    "reason": "This is the effect of accounting changes on EPS, which is a disclosure item, not actual diluted EPS"
+  },
+  {
+    "key": "CashAndEquivalents|srt|FutureNetCashFlowsRelatingToProvedOilAndGasReservesCashInflows",
+    "decision": "none",
+    "category": "disclosure",
+    "reason": "Future net cash flows from proved reserves is a supplementary disclosure item, not cash and equivalents"
+  },
+  {
+    "key": "AccountsPayable|us-gaap|IncreaseDecreaseInAccountsPayableAndOtherOperatingLiabilities",
+    "decision": "none",
+    "category": "reconciliation",
+    "reason": "This is a working capital change in the cash flow statement, used to reconcile net income to operating cash flow, not accounts payable itself"
+  },
+  {
+    "key": "OtherCurrentAssets|us-gaap|LoansAndLeasesReceivableCommercial",
+    "decision": "none",
+    "category": "disclosure",
+    "reason": "This is a loans and leases receivable item for financial institutions, typically disclosed separately, not classified as other current assets"
+  },
+  {
+    "key": "NetIncomeToCommon|us-gaap|UndistributedEarningsDiluted",
+    "decision": "none",
+    "category": "disclosure",
+    "reason": "Undistributed earnings diluted is a disclosure metric related to retained earnings, not net income to common shareholders"
+  },
+  {
+    "key": "CashAndEquivalents|us-gaap|OtherNoncashIncomeExpense",
+    "decision": "none",
+    "category": "disclosure",
+    "reason": "This is a noncash income/expense reconciliation item, not cash and equivalents"
+  },
+  {
+    "key": "CostOfRevenue|us-gaap|EquityMethodInvestmentSummarizedFinancialInformationCostOfSales",
+    "decision": "none",
+    "category": "disclosure",
+    "reason": "This is summarized financial information of an equity method investment, not actual cost of revenue"
+  },
+  {
+    "key": "OtherNonCurrentAssets|ifrs-full|DecreaseThroughClassifiedAsHeldForSaleInvestmentProperty",
+    "decision": "none",
+    "category": "disclosure",
+    "reason": "This is a reclassification detail for investment property held for sale, not a non-current asset balance"
+  },
+  {
+    "key": "ResearchAndDevelopment|us-gaap|ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsForfeituresWeightedAverageGrantDateFairValue",
+    "decision": "none",
+    "category": "disclosure",
+    "reason": "This is a share-based compensation disclosure detail (forfeiture rates and fair values), not R&D expense"
+  },
+  {
+    "key": "OtherCurrentAssets|us-gaap|CapitalLeasesLessorBalanceSheetNetInvestmentInSalesTypeLeasesCurrent",
+    "decision": "none",
+    "category": "disclosure",
+    "reason": "This is a lessor balance sheet detail for capital leases, which is a specific financing arrangement disclosure, not current assets"
+  },
+  {
+    "key": "DepreciationAmortization|ifrs-full|WritedownsReversalsOfPropertyPlantAndEquipment",
+    "decision": "none",
+    "category": "disclosure",
+    "reason": "Write-downs and reversals of PPE are impairment adjustments/reconciliation items, distinct from regular depreciation/amortization"
+  },
+  {
+    "key": "CapitalExpenditures|us-gaap|DiscountedFutureNetCashFlowsRelatingToProvedOilAndGasReservesFutureDevelopmentCosts",
+    "decision": "none",
+    "category": "valuation_estimate",
+    "reason": "Discounted future cash flows relating to oil and gas reserves is a valuation estimate for disclosure, not a cash flow or capex line item"
+  },
+  {
+    "key": "AccountsPayable|us-gaap|IncreaseDecreaseInAccountsPayableRelatedParties",
+    "decision": "subcomponent",
+    "correct_metric": "TotalCurrentLiabilities",
+    "category": "subcomponent",
+    "reason": "Changes in accounts payable are components of operating cash flow adjustments, not balance sheet balances themselves"
+  },
+  {
+    "key": "InterestIncome|ifrs-full|DividendsReceivedFromAssociatesClassifiedAsInvestingActivities",
+    "decision": "none",
+    "category": "operating_activity",
+    "reason": "Dividends received from associates is an investing cash inflow, not interest income"
+  },
+  {
+    "key": "DepreciationAmortization|us-gaap|FiniteLivedIntangibleAssetsAmortizationExpenseYearTwo",
+    "decision": "none",
+    "category": "schedule_disclosure",
+    "reason": "Expected future amortization by year is a schedule disclosure item, not a current period expense"
+  },
+  {
+    "key": "InvestingCashFlow|us-gaap|ReductionsInOtherAssetsAmount",
+    "decision": "none",
+    "category": "cash_flow_component",
+    "reason": "Changes in other assets are cash flow adjustments, not investing cash flow themselves"
+  },
+  {
+    "key": "InvestingCashFlow|us-gaap|IncreaseDecreaseInMarketableSecuritiesRestricted",
+    "decision": "subcomponent",
+    "correct_metric": "InvestingCashFlow",
+    "category": "subcomponent",
+    "reason": "Changes in restricted marketable securities are components of investing cash flow"
+  },
+  {
+    "key": "OtherCurrentLiabilities|us-gaap|SecuritiesSoldUnderAgreementsToRepurchaseGross",
+    "decision": "none",
+    "category": "balance_sheet_detail",
+    "reason": "Securities sold under repurchase agreements are financing liabilities, not operating current liabilities"
+  },
+  {
+    "key": "OtherNonOperatingIncome|us-gaap|FairValueAssumptionsExpectedDividendPayments",
+    "decision": "none",
+    "category": "valuation_assumption",
+    "reason": "Fair value assumptions for dividend payments are disclosure inputs, not realized operating income"
+  },
+  {
+    "key": "PropertyPlantEquipment|us-gaap|RealEstateFederalIncomeTaxBasis",
+    "decision": "none",
+    "category": "schedule_disclosure",
+    "reason": "SEC Schedule III real estate tax basis is a schedule disclosure item, not a balance sheet measure"
+  },
+  {
+    "key": "IncomeTaxExpense|us-gaap|EffectiveIncomeTaxRateReconciliationDeductionsOther",
+    "decision": "none",
+    "category": "rate_percentage",
+    "reason": "Effective tax rate reconciliation items and percentages are disclosure details, not tax expense amounts"
+  },
+  {
+    "key": "CommonStock|us-gaap|EquityIssuancePerShareAmount",
+    "decision": "none",
+    "category": "per_share_detail",
+    "reason": "Equity issuance per share amount is a development stage disclosure, not common stock balance"
+  },
+  {
+    "key": "IncomeTaxExpense|us-gaap|UnrecognizedTaxBenefitsResultingInNetOperatingLossCarryforward",
+    "decision": "none",
+    "category": "disclosure_detail",
+    "reason": "Unrecognized tax benefits relating to NOL carryforwards are tax disclosures, not income tax expense"
+  },
+  {
+    "key": "OperatingCashFlow|ifrs-full|DisposalsPropertyPlantAndEquipment",
+    "decision": "none",
+    "category": "balance_sheet_activity",
+    "reason": "Disposals of PP&E are investing activities, not operating cash flow"
+  },
+  {
+    "key": "OperatingCashFlow|us-gaap|FinancingReceivableSignificantSales",
+    "decision": "none",
+    "category": "investing_activity",
+    "reason": "Sales of financing receivables are investing activities, not operating cash flow"
+  },
+  {
+    "key": "CashAndEquivalents|ifrs-full|PortionOfConsiderationPaidReceivedConsistingOfCashAndCashEquivalents",
+    "decision": "none",
+    "category": "transaction_component",
+    "reason": "Portion of consideration consisting of cash in a transaction is a detail of an acquisition, not cash balance"
+  },
+  {
+    "key": "NetIncomeToCommon|ifrs-full|ShareOfProfitLossOfContinuingOperationsOfAssociatesAndJointVenturesAccountedForUsingEquityMethod",
+    "decision": "none",
+    "category": "equity_method_income",
+    "reason": "Share of profit from associates is equity method investment income, not net income to common shareholders"
+  },
+  {
+    "key": "ResearchAndDevelopment|us-gaap|ShareBasedCompensationArrangementsByShareBasedPaymentAwardOptionsForfeituresInPeriodWeightedAverageExercisePrice",
+    "decision": "none",
+    "category": "share_plan_detail",
+    "reason": "Weighted average exercise prices and forfeitures are share-based compensation plan details, not R&D expense"
+  },
+  {
+    "key": "ResearchAndDevelopment|us-gaap|ShareBasedCompensationSharesAuthorizedUnderStockOptionPlansExercisePriceRangeNumberOfOutstandingOptions",
+    "decision": "none",
+    "category": "share_plan_detail",
+    "reason": "Share-based payment option details are plan disclosures, not R&D expense"
+  },
+  {
+    "key": "CapitalExpenditures|us-gaap|RealEstateInventoryCapitalizedInterestCosts",
+    "decision": "none",
+    "category": "inventory_detail",
+    "reason": "Capitalized interest costs in real estate inventory are inventory components, not capital expenditures"
+  },
+  {
+    "key": "OtherNonCurrentLiabilities|us-gaap|DeferredTaxLiabilitiesGoodwillAndIntangibleAssetsGoodwill",
+    "decision": "none",
+    "category": "deferred_tax_detail",
+    "reason": "Deferred tax liabilities for goodwill are tax reconciliation items, not operating liabilities"
+  },
+  {
+    "key": "InterestIncome|us-gaap|DividendIncomeOperatingPaidInKind",
+    "decision": "map",
+    "correct_metric": "OtherNonOperatingIncome",
+    "reason": "Dividend income paid in kind is non-operating investment income"
+  },
+  {
+    "key": "TotalStockholdersEquity|us-gaap|CapitalizationLongtermDebtAndEquity",
+    "decision": "none",
+    "category": "schedule_disclosure",
+    "reason": "Capitalization schedule of debt and equity is a structural disclosure, not a single balance sheet metric"
+  },
+  {
+    "key": "CurrentPortionLongTermDebt|us-gaap|BusinessCombinationRecognizedIdentifiableAssetsAcquiredAndLiabilitiesAssumedCurrentLiabilitiesLongTermDebt",
+    "decision": "none",
+    "category": "acquisition_detail",
+    "reason": "Business combination schedule details are acquisition disclosures, not current liabilities"
+  },
+  {
+    "key": "OtherCurrentAssets|us-gaap|IncreaseDecreaseInPrepaidInterest",
+    "decision": "subcomponent",
+    "correct_metric": "OperatingCashFlow",
+    "category": "subcomponent",
+    "reason": "Changes in prepaid interest are adjustments to operating cash flow"
+  },
+  {
+    "key": "CashAndEquivalents|us-gaap|OtherNoncashExpense",
+    "decision": "none",
+    "category": "noncash_item",
+    "reason": "Other noncash expense is a reconciliation item, not a cash balance"
+  },
+  {
+    "key": "ResearchAndDevelopment|us-gaap|ShareBasedCompensationArrangementsByShareBasedPaymentAwardOptionsGrantsInPeriodWeightedAverageExercisePrice",
+    "decision": "none",
+    "category": "disclosure item",
+    "reason": "Weighted average exercise price is a stock option disclosure metric, not a financial statement measure"
+  },
+  {
+    "key": "IncomeTaxExpense|us-gaap|ProvisionForLoanLossesExpensed",
+    "decision": "map",
+    "correct_metric": "ProvisionForCreditLosses",
+    "reason": "Provision for loan losses is the primary measure for credit loss expense in financial institutions"
+  },
+  {
+    "key": "ShortTermInvestments|us-gaap|AvailableForSaleSecuritiesGrossUnrealizedLoss",
+    "decision": "none",
+    "category": "fair value disclosure",
+    "reason": "Unrealized loss on available-for-sale securities is a fair value adjustment, not a balance sheet line item"
+  },
+  {
+    "key": "OtherCurrentAssets|us-gaap|IncreaseDecreaseInPrepaidPensionCosts",
+    "decision": "none",
+    "category": "cash flow adjustment",
+    "reason": "Changes in prepaid pension costs are working capital adjustments used in cash flow reconciliation, not a balance sheet measure"
+  },
+  {
+    "key": "DividendsPerShare|us-gaap|FairValueAssumptionsWeightedAverageExpectedDividend",
+    "decision": "none",
+    "category": "disclosure item",
+    "reason": "Expected dividend is a valuation assumption used in fair value calculations, not a metric"
+  },
+  {
+    "key": "EarningsPerShareDiluted|us-gaap|BusinessAcquisitionProFormaEarningsPerShareDiluted",
+    "decision": "none",
+    "category": "pro forma disclosure",
+    "reason": "Pro forma EPS related to business acquisitions is a supplemental disclosure, not actual reported EPS"
+  },
+  {
+    "key": "IntangibleAssets|ifrs-full|DisposalsIntangibleAssetsOtherThanGoodwill",
+    "decision": "none",
+    "category": "disposal activity",
+    "reason": "Disposals of intangible assets are transaction detail, not the balance sheet value of intangibles"
+  },
+  {
+    "key": "IntangibleAssets|ifrs-full|DisposalsIntangibleAssetsOtherThanGoodwill",
+    "decision": "none",
+    "category": "disposal activity",
+    "reason": "Disposals of intangible assets are transaction detail, not the balance sheet value of intangibles"
+  },
+  {
+    "key": "IntangibleAssets|ifrs-full|DisposalsIntangibleAssetsOtherThanGoodwill",
+    "decision": "none",
+    "category": "disposal activity",
+    "reason": "Disposals of intangible assets are transaction detail, not the balance sheet value of intangibles"
+  },
+  {
+    "key": "OtherNonCurrentAssets|us-gaap|SquareFootageOfRealEstateProperty",
+    "decision": "none",
+    "category": "unrelated measure",
+    "reason": "Square footage is a physical characteristic/disclosure, not a financial statement metric"
+  },
+  {
+    "key": "IncomeTaxExpense|us-gaap|SignificantChangeInUnrecognizedTaxBenefitsIsReasonablyPossibleAmountOfUnrecordedBenefit",
+    "decision": "none",
+    "category": "tax disclosure",
+    "reason": "Unrecorded tax benefit is a contingent liability disclosure, not actual tax expense"
+  },
+  {
+    "key": "NetIncome|us-gaap|EquityMethodInvestmentSummarizedFinancialInformationNetIncomeLoss",
+    "decision": "none",
+    "category": "equity method disclosure",
+    "reason": "Net income of an equity method investee is summarized financial information, not the parent's net income"
+  },
+  {
+    "key": "NetIncome|us-gaap|EquityMethodInvestmentSummarizedFinancialInformationNetIncomeLoss",
+    "decision": "none",
+    "category": "equity method disclosure",
+    "reason": "Net income of an equity method investee is summarized financial information, not the parent's net income"
+  },
+  {
+    "key": "OtherNonCurrentAssets|us-gaap|EquityMethodInvestmentSummarizedFinancialInformationNoncurrentAssets",
+    "decision": "none",
+    "category": "equity method disclosure",
+    "reason": "Noncurrent assets of an equity method investee is summarized financial information disclosure, not the parent's assets"
+  },
+  {
+    "key": "PropertyPlantEquipment|us-gaap|OilAndGasPropertySuccessfulEffortMethodAccumulatedDepreciationDepletionAndAmortization",
+    "decision": "subcomponent",
+    "correct_metric": "PropertyPlantEquipment",
+    "category": "subcomponent",
+    "reason": "Accumulated depreciation/depletion is a component of net PP&E valuation"
+  },
+  {
+    "key": "OtherNonOperatingIncome|ifrs-full|ImpairmentLossRecognisedInProfitOrLossIntangibleAssetsAndGoodwill",
+    "decision": "map",
+    "correct_metric": "OtherNonOperatingIncome",
+    "reason": "Impairment loss is a non-operating charge typically classified as other non-operating income (negative)"
+  },
+  {
+    "key": "PremiumsEarned|us-gaap|SupplementalInformationForPropertyCasualtyInsuranceUnderwritersPremiumsWritten",
+    "decision": "map",
+    "correct_metric": "PremiumsEarned",
+    "reason": "Premiums written is the primary revenue measure for insurance underwriters"
+  },
+  {
+    "key": "EarningsPerShareBasic|us-gaap|InvestmentCompanyInvestmentIncomeLossPerShare",
+    "decision": "none",
+    "category": "investment company specific",
+    "reason": "Investment company income per share is a specialized metric for fund reporting, not a standard metric"
+  },
+  {
+    "key": "OtherNonOperatingIncome|us-gaap|ValuationAllowanceForImpairmentOfRecognizedServicingAssetsSales",
+    "decision": "none",
+    "category": "valuation allowance",
+    "reason": "Valuation allowance for servicing assets is a contra-asset adjustment, not an operating measure"
+  },
+  {
+    "key": "CapitalExpenditures|us-gaap|EscrowDepositDisbursementsRelatedToPropertyAcquisition1",
+    "decision": "none",
+    "category": "acquisition-related",
+    "reason": "Escrow disbursements for acquisitions are contingent consideration, not capital expenditures"
+  },
+  {
+    "key": "DepreciationAmortization|us-gaap|FiniteLivedIntangibleAssetsAmortizationExpenseRemainderOfFiscalYear",
+    "decision": "none",
+    "category": "disclosure item",
+    "reason": "Expected future amortization is a disclosure note, not current period depreciation/amortization expense"
+  },
+  {
+    "key": "CurrentPortionLongTermDebt|us-gaap|BusinessCombinationRecognizedIdentifiableAssetsAcquiredAndLiabilitiesAssumedCurrentLiabilitiesLongTermDebt",
+    "decision": "none",
+    "category": "acquisition disclosure",
+    "reason": "Business combination schedule items are transaction detail, not balance sheet measures"
+  },
+  {
+    "key": "OtherNonCurrentLiabilities|us-gaap|PreviouslyEstimatedDevelopmentCostsIncurredDuringPeriod",
+    "decision": "none",
+    "category": "development cost",
+    "reason": "Development costs are capitalized asset values or period expenses, not a liability measure"
+  },
+  {
+    "key": "OtherNonOperatingIncome|us-gaap|SegmentReportingInformationInterestIncomeExpenseNet",
+    "decision": "none",
+    "category": "segment disclosure",
+    "reason": "Segment interest income/expense is supplemental segment information, not a consolidated financial statement line"
+  },
+  {
+    "key": "OtherCurrentLiabilities|us-gaap|SupplementalInformationForPropertyCasualtyInsuranceUnderwritersUnearnedPremiums",
+    "decision": "subcomponent",
+    "correct_metric": "OtherCurrentLiabilities",
+    "category": "subcomponent",
+    "reason": "Unearned premiums are a component of current liabilities for insurance companies"
+  },
+  {
+    "key": "OtherNonCurrentAssets|us-gaap|BusinessCombinationRecognizedIdentifiableAssetsAcquiredAndLiabilitiesAssumedNoncurrentAssets",
+    "decision": "none",
+    "category": "business combination/acquisition detail",
+    "reason": "This is a line item within the business combination schedule related to the purchase price allocation of identifiable assets acquired. It's not a primary measure of a StandardMetric balance sheet item."
+  },
+  {
+    "key": "DividendsPerShare|us-gaap|PreferredStockDividendRatePerDollarAmount",
+    "decision": "none",
+    "category": "rate/disclosure",
+    "reason": "This is a dividend rate (per-dollar-amount), not a count of dividends paid or per-share amount. It's a rate disclosure, not a financial statement measure."
+  },
+  {
+    "key": "CashAndEquivalents|us-gaap|NoncashOrPartNoncashAcquisitionValueOfAssetsAcquired1",
+    "decision": "none",
+    "category": "business combination/acquisition detail",
+    "reason": "This is a component of acquisition accounting (purchase price allocation), not a standalone balance sheet asset measure."
+  },
+  {
+    "key": "DepreciationAmortization|us-gaap|AmortizationMethodQualifiedAffordableHousingProjectInvestments",
+    "decision": "none",
+    "category": "disclosure/methodology",
+    "reason": "This is an amortization method disclosure for a specific asset class (affordable housing investments), not a primary financial statement line item."
+  },
+  {
+    "key": "OtherCurrentLiabilities|us-gaap|AssetsSoldUnderAgreementsToRepurchaseMarketValue",
+    "decision": "none",
+    "category": "derivative/repo accounting",
+    "reason": "This is a market value disclosure related to repurchase agreements, not a primary balance sheet liability measure."
+  },
+  {
+    "key": "PropertyPlantEquipment|ifrs-full|ChangesInPropertyPlantAndEquipment",
+    "decision": "none",
+    "category": "changes/reconciliation",
+    "reason": "This is a reconciliation or change schedule for property, plant and equipment, not the primary balance sheet measure."
+  },
+  {
+    "key": "CurrentPortionLongTermDebt|us-gaap|BusinessAcquisitionPurchasePriceAllocationCurrentLiabilitiesLongTermDebt",
+    "decision": "none",
+    "category": "business combination/acquisition detail",
+    "reason": "This is a component of the business acquisition purchase price allocation schedule, not a primary balance sheet measure."
+  },
+  {
+    "key": "OtherCurrentLiabilities|us-gaap|SecuritiesLoanedOrSoldUnderAgreementsToRepurchaseFairValueDisclosure",
+    "decision": "none",
+    "category": "fair value disclosure",
+    "reason": "This is explicitly labeled as a fair value disclosure for securities lending/repo transactions, not a primary financial statement measure."
+  },
+  {
+    "key": "ResearchAndDevelopment|us-gaap|ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsOutstandingWeightedAverageExercisePrice",
+    "decision": "none",
+    "category": "equity compensation detail",
+    "reason": "This is a weighted average exercise price for share-based compensation options outstanding, which is a rate/price metric, not a StandardMetric."
+  },
+  {
+    "key": "OtherNonCurrentLiabilities|ifrs-full|DividendsPaidToNoncontrollingInterests",
+    "decision": "none",
+    "category": "dividend disclosure",
+    "reason": "This is dividends paid to noncontrolling interests, which is a component of equity transactions but not a primary financial statement line item."
+  },
+  {
+    "key": "RetainedEarnings|us-gaap|AmountAvailableForDividendDistributionWithoutAffectingCapitalAdequacyRequirements",
+    "decision": "none",
+    "category": "capital adequacy disclosure",
+    "reason": "This is a regulatory/capital adequacy disclosure about available amounts, not a balance sheet measure of retained earnings itself."
+  },
+  {
+    "key": "IncomeTaxExpense|us-gaap|CumulativeEffectOnRetainedEarningsTax1",
+    "decision": "none",
+    "category": "retained earnings adjustment",
+    "reason": "This is a cumulative tax effect adjustment to retained earnings, not the primary retained earnings or income tax expense measure."
+  },
+  {
+    "key": "OperatingCashFlow|us-gaap|RepaymentOfNotesReceivableFromRelatedParties",
+    "decision": "none",
+    "category": "investing activity",
+    "reason": "This is a repayment of notes receivable which is an investing activity, but repayments of notes receivable are not standard operating, investing, or financing cash flow measures."
+  },
+  {
+    "key": "IncomeTaxExpense|us-gaap|UnrecognizedTaxBenefitsIncreasesResultingFromPriorPeriodTaxPositions",
+    "decision": "none",
+    "category": "tax disclosure/reconciliation",
+    "reason": "This is a component of unrecognized tax benefits reconciliation, not a primary income tax expense measure."
+  },
+  {
+    "key": "OtherCurrentLiabilities|us-gaap|IncreaseDecreaseInDeferredRevenueAndCustomerAdvancesAndDeposits",
+    "decision": "none",
+    "category": "working capital change",
+    "reason": "This is a change in deferred revenue, which is a working capital adjustment in the cash flow statement, not a primary balance sheet liability measure."
+  },
+  {
+    "key": "OtherCurrentAssets|us-gaap|IncreaseDecreaseInDerivativeAssetsAndLiabilities",
+    "decision": "none",
+    "category": "working capital change",
+    "reason": "This is a change in derivative assets/liabilities used in cash flow reconciliation, not a primary balance sheet asset measure."
+  },
+  {
+    "key": "OperatingExpenses|us-gaap|DeferredSalesCommission",
+    "decision": "none",
+    "category": "balance sheet asset",
+    "reason": "Deferred sales commission is a balance sheet asset, not an income statement expense. It's not a primary StandardMetric."
+  },
+  {
+    "key": "IncomeTaxExpense|us-gaap|SignificantChangeInUnrecognizedTaxBenefitsIsReasonablyPossibleEstimatedRangeOfChangeUpperBound",
+    "decision": "none",
+    "category": "tax disclosure/estimate",
+    "reason": "This is an estimated range disclosure for unrecognized tax benefits, not a primary income tax measure."
+  },
+  {
+    "key": "ResearchAndDevelopment|us-gaap|ShareBasedCompensationArrangementsByShareBasedPaymentAwardOptionsExercisesInPeriodWeightedAverageExercisePrice",
+    "decision": "none",
+    "category": "equity compensation detail",
+    "reason": "This is a weighted average exercise price for share options exercised, which is a rate metric, not a StandardMetric."
+  },
+  {
+    "key": "FinancingCashFlow|ifrs-full|AdjustmentsForIncreaseDecreaseInRepurchaseAgreementsAndCashCollateralOnSecuritiesLent",
+    "decision": "none",
+    "category": "working capital adjustment",
+    "reason": "This is an adjustment for changes in repurchase agreements, which is a cash flow working capital adjustment, not a primary financing cash flow measure."
+  },
+  {
+    "key": "OtherNonCurrentAssets|us-gaap|DefinedBenefitPlanTargetPlanAssetAllocationsRangeMaximum",
+    "decision": "none",
+    "category": "pension/benefit plan disclosure",
+    "reason": "This is a target asset allocation disclosure for pension plans, not a primary balance sheet asset measure."
+  },
+  {
+    "key": "InterestIncome|us-gaap|DividendIncomeSecuritiesOperatingTaxExempt",
+    "decision": "map",
+    "correct_metric": "OtherNonOperatingIncome",
+    "reason": "Dividend income on securities is non-operating income, not interest income."
+  },
+  {
+    "key": "IncomeTaxExpense|us-gaap|LiabilityForUncertainTaxPositionsCurrent",
+    "decision": "none",
+    "category": "tax liability",
+    "reason": "This is a liability account for uncertain tax positions, not the income tax expense measure itself."
+  },
+  {
+    "key": "OperatingCashFlow|us-gaap|InterestPaidCapitalized",
+    "decision": "none",
+    "category": "investing activity supplemental",
+    "reason": "This is capitalized interest paid during investing activities, a supplemental cash flow disclosure, not a primary cash flow category measure."
+  },
+  {
+    "key": "IncomeTaxExpense|us-gaap|LiabilityForUncertainTaxPositionsNoncurrent",
+    "decision": "none",
+    "category": "tax liability",
+    "reason": "This is a liability account for uncertain tax positions, not the income tax expense measure itself."
+  },
+  {
+    "key": "InterestExpense|us-gaap|ShortTermDebtWeightedAverageInterestRate",
+    "decision": "none",
+    "category": "rate/percentage",
+    "reason": "A weighted average interest rate is a disclosure metric, not a financial statement line item"
+  },
+  {
+    "key": "TotalStockholdersEquity|us-gaap|MinorityInterestOwnershipPercentageByParent",
+    "decision": "none",
+    "category": "ownership_percentage",
+    "reason": "Ownership percentage is a disclosure item, not a balance sheet metric"
+  },
+  {
+    "key": "Revenue|ifrs-full|PercentageOfEntitysRevenue",
+    "decision": "none",
+    "category": "percentage",
+    "reason": "Percentage of entity's revenue is a ratio/disclosure item, not a primary financial statement line"
+  },
+  {
+    "key": "InterestIncome|us-gaap|InvestmentCompanyDistributionOrdinaryIncome",
+    "decision": "none",
+    "category": "distribution",
+    "reason": "Investment company distribution is a disclosure item specific to investment companies, not a standard interest income metric"
+  },
+  {
+    "key": "LongTermDebt|us-gaap|LongTermDebtMeasurementInput",
+    "decision": "none",
+    "category": "fair_value_input",
+    "reason": "Measurement input is a fair value disclosure tag, not the actual debt balance"
+  },
+  {
+    "key": "DividendsPerShare|us-gaap|PolicyholderDividendsRateOnPolicyEarnings",
+    "decision": "none",
+    "category": "rate",
+    "reason": "A rate on policy earnings is a disclosure metric, not a per-share dividend amount"
+  },
+  {
+    "key": "CapitalExpenditures|us-gaap|AccumulatedCapitalizedInterestCosts",
+    "decision": "none",
+    "category": "accumulated_disclosure",
+    "reason": "Accumulated capitalized interest is a balance sheet accumulation detail, not capital expenditures"
+  },
+  {
+    "key": "InterestIncome|us-gaap|ProceedsFromDividendsReceived",
+    "decision": "none",
+    "category": "investment_activity",
+    "reason": "Proceeds from dividends received is an investing cash flow item, not interest income"
+  },
+  {
+    "key": "OtherNonOperatingIncome|ifrs-full|ImpairmentLossRecognisedInProfitOrLossTradeReceivables",
+    "decision": "none",
+    "category": "loss_item",
+    "reason": "Impairment loss on trade receivables is a specific loss item, not other non-operating income"
+  },
+  {
+    "key": "ResearchAndDevelopment|us-gaap|ShareBasedCompensationArrangementByShareBasedPaymentAwardPerShareWeightedAveragePriceOfSharesPurchased",
+    "decision": "none",
+    "category": "fair_value",
+    "reason": "Weighted average price of shares purchased is a fair value disclosure, not R&D expense"
+  },
+  {
+    "key": "DepreciationAmortization|us-gaap|FiniteLivedIntangibleAssetsFutureAmortizationExpense",
+    "decision": "none",
+    "category": "schedule_item",
+    "reason": "Future amortization expense is a schedule disclosure item, not current period depreciation/amortization"
+  },
+  {
+    "key": "ResearchAndDevelopment|us-gaap|ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsGrantsInPeriodWeightedAverageGrantDateFairValue",
+    "decision": "none",
+    "category": "fair_value",
+    "reason": "Weighted average grant date fair value is a fair value disclosure for share-based compensation, not R&D expense"
+  },
+  {
+    "key": "CapitalExpenditures|us-gaap|InterestCostsCapitalizedAdjustment",
+    "decision": "none",
+    "category": "adjustment",
+    "reason": "Capitalized interest adjustment is a balance sheet detail/capitalization adjustment, not capital expenditures"
+  },
+  {
+    "key": "OtherCurrentAssets|ifrs-full|FairValueOfAcquiredReceivables",
+    "decision": "none",
+    "category": "fair_value",
+    "reason": "Fair value of acquired receivables is a fair value disclosure tag, not a current asset line"
+  },
+  {
+    "key": "OtherCurrentAssets|us-gaap|EscrowDepositsRelatedToPropertySales",
+    "decision": "none",
+    "category": "escrow_deposits",
+    "reason": "Escrow deposits are specific deposits for property sales transactions, a transaction detail not a standard current asset"
+  },
+  {
+    "key": "OtherNonCurrentAssets|us-gaap|OtherSignificantNoncashTransactionValueOfConsiderationGiven1",
+    "decision": "none",
+    "category": "noncash_transaction",
+    "reason": "Noncash transaction consideration is a disclosure item for merger/acquisition details, not an asset"
+  },
+  {
+    "key": "InterestIncome|ifrs-full|CurrentInterestReceivable",
+    "decision": "none",
+    "category": "receivable_detail",
+    "reason": "Current interest receivable is a receivable detail, not interest income"
+  },
+  {
+    "key": "OtherNonCurrentAssets|ifrs-full|CumulativeUnrecognisedShareOfLossesOfAssociates",
+    "decision": "none",
+    "category": "equity_adjustment",
+    "reason": "Cumulative unrecognized share of losses is an equity adjustment item, not an asset"
+  },
+  {
+    "key": "ShortTermInvestments|ifrs-full|PricesSpecifiedInForwardAgreementsToPurchaseFinancialAssetsForCash",
+    "decision": "none",
+    "category": "forward_contract_detail",
+    "reason": "Prices in forward agreements are contract terms/disclosures, not investments"
+  },
+  {
+    "key": "RetainedEarnings|us-gaap|DividendPaymentsRestrictionsScheduleStatutoryCapitalAndSurplus1",
+    "decision": "none",
+    "category": "restriction_disclosure",
+    "reason": "Dividend payment restrictions are legal/statutory disclosures, not retained earnings"
+  },
+  {
+    "key": "OtherCurrentLiabilities|us-gaap|AccrualForTaxesOtherThanIncomeTaxesCurrentAndNoncurrent",
+    "decision": "none",
+    "category": "accrual_detail",
+    "reason": "Accrual for other taxes is a specific liability detail, typically accrued in current liabilities but this is a disclosure item"
+  },
+  {
+    "key": "OtherNonCurrentAssets|ifrs-full|RiskExposureAssociatedWithInstrumentsSharingCharacteristic",
+    "decision": "none",
+    "category": "risk_disclosure",
+    "reason": "Risk exposure associated with instruments is a disclosure item, not an asset"
+  },
+  {
+    "key": "TotalStockholdersEquity|us-gaap|MinorityInterestOwnershipPercentageByNoncontrollingOwners",
+    "decision": "none",
+    "category": "ownership_percentage",
+    "reason": "Noncontrolling ownership percentage is a disclosure item, not stockholders' equity"
+  },
+  {
+    "key": "OtherNonCurrentLiabilities|us-gaap|NoncashOrPartNoncashAcquisitionValueOfLiabilitiesAssumed1",
+    "decision": "none",
+    "category": "acquisition_detail",
+    "reason": "Liabilities assumed in noncash acquisition is an acquisition schedule detail, not a balance sheet liability"
+  },
+  {
+    "key": "ShortTermInvestments|us-gaap|OtherMarketableSecuritiesNoncurrent",
+    "decision": "none",
+    "category": "deprecated",
+    "reason": "Deprecated noncurrent securities tag is a former taxonomy item, and fair value descriptor makes it a disclosure rather than primary measure"
+  },
+  {
+    "key": "Goodwill|ifrs-full|DisposalsIntangibleAssetsAndGoodwill",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Disposals of intangible assets and goodwill is a transaction/event, not a balance sheet line item metric"
+  },
+  {
+    "key": "IntangibleAssets|ifrs-full|DisposalsIntangibleAssetsAndGoodwill",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Disposals of intangible assets and goodwill is a transaction/event, not a balance sheet line item metric"
+  },
+  {
+    "key": "OperatingCashFlow|us-gaap|PaymentsForProceedsFromLoansReceivable",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Loan receivable activity is not an operating cash flow metric; it relates to lending/investing activities"
+  },
+  {
+    "key": "AccumulatedOtherComprehensiveIncome|us-gaap|NotionalAmountOfForeignCurrencyCashFlowHedgeDerivatives",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Notional amount of derivatives is a disclosure/fair value metric, not a balance sheet line item"
+  },
+  {
+    "key": "DividendsPaid|us-gaap|ProceedsFromIssuanceOfCommonStockDividendReinvestmentPlan",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Proceeds from stock issuance via DRIP is a financing cash flow, not dividends paid"
+  },
+  {
+    "key": "OtherNonCurrentAssets|us-gaap|FairValueMeasurementWithUnobservableInputsReconciliationRecurringBasisAssetGainLossIncludedInOtherComprehensiveIncome",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Fair value measurement reconciliation with unobservable inputs is a disclosure item, not a primary financial statement metric"
+  },
+  {
+    "key": "IncomeTaxExpense|us-gaap|StockIssuedDuringPeriodValueStockOptionsExercisedNetOfTaxBenefitExpense",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Stock option exercise proceeds is a financing activity detail, not an income statement metric"
+  },
+  {
+    "key": "OtherNonCurrentAssets|us-gaap|UnrecognizedTaxBenefitsResultingInNetOperatingLossCarryforward",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Unrecognized tax benefits disclosure item, not a balance sheet line item"
+  },
+  {
+    "key": "IncomeTaxExpense|us-gaap|EffectiveIncomeTaxRateReconciliationNondeductibleExpenseResearchAndDevelopment",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Tax rate reconciliation percentage is a disclosure item, not an income statement metric"
+  },
+  {
+    "key": "InterestIncome|us-gaap|RevenuesNetOfInterestExpense",
+    "decision": "map",
+    "correct_metric": "Revenue",
+    "reason": "Revenues net of interest expense is a revenue measure, though adjusted, it is fundamentally a revenue line item"
+  },
+  {
+    "key": "OtherNonCurrentLiabilities|ifrs-full|IncomeTaxConsequencesOfDividendsProposedOrDeclaredBeforeFinancialStatementsAuthorisedForIssueNotRecognisedAsLiability",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Tax consequences of dividends is a disclosure item, not a liability line item"
+  },
+  {
+    "key": "OperatingCashFlow|us-gaap|FreshStartAdjustmentIncreaseDecreaseOtherCurrentLiabilities",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Fresh-start adjustment is a reorganization accounting item, not an operating cash flow metric"
+  },
+  {
+    "key": "DividendsPerShare|us-gaap|PartnersCapitalAccountDistributionPerUnitOfLimitedPartnerInterest",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Partners' capital distribution per unit is a partnership disclosure, not a per-share metric"
+  },
+  {
+    "key": "OtherCurrentLiabilities|ifrs-full|NoncurrentPayablesOnSocialSecurityAndTaxesOtherThanIncomeTax",
+    "decision": "map",
+    "correct_metric": "OtherNonCurrentLiabilities",
+    "reason": "Noncurrent payables for social security and non-income taxes belong in other noncurrent liabilities"
+  },
+  {
+    "key": "RetainedEarnings|us-gaap|PartnersCapitalAllocatedForIncomeTaxAndOtherWithdrawals",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Partners' capital allocation for tax withdrawals is a partnership accounting item, not retained earnings"
+  },
+  {
+    "key": "OtherNonOperatingIncome|ifrs-full|OtherCashReceiptsFromSalesOfEquityOrDebtInstrumentsOfOtherEntitiesClassifiedAsInvestingActivities",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Proceeds from sales of other entities' equity/debt instruments is an investing cash flow, not other nonoperating income"
+  },
+  {
+    "key": "AccountsReceivable|ifrs-full|ReclassificationOutOfLoansAndReceivables",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Reclassification of loans and receivables is an accounting reclassification, not a balance sheet metric"
+  },
+  {
+    "key": "OtherNonCurrentLiabilities|us-gaap|RepurchaseAgreementCounterpartyAmountAtRisk",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Repurchase agreement counterparty risk amount is a disclosure/derivative item, not a liability metric"
+  },
+  {
+    "key": "ResearchAndDevelopment|us-gaap|ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsGrantsInPeriodWeightedAverageGrantDateFairValue",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Share-based compensation options grant fair value is a disclosure item, not an R&D expense metric"
+  },
+  {
+    "key": "LongTermDebt|us-gaap|LongTermDebtPercentageBearingVariableInterestRate",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Interest rate percentage is a disclosure rate, not a debt balance metric"
+  },
+  {
+    "key": "AccountsReceivable|ifrs-full|AdjustmentsForDecreaseIncreaseInOtherOperatingReceivables",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Adjustments for changes in operating receivables is a cash flow reconciliation item, not an accounts receivable metric"
+  },
+  {
+    "key": "AccountsReceivable|ifrs-full|AmountByWhichLoansOrReceivablesRelatedCreditDerivativesOrSimilarInstrumentsMitigateMaximumExposureToCreditRisk",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Credit derivative mitigation of credit risk is a disclosure item, not a receivable balance metric"
+  },
+  {
+    "key": "AccountsReceivable|us-gaap|FinancingReceivableSale",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Financing receivable sales/securitization is a transaction event, not an accounts receivable metric"
+  },
+  {
+    "key": "AccountsReceivable|us-gaap|ReinsuranceReceivablesIncurredButNotReportedClaims",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Reinsurance recoverables IBNR claims is an insurance-specific disclosure, not a receivable metric"
+  },
+  {
+    "key": "AccountsReceivable|ifrs-full|FinanceLeaseReceivables",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Finance lease receivables is a lease accounting detail, not a general accounts receivable metric"
+  },
+  {
+    "key": "AccountsReceivable|us-gaap|CapitalLeasesFutureMinimumPaymentsReceivable",
+    "decision": "subcomponent",
+    "correct_metric": "AccountsReceivable",
+    "category": "subcomponent",
+    "reason": "Capital lease receivables are a component of accounts receivable, representing future payments due from lease arrangements"
+  },
+  {
+    "key": "AccountsReceivable|ifrs-full|ReceivablesFromTaxesOtherThanIncomeTax",
+    "decision": "subcomponent",
+    "correct_metric": "AccountsReceivable",
+    "category": "subcomponent",
+    "reason": "Tax receivables are a type of receivable asset, part of accounts receivable"
+  },
+  {
+    "key": "OtherNonCurrentAssets|us-gaap|SecuritiesLoanedAndSecuritiesSoldUnderAgreementToRepurchaseGrossIncludingNotSubjectToMasterNettingArrangement",
+    "decision": "none",
+    "category": "balance_sheet_but_specialized_banking",
+    "reason": "Securities loaned and repurchased agreements are specialized financial instruments tracked separately; not a standard operating receivable or investment category"
+  },
+  {
+    "key": "FinancingCashFlow|ifrs-full|DividendsReceivedFromAssociatesClassifiedAsInvestingActivities",
+    "decision": "none",
+    "category": "cash_flow_classification",
+    "reason": "Dividend received from associates is an investing activity, not operating or financing cash flow in isolation; this is a disclosure detail"
+  },
+  {
+    "key": "OtherNonOperatingIncome|us-gaap|ResultsOfOperationsSalesOrTransfersToEntitysOtherOperations",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Internal transfers between operations are not standard income statement metrics; this is a disclosure/schedule item"
+  },
+  {
+    "key": "CommonStock|us-gaap|CommonStockHeldBySubsidiary",
+    "decision": "none",
+    "category": "balance_sheet_detail",
+    "reason": "Treasury stock/subsidiary-held stock is a contra-equity account, not a primary common stock metric"
+  },
+  {
+    "key": "AccountsReceivable|us-gaap|SalesTypeAndDirectFinancingLeasesLeaseReceivablePaymentsToBeReceivedNextTwelveMonths",
+    "decision": "subcomponent",
+    "correct_metric": "AccountsReceivable",
+    "category": "subcomponent",
+    "reason": "Lease receivables from sales-type and direct financing leases are a component of accounts receivable"
+  },
+  {
+    "key": "ShortTermInvestments|us-gaap|AvailableForSaleSecuritiesDebtMaturitiesAfterOneThroughFiveYearsFairValue",
+    "decision": "none",
+    "category": "disclosure_detail",
+    "reason": "Fair value maturity schedule for available-for-sale debt securities is a disclosure schedule detail, not a primary balance sheet metric"
+  },
+  {
+    "key": "AccumulatedOtherComprehensiveIncome|us-gaap|DerivativeAssetFairValueGrossLiabilityAndObligationToReturnCashOffset",
+    "decision": "none",
+    "category": "fair_value_disclosure",
+    "reason": "Derivative fair value offset calculations are disclosure items used in footnote detail, not a primary financial statement line"
+  },
+  {
+    "key": "AccountsReceivable|us-gaap|OriginationOfNotesReceivableFromRelatedParties",
+    "decision": "subcomponent",
+    "correct_metric": "AccountsReceivable",
+    "category": "subcomponent",
+    "reason": "Notes receivable from related parties are a component of accounts receivable"
+  },
+  {
+    "key": "DividendsPerShare|us-gaap|StatutoryAccountingPracticesStatutoryAmountAvailableForDividendPaymentsWithRegulatoryApproval",
+    "decision": "none",
+    "category": "disclosure_item",
+    "reason": "Statutory accounting amounts available for dividends are regulatory disclosure items, not per-share metrics"
+  },
+  {
+    "key": "AccountsReceivable|us-gaap|FairValueConcentrationOfRiskLoansReceivable",
+    "decision": "none",
+    "category": "disclosure_detail",
+    "reason": "Fair value concentration of risk disclosure is a footnote detail, not a primary balance sheet metric"
+  },
+  {
+    "key": "OtherNonOperatingIncome|us-gaap|AccumulatedDepreciationDepletionAndAmortizationSaleOfPropertyPlantAndEquipment1",
+    "decision": "none",
+    "category": "gain_loss_detail",
+    "reason": "Accumulated depreciation on disposed assets is a gain/loss component, not a primary operating or non-operating income line"
+  },
+  {
+    "key": "OtherNonCurrentAssets|us-gaap|DerivativeLiabilitySecuritiesSoldUnderAgreementsToResellSecuritiesLoanedAsset",
+    "decision": "none",
+    "category": "balance_sheet_detail",
+    "reason": "Derivative liability on securities repurchase agreements is a specialized financial instrument disclosure, not a standard asset category"
+  },
+  {
+    "key": "AccountsReceivable|us-gaap|ProceedsFromCollectionOfOtherReceivables",
+    "decision": "none",
+    "category": "cash_flow_detail",
+    "reason": "Collection of receivables is a cash flow detail/schedule item, not a primary balance sheet metric"
+  },
+  {
+    "key": "EarningsPerShareDiluted|us-gaap|BusinessAcquisitionProFormaEarningsPerShareDiluted",
+    "decision": "none",
+    "category": "disclosure_item",
+    "reason": "Pro forma EPS from acquisitions is a disclosure metric for information purposes, not actual reported EPS"
+  },
+  {
+    "key": "OtherNonOperatingIncome|ifrs-full|IncreaseDecreaseThroughCumulativeCatchupAdjustmentsToRevenueArisingFromChangeInMeasureOfProgressContractLiabilities",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Contract liability adjustments from performance obligations are accounting adjustments, not standard income statement metrics"
+  },
+  {
+    "key": "AccountsReceivable|us-gaap|ProceedsFromCollectionOfFinanceReceivables",
+    "decision": "none",
+    "category": "cash_flow_detail",
+    "reason": "Collection of finance receivables is a cash flow detail/schedule item, not a primary balance sheet metric"
+  },
+  {
+    "key": "InterestIncome|us-gaap|DividendIncomeEquitySecuritiesOperating",
+    "decision": "none",
+    "category": "income_component",
+    "reason": "Dividend income from equity securities is non-operating income, distinct from interest income"
+  },
+  {
+    "key": "ShortTermDebt|us-gaap|AccountsPayableInterestBearingCurrentAndNoncurrent",
+    "decision": "subcomponent",
+    "correct_metric": "AccountsPayable",
+    "category": "subcomponent",
+    "reason": "Interest-bearing accounts payable are a component of accounts payable, not short-term debt"
+  },
+  {
+    "key": "OtherNonCurrentAssets|us-gaap|InvestmentOwnedUnrecognizedUnrealizedDepreciation",
+    "decision": "none",
+    "category": "fair_value_disclosure",
+    "reason": "Unrealized depreciation on investments is a fair value disclosure detail, not a primary balance sheet metric"
+  },
+  {
+    "key": "DepreciationAmortization|us-gaap|FiniteLivedIntangibleAssetsAmortizationExpenseAfterYearFive",
+    "decision": "none",
+    "category": "disclosure_schedule",
+    "reason": "Expected future amortization of intangible assets is a schedule disclosure, not current period amortization expense"
+  },
+  {
+    "key": "OtherNonCurrentLiabilities|us-gaap|PreviouslyEstimatedDevelopmentCostsIncurred",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Previously estimated development costs are cost accounting adjustments, not a primary financial statement line"
+  },
+  {
+    "key": "IntangibleAssets|ifrs-full|IncreaseDecreaseThroughOtherChangesIntangibleAssetsOtherThanGoodwill",
+    "decision": "none",
+    "category": "balance_sheet_detail",
+    "reason": "Changes in intangible assets from other adjustments are accounting movements/schedule details, not the primary intangible assets balance"
+  },
+  {
+    "key": "IntangibleAssets|ifrs-full|IncreaseDecreaseThroughOtherChangesIntangibleAssetsOtherThanGoodwill",
+    "decision": "none",
+    "category": "balance_sheet_detail",
+    "reason": "Changes in intangible assets from other adjustments are accounting movements/schedule details, not the primary intangible assets balance"
+  },
+  {
+    "key": "AccountsReceivable|us-gaap|SalesTypeLeaseLeaseReceivable",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Sales-type lease receivable is a specific lease accounting item, not a standard accounts receivable line item"
+  },
+  {
+    "key": "Goodwill|us-gaap|NoncashOrPartNoncashAcquisitionInventoryAcquired1",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Inventory acquired in noncash acquisitions is a transaction detail, not a primary balance sheet inventory measure"
+  },
+  {
+    "key": "AccountsReceivable|us-gaap|LoansReceivableHeldForSaleAmount",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Financing receivable held-for-sale is a specific category for financial instruments, not standard accounts receivable"
+  },
+  {
+    "key": "AccountsReceivable|us-gaap|LoansAndLeasesReceivableGrossCarryingAmountOther",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Loans and leases receivable is a specialized financial institution asset, not standard accounts receivable"
+  },
+  {
+    "key": "PropertyPlantEquipment|us-gaap|PropertyPlantAndEquipmentUsefulLifeMaximum",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Useful life is a depreciation assumption/disclosure item, not a property plant and equipment balance"
+  },
+  {
+    "key": "IncomeTaxExpense|us-gaap|IncomeTaxReconciliationDeductionsDividends",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Tax reconciliation deductions are disclosure/tax rate detail items, not income tax expense amounts"
+  },
+  {
+    "key": "ResearchAndDevelopment|us-gaap|ShareBasedCompensationArrangementByShareBasedPaymentAwardFairValueAssumptionsWeightedAverageVolatilityRate",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Fair value assumptions (volatility rates) are valuation inputs/disclosures, not R&D expense"
+  },
+  {
+    "key": "InterestExpense|us-gaap|DebtIssuanceCostsIncurredDuringNoncashOrPartialNoncashTransaction",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Debt issuance costs are capitalized balance sheet items, not interest expense"
+  },
+  {
+    "key": "OtherCurrentAssets|us-gaap|ExcessStockSharesOutstanding",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Excess stock shares outstanding is a capital structure detail, not a current asset"
+  },
+  {
+    "key": "FinancingCashFlow|us-gaap|IncreaseDecreaseInReceivablesUnderRepurchaseAgreements",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Changes in repurchase agreement receivables are operational adjustments, not primary financing cash flow"
+  },
+  {
+    "key": "InterestIncome|ifrs-full|AdjustmentsForDividendIncome",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Adjustments for dividend income are reconciliation items, not primary interest income"
+  },
+  {
+    "key": "OtherCurrentAssets|us-gaap|ReinsuranceReceivablesCaseBasis",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Reinsurance recoverables are insurance-specific assets, not general other current assets"
+  },
+  {
+    "key": "SharesOutstandingBasic|us-gaap|WeightedAverageNumberOfLimitedPartnershipAndGeneralPartnershipUnitOutstandingBasicAndDiluted",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Partnership unit shares outstanding are distinct from common stock shares outstanding"
+  },
+  {
+    "key": "InterestIncome|us-gaap|InterestRevenueExpenseNet",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Net interest revenue (expense) combines interest income and expense; not a single primary line item"
+  },
+  {
+    "key": "NetIncome|ifrs-full|UnrecognisedShareOfLossesOfAssociates",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Unrecognized share of losses is an equity method adjustment, not net income"
+  },
+  {
+    "key": "OtherNonCurrentAssets|us-gaap|LoansAndLeasesReceivableRelatedPartiesAdditions",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Additions to loans/leases receivable is a transaction detail, not a balance sheet total"
+  },
+  {
+    "key": "ShareRepurchases|us-gaap|ProceedsFromIssuanceOfCommonStockDividendReinvestmentPlan",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Proceeds from dividend reinvestment plan represent equity issuance, not share repurchases"
+  },
+  {
+    "key": "OtherCurrentAssets|us-gaap|IncreaseDecreaseInPrepaidSupplies",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Changes in prepaid supplies are working capital adjustments, not a balance sheet asset category"
+  },
+  {
+    "key": "OtherNonCurrentAssets|us-gaap|LoansAndLeasesReceivableBeforeFeesGross",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Loans and leases receivable is a financial institution-specific asset, not standard property plant equipment"
+  },
+  {
+    "key": "OperatingCashFlow|us-gaap|ProceedsFromDistributionsReceivedFromRealEstatePartnerships",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Distributions from real estate partnerships are investment returns, not operating cash flow"
+  },
+  {
+    "key": "IntangibleAssets|ifrs-full|ImpairmentLossRecognisedInProfitOrLossIntangibleAssetsOtherThanGoodwill",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Impairment losses are income statement charges, not intangible asset balance amounts"
+  },
+  {
+    "key": "InterestExpense|us-gaap|InterestAccrualRateAssociatedWithAmortizationMethodOfPresentValueOfFutureInsuranceProfits",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Interest accrual rates are insurance accounting assumptions, not interest expense amounts"
+  },
+  {
+    "key": "IncomeTaxExpense|us-gaap|EffectiveIncomeTaxRateReconciliationDeductionsEmployeeStockOwnershipPlanDividends",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Tax rate reconciliation percentages are disclosure items, not income tax expense amounts"
+  },
+  {
+    "key": "ResearchAndDevelopment|us-gaap|ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsVestedInPeriodWeightedAverageGrantDateFairValue",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Share-based compensation fair value assumptions are disclosure/valuation details, not R&D expense"
+  },
+  {
+    "key": "ResearchAndDevelopment|us-gaap|ShareBasedCompensationArrangementsByShareBasedPaymentAwardOptionsExpirationsInPeriodWeightedAverageExercisePrice",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Share option exercise price assumptions are disclosure items, not R&D expense amounts"
+  },
+  {
+    "key": "OtherNonOperatingIncome|us-gaap|AccumulatedDepreciationDepletionAndAmortizationSaleOfPropertyPlantAndEquipment",
+    "decision": "none",
+    "category": "contra-asset/schedule",
+    "reason": "This is an accumulated depreciation contra-account related to asset disposals, not a primary income statement or balance sheet line item"
+  },
+  {
+    "key": "DividendsPaid|us-gaap|CommonStockDividendsShares",
+    "decision": "none",
+    "category": "share_activity",
+    "reason": "This tracks the number of shares issued as dividends, not dividend payments in cash or aggregate amount"
+  },
+  {
+    "key": "CapitalExpenditures|ifrs-full|SalesFairValueMeasurementAssets",
+    "decision": "none",
+    "category": "fair_value_disclosure",
+    "reason": "Fair value measurement disclosure item, not a primary financial statement metric"
+  },
+  {
+    "key": "OtherNonCurrentAssets|ifrs-full|FinancialAssetsWhoseContractualCashFlowCharacteristicsHaveBeenAssessedBasedOnFactsAndCircumstancesAtInitialRecognitionWithoutTakingIntoAccountRequirementsRelatedToModificationOfTimeValueOfMoneyElement",
+    "decision": "none",
+    "category": "disclosure",
+    "reason": "Complex IFRS classification disclosure for financial assets, not a quantifiable balance sheet line"
+  },
+  {
+    "key": "OtherNonCurrentAssets|ifrs-full|FinancialAssetsWhoseContractualCashFlowCharacteristicsHaveBeenAssessedBasedOnFactsAndCircumstancesAtInitialRecognitionWithoutTakingIntoAccountRequirementsRelatedToModificationOfTimeValueOfMoneyElement",
+    "decision": "none",
+    "category": "disclosure",
+    "reason": "Complex IFRS classification disclosure for financial assets, not a quantifiable balance sheet line"
+  },
+  {
+    "key": "LongTermDebt|us-gaap|LongTermDebtWeightedAverageInterestRateOverTime",
+    "decision": "none",
+    "category": "rate",
+    "reason": "Weighted average interest rate is a rate metric, not a balance sheet or income statement amount"
+  },
+  {
+    "key": "OtherNonCurrentAssets|us-gaap|CommonStockOtherValueOutstanding",
+    "decision": "none",
+    "category": "equity_detail",
+    "reason": "This is a detailed component of common stock accounting value, not a standard financial metric"
+  },
+  {
+    "key": "OtherNonCurrentAssets|us-gaap|FiniteLivedIntangibleAssetsAmortizationExpenseYearFive",
+    "decision": "none",
+    "category": "schedule",
+    "reason": "Disclosure of future amortization expense schedule (Year Five), not a current period financial statement line"
+  },
+  {
+    "key": "OtherNonCurrentAssets|us-gaap|MortgageLoansOnRealEstateAmortizationOfPremium",
+    "decision": "none",
+    "category": "schedule",
+    "reason": "SEC schedule detail item (12-29) for mortgage loans, not a primary financial statement metric"
+  },
+  {
+    "key": "ProvisionForCreditLosses|us-gaap|FinancingReceivableAllowanceForCreditLossesCollectivelyEvaluatedForImpairment",
+    "decision": "none",
+    "category": "allowance_detail",
+    "reason": "This is a sub-component of allowance for credit losses by evaluation category, not the total provision"
+  },
+  {
+    "key": "OperatingExpenses|us-gaap|ReimbursementRevenue",
+    "decision": "map",
+    "correct_metric": "Revenue",
+    "reason": "Reimbursement revenue is operating revenue, regardless of deprecation status"
+  },
+  {
+    "key": "ShortTermInvestments|us-gaap|CertainLoansAcquiredInTransferAccountedForAsDebtSecuritiesAcquiredDuringPeriodContractuallyRequiredPaymentsReceivableAtAcquisition",
+    "decision": "none",
+    "category": "schedule",
+    "reason": "Highly specific accounting detail for acquired loans classified as debt securities, not a primary investment metric"
+  },
+  {
+    "key": "OtherNonCurrentAssets|us-gaap|RealEstateInventoryCapitalizedInterestCostsPeriodIncreaseDecrease",
+    "decision": "none",
+    "category": "disclosure",
+    "reason": "Capitalized interest cost changes are balance sheet adjustments to inventory, not a standalone metric"
+  },
+  {
+    "key": "OtherNonOperatingIncome|us-gaap|CashFlowHedgeGainLossReclassifiedToInterestExpenseNet",
+    "decision": "none",
+    "category": "hedge_reclassification",
+    "reason": "Derivative hedge reclassification detail, not a primary financial statement line"
+  },
+  {
+    "key": "ProvisionForCreditLosses|us-gaap|LoansAndLeasesReceivableNetReportedAmountOther",
+    "decision": "none",
+    "category": "balance_detail",
+    "reason": "This is a specific category of loans and leases receivable, part of larger loan portfolio"
+  },
+  {
+    "key": "OperatingExpenses|us-gaap|DefinedBenefitPlanEffectOfOnePercentagePointDecreaseOnServiceAndInterestCostComponents1",
+    "decision": "none",
+    "category": "sensitivity_disclosure",
+    "reason": "Actuarial sensitivity analysis disclosure, not an actual financial statement amount"
+  },
+  {
+    "key": "ProvisionForCreditLosses|us-gaap|FinancingReceivableAllowanceForCreditLossesRecovery",
+    "decision": "none",
+    "category": "allowance_activity",
+    "reason": "Recovery of credit losses is an activity within allowance accounting, not the primary provision metric"
+  },
+  {
+    "key": "OtherNonCurrentLiabilities|us-gaap|DefinedBenefitPlanPlansWithBenefitObligationsInExcessOfPlanAssetsAggregateBenefitObligation",
+    "decision": "map",
+    "correct_metric": "OtherNonCurrentLiabilities",
+    "reason": "Defined benefit pension obligation is a non-current liability"
+  },
+  {
+    "key": "OperatingCashFlow|us-gaap|ProceedsFromSaleOfOtherReceivables",
+    "decision": "map",
+    "correct_metric": "InvestingCashFlow",
+    "reason": "Proceeds from sale of receivables are investing activity, not operating cash flow"
+  },
+  {
+    "key": "OtherCurrentLiabilities|us-gaap|PreconfirmationInventories",
+    "decision": "none",
+    "category": "pushdown_accounting",
+    "reason": "Preconfirmation inventory is a pushdown accounting disclosure item in business combinations, not a standard metric"
+  },
+  {
+    "key": "LongTermDebt|us-gaap|PledgedFinancialInstrumentsNotSeparatelyReportedLoansReceivablePledgedForFederalHomeLoanBankDebt",
+    "decision": "none",
+    "category": "collateral_disclosure",
+    "reason": "This is a disclosure of pledged collateral supporting debt, not the debt amount itself"
+  },
+  {
+    "key": "OtherCurrentLiabilities|us-gaap|DisposalGroupIncludingDiscontinuedOperationAccruedLiabilities",
+    "decision": "none",
+    "category": "discontinued_operations",
+    "reason": "Discontinued operations asset classification detail, not a primary current liability metric"
+  },
+  {
+    "key": "OtherNonCurrentAssets|us-gaap|OperatingLeasesFutureMinimumPaymentsReceivableInTwoYears",
+    "decision": "none",
+    "category": "schedule",
+    "reason": "Operating lease future payment schedule disclosure, not a current balance sheet amount"
+  },
+  {
+    "key": "OtherNonCurrentLiabilities|srt|RealEstateAndAccumulatedDepreciationAmountOfEncumbrances",
+    "decision": "none",
+    "category": "schedule",
+    "reason": "SEC schedule (12-28) real estate encumbrance detail, disclosure of debt collateral not debt itself"
+  },
+  {
+    "key": "PropertyPlantEquipment|us-gaap|OilAndGasPropertySuccessfulEffortMethodAccumulatedDepreciationDepletionAmortizationAndImpairment",
+    "decision": "none",
+    "category": "contra-asset",
+    "reason": "Accumulated depreciation/depletion is a contra-asset account reducing gross property value, not a primary asset metric"
+  },
+  {
+    "key": "ResearchAndDevelopment|us-gaap|ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsExercisableWeightedAverageExercisePrice",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "This is a weighted average exercise price for stock options - a disclosure metric about equity compensation arrangements, not a financial statement line item"
+  },
+  {
+    "key": "OtherNonCurrentLiabilities|us-gaap|FinancialAssetsSoldUnderAgreementsToRepurchaseGrossIncludingNotSubjectToMasterNettingArrangement",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "This is a balance sheet asset item (financial assets sold under repurchase agreements), not a liability, and doesn't map to standard metrics"
+  },
+  {
+    "key": "Goodwill|us-gaap|BusinessCombinationAcquiredReceivablesGrossContractualAmount",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "This is a one-time business combination adjustment for acquired receivables, not a recurring balance sheet item that maps to StandardMetrics"
+  },
+  {
+    "key": "PropertyPlantEquipment|us-gaap|AccumulatedDepreciationDepletionAndAmortizationPropertyPlantAndEquipmentPeriodIncreaseDecrease",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "This is a period change in accumulated depreciation (a contra-asset account detail), not a primary balance sheet or income statement metric"
+  },
+  {
+    "key": "OtherNonOperatingIncome|us-gaap|FreshStartAdjustmentIncreaseDecreaseCommonStock",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "This is a fresh-start adjustment to equity accounts in bankruptcy reorganizations, a non-recurring item that doesn't map to standard metrics"
+  },
+  {
+    "key": "ProvisionForCreditLosses|us-gaap|FinancingReceivableRecordedInvestmentNonaccrualStatus",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "This is a classification of financing receivables (accrual status detail), not a provision amount or primary metric"
+  },
+  {
+    "key": "OtherNonOperatingIncome|ifrs-full|CarryingAmountAtTimeOfSaleOfInvestmentPropertyCarriedAtCostWithinFairValueModel",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "This is a carrying amount of investment property under fair value measurement model, a fair value disclosure item that doesn't map to StandardMetrics"
+  },
+  {
+    "key": "FinancingCashFlow|ifrs-full|AdjustmentsForIncreaseDecreaseInRepurchaseAgreementsAndCashCollateralOnSecuritiesLent",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "This is an adjustment for repurchase agreements and cash collateral in cash flow statements, a reconciling item rather than a primary metric"
+  },
+  {
+    "key": "NetIncome|us-gaap|DiscontinuedOperationIncomeLossFromDiscontinuedOperationBeforeIncomeTax",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "Discontinued operations income/loss is a separately presented component, not a recurring metric that maps to standard operations"
+  },
+  {
+    "key": "OperatingCashFlow|us-gaap|ProceedsFromSaleAndCollectionOfLoansReceivable",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "This is proceeds from sale of loans (a specific investing activity), which should map to InvestingCashFlow, not OperatingCashFlow, but is too specific to be a primary metric"
+  },
+  {
+    "key": "OperatingExpenses|us-gaap|LiabilitiesSubjectToCompromisePaymentsUnderBankruptcyCourtOrderForFreightAndDistributionCosts",
+    "decision": "none",
+    "category": "unrelated",
+    "reason": "This is a bankruptcy-specific liability item for court-ordered payments, a restructuring disclosure that doesn't map to standard operating metrics"
+  },
+  {
+    "key": "OtherNonCurrentAssets|us-gaap|DisposalGroupIncludingDiscontinuedOperationInventoryNoncurrent",
+    "decision": "subcomponent",
+    "correct_metric": "Inventory",
+    "category": "subcomponent",
+    "reason": "Noncurrent inventory held in disposal groups is a component of total inventory, though typically inventory is current"
+  }
+]
