@@ -1,10 +1,17 @@
 use chrono::NaiveDate;
-use serde::Deserialize;
+use serde::{Deserialize, Deserializer};
 
 use crate::models::cik::Cik;
 use crate::models::company::Company;
 use crate::models::filing::Filing;
 use crate::models::filing_type::FilingType;
+
+/// SEC sends `[null]` in these lists for some shells/SPACs; drop the nulls
+/// instead of failing the whole response.
+fn strings_skip_nulls<'de, D: Deserializer<'de>>(d: D) -> Result<Option<Vec<String>>, D::Error> {
+    let v: Option<Vec<Option<String>>> = Option::deserialize(d)?;
+    Ok(v.map(|v| v.into_iter().flatten().collect()))
+}
 
 /// Raw EDGAR submissions API response.
 #[derive(Debug, Clone, Deserialize)]
@@ -16,7 +23,9 @@ pub struct SubmissionsResponse {
     #[serde(rename = "sicDescription")]
     pub sic_description: Option<String>,
     pub name: Option<String>,
+    #[serde(default, deserialize_with = "strings_skip_nulls")]
     pub tickers: Option<Vec<String>>,
+    #[serde(default, deserialize_with = "strings_skip_nulls")]
     pub exchanges: Option<Vec<String>>,
     pub ein: Option<String>,
     pub description: Option<String>,
