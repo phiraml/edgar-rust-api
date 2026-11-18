@@ -61,6 +61,14 @@ pub enum MetricResolution {
     /// Try tags in order, take the first one that has data.
     FirstMatch(Vec<TagSpec>),
 
+    /// Take the largest value among the tags that have data. For alternative
+    /// tags for the same total where some filers put only part of it under one
+    /// tag (lessors' contract revenue excludes lease revenue).
+    Largest(Vec<TagSpec>),
+
+    /// Try resolutions in order, take the first that produces a value.
+    FirstOf(Vec<MetricResolution>),
+
     /// Sum values from multiple tags.
     Sum(Vec<TagSpec>),
 
@@ -79,7 +87,10 @@ impl MetricResolution {
     /// Useful for coverage analysis to know which tags were tried.
     pub fn tag_specs(&self) -> Vec<&TagSpec> {
         match self {
-            Self::FirstMatch(specs) | Self::Sum(specs) => specs.iter().collect(),
+            Self::FirstMatch(specs) | Self::Sum(specs) | Self::Largest(specs) => {
+                specs.iter().collect()
+            }
+            Self::FirstOf(options) => options.iter().flat_map(|r| r.tag_specs()).collect(),
             Self::Difference(a, b) => vec![a.as_ref(), b.as_ref()],
             Self::Ratio(a, b) => {
                 let mut out = a.tag_specs();
@@ -95,6 +106,8 @@ impl std::fmt::Debug for MetricResolution {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
             Self::FirstMatch(tags) => f.debug_tuple("FirstMatch").field(tags).finish(),
+            Self::Largest(tags) => f.debug_tuple("Largest").field(tags).finish(),
+            Self::FirstOf(options) => f.debug_tuple("FirstOf").field(options).finish(),
             Self::Sum(tags) => f.debug_tuple("Sum").field(tags).finish(),
             Self::Difference(a, b) => f.debug_tuple("Difference").field(a).field(b).finish(),
             Self::Ratio(a, b) => f.debug_tuple("Ratio").field(a).field(b).finish(),

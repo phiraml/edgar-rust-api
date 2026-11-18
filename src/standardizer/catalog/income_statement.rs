@@ -8,22 +8,30 @@ use crate::standardizer::resolution::{MetricResolution, TagSpec};
 pub fn definitions() -> Vec<MetricDefinition> {
     vec![
         // ─── Revenue (36/42 use Revenues, 31/42 use RevenueFromContract...) ───
+        // The tax-exclusive total tags are compared and the largest wins. Lessors
+        // (towers, REITs) put only non-lease revenue under RevenueFromContract...
+        // and the total under Revenues (AMT: $0.94B vs $10.4B); for everyone
+        // else the two match. The rest are fallbacks when no total is tagged.
         MetricDefinition {
             metric: StandardMetric::Revenue,
-            resolution: MetricResolution::FirstMatch(vec![
-                TagSpec::gaap_usd("RevenueFromContractWithCustomerExcludingAssessedTax"),  // 31/42
-                TagSpec::gaap_usd("RevenueFromContractWithCustomerIncludingAssessedTax"),
-                TagSpec::gaap_usd("Revenues"),                                             // 36/42
-                TagSpec::gaap_usd("SalesRevenueNet"),                                      // 25/42
-                TagSpec::gaap_usd("SalesRevenueGoodsNet"),                                 // 21/42
-                TagSpec::gaap_usd("SalesRevenueServicesNet"),
-                TagSpec::gaap_usd("RegulatedAndUnregulatedOperatingRevenue"),
-                TagSpec::gaap_usd("ElectricUtilityRevenue"),
-                TagSpec::gaap_usd("RealEstateRevenueNet"),
-                TagSpec::gaap_usd("InterestAndDividendIncomeOperating"),
-                TagSpec::gaap_usd("HealthCareOrganizationRevenue"),
-                TagSpec::gaap_usd("OilAndGasRevenue"),
-                TagSpec::gaap_usd("FinancialServicesRevenue"),
+            resolution: MetricResolution::FirstOf(vec![
+                MetricResolution::Largest(vec![
+                    TagSpec::gaap_usd("RevenueFromContractWithCustomerExcludingAssessedTax"), // 31/42
+                    TagSpec::gaap_usd("Revenues"),                                            // 36/42
+                    TagSpec::gaap_usd("SalesRevenueNet"),                                     // 25/42
+                ]),
+                MetricResolution::FirstMatch(vec![
+                    TagSpec::gaap_usd("RevenueFromContractWithCustomerIncludingAssessedTax"),
+                    TagSpec::gaap_usd("SalesRevenueGoodsNet"), // 21/42
+                    TagSpec::gaap_usd("SalesRevenueServicesNet"),
+                    TagSpec::gaap_usd("RegulatedAndUnregulatedOperatingRevenue"),
+                    TagSpec::gaap_usd("ElectricUtilityRevenue"),
+                    TagSpec::gaap_usd("RealEstateRevenueNet"),
+                    TagSpec::gaap_usd("InterestAndDividendIncomeOperating"),
+                    TagSpec::gaap_usd("HealthCareOrganizationRevenue"),
+                    TagSpec::gaap_usd("OilAndGasRevenue"),
+                    TagSpec::gaap_usd("FinancialServicesRevenue"),
+                ]),
             ]),
         },
         // ─── Cost of Revenue (29/42 COGS, 20/42 CostOfRevenue) ───
