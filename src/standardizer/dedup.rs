@@ -67,7 +67,7 @@ fn pick_best<'a>(facts: &[&'a FactValue]) -> Option<&'a FactValue> {
     Some(best)
 }
 
-fn is_periodic_form(fact: &FactValue) -> bool {
+pub(crate) fn is_periodic_form(fact: &FactValue) -> bool {
     matches!(
         fact.form.as_deref(),
         Some("10-K") | Some("10-K/A") | Some("10-Q") | Some("10-Q/A") | Some("20-F") | Some("40-F")

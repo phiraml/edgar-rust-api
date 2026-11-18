@@ -2,6 +2,7 @@ use edgar_lib::models::company::Company;
 use edgar_lib::models::company_facts::CompanyFactsResponse;
 use edgar_lib::models::cik::Cik;
 use edgar_lib::standardizer::engine::StandardizationEngine;
+use edgar_lib::models::period::{FiscalPeriod, Quarter};
 use edgar_lib::standardizer::output::StandardMetric;
 
 fn sample_company() -> Company {
@@ -159,4 +160,112 @@ fn test_latest_annual() {
 
     let latest = financials.latest_annual().expect("Should have latest annual");
     assert_eq!(latest.period.year, 2023);
+}
+
+// ── Period alignment regressions ────────────────────────────────────────
+//
+// EDGAR's `fy` is the fiscal year of the *filing*: a FY2025 10-K tags its
+// FY2023/FY2024 comparatives `fy: 2025` too. Periods must come from dates.
+
+fn company_with_fye(fye: &str) -> Company {
+    Company {
+        fiscal_year_end: Some(fye.to_string()),
+        ..sample_company()
+    }
+}
+
+fn fact(start: Option<&str>, end: &str, val: f64, fy: i32, fp: &str, form: &str, filed: &str) -> serde_json::Value {
+    let mut f = serde_json::json!({
+        "end": end, "val": val, "accn": format!("acc-{filed}"), "fy": fy, "fp": fp,
+        "form": form, "filed": filed,
+    });
+    if let Some(s) = start {
+        f["start"] = serde_json::json!(s);
+    }
+    f
+}
+
+fn facts_with_revenue(values: Vec<serde_json::Value>) -> CompanyFactsResponse {
+    serde_json::from_value(serde_json::json!({
+        "cik": 789019,
+        "entityName": "Test Co",
+        "facts": { "us-gaap": { "RevenueFromContractWithCustomerExcludingAssessedTax": {
+            "label": "Revenue", "description": null, "units": { "USD": values }
+        }}}
+    }))
+    .unwrap()
+}
+
+#[test]
+fn test_10k_comparatives_land_in_their_own_fiscal_year() {
+    // June FYE. The FY2025 10-K carries three years, all tagged fy=2025.
+    let facts = facts_with_revenue(vec![
+        fact(Some("2022-07-01"), "2023-06-30", 211.9e9, 2025, "FY", "10-K", "2025-07-30"),
+        fact(Some("2023-07-01"), "2024-06-30", 245.1e9, 2025, "FY", "10-K", "2025-07-30"),
+        fact(Some("2024-07-01"), "2025-06-30", 281.7e9, 2025, "FY", "10-K", "2025-07-30"),
+    ]);
+    let fin = StandardizationEngine::new()
+        .standardize(&facts, &company_with_fye("0630"))
+        .unwrap();
+
+    let years: Vec<i32> = fin.annual.iter().map(|p| p.period.year).collect();
+    assert_eq!(years, vec![2023, 2024, 2025]);
+    let rev = |y: i32| {
+        fin.annual.iter().find(|p| p.period.year == y).unwrap().get(&StandardMetric::Revenue).unwrap()
+    };
+    assert_eq!(rev(2023), 211.9e9);
+    assert_eq!(rev(2024), 245.1e9);
+    assert_eq!(rev(2025), 281.7e9);
+    assert_eq!(fin.annual.last().unwrap().end_date.as_deref(), Some("2025-06-30"));
+}
+
+#[test]
+fn test_restated_value_from_latest_filing_wins() {
+    let facts = facts_with_revenue(vec![
+        fact(Some("2023-07-01"), "2024-06-30", 245.0e9, 2024, "FY", "10-K", "2024-07-30"),
+        fact(Some("2023-07-01"), "2024-06-30", 245.1e9, 2025, "FY", "10-K", "2025-07-30"),
+    ]);
+    let fin = StandardizationEngine::new()
+        .standardize(&facts, &company_with_fye("0630"))
+        .unwrap();
+    assert_eq!(fin.annual.len(), 1);
+    assert_eq!(fin.annual[0].get(&StandardMetric::Revenue), Some(245.1e9));
+}
+
+#[test]
+fn test_quarter_uses_three_month_value_not_year_to_date() {
+    // A Q3 10-Q reports the 3-month and the 9-month figure with the same end date.
+    let facts = facts_with_revenue(vec![
+        fact(Some("2025-07-01"), "2025-09-30", 30.0e9, 2025, "Q3", "10-Q", "2025-10-30"),
+        fact(Some("2025-01-01"), "2025-09-30", 85.0e9, 2025, "Q3", "10-Q", "2025-10-30"),
+    ]);
+    let fin = StandardizationEngine::new()
+        .standardize(&facts, &company_with_fye("1231"))
+        .unwrap();
+    assert_eq!(fin.quarterly.len(), 1);
+    assert_eq!(fin.quarterly[0].period.to_string(), FiscalPeriod::quarterly(2025, Quarter::Q3).to_string());
+    assert_eq!(fin.quarterly[0].get(&StandardMetric::Revenue), Some(30.0e9));
+    assert!(fin.annual.is_empty(), "a 9-month YTD figure is not an annual period");
+}
+
+#[test]
+fn test_52_53_week_fiscal_year() {
+    // NVDA-style: fiscal year ends the last Sunday of January; EDGAR FYE "0125".
+    let facts = facts_with_revenue(vec![
+        fact(Some("2024-01-29"), "2025-01-26", 130.5e9, 2025, "FY", "10-K", "2025-02-26"),
+        fact(Some("2023-01-30"), "2024-01-28", 60.9e9, 2025, "FY", "10-K", "2025-02-26"),
+        fact(Some("2024-10-28"), "2025-01-26", 39.3e9, 2025, "FY", "10-K", "2025-02-26"),
+    ]);
+    let fin = StandardizationEngine::new()
+        .standardize(&facts, &company_with_fye("0125"))
+        .unwrap();
+    let years: Vec<(i32, Option<f64>)> = fin
+        .annual
+        .iter()
+        .map(|p| (p.period.year, p.get(&StandardMetric::Revenue)))
+        .collect();
+    assert_eq!(years, vec![(2024, Some(60.9e9)), (2025, Some(130.5e9))]);
+    // The discrete 13-week Q4 is a quarter, not a year.
+    assert_eq!(fin.quarterly.len(), 1);
+    assert_eq!(fin.quarterly[0].get(&StandardMetric::Revenue), Some(39.3e9));
 }

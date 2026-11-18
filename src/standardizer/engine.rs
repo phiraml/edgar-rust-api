@@ -1,38 +1,99 @@
+use std::cmp::Reverse;
 use std::collections::{BTreeMap, HashMap};
+
+use chrono::NaiveDate;
 
 use crate::error::Result;
 use crate::models::company::Company;
 use crate::models::company_facts::{CompanyFactsResponse, FactValue};
-use crate::models::period::FiscalPeriod;
+use crate::models::period::{FiscalPeriod, Quarter};
 
 use super::catalog::sector::sector_definitions;
 use super::catalog::{DefaultCatalog, MetricCatalog};
-use super::dedup::dedup_facts;
+use super::dedup::is_periodic_form;
 use super::output::{MetricValue, PeriodData, StandardMetric, StandardizedFinancials};
-use super::period_align::detect_fiscal_year_end;
+use super::period_align::{fact_periods, FiscalYearEnd};
 use super::resolution::{MetricResolution, TagSpec};
+
+type FactKey = (String, String, String);
 
 /// Index over a company's XBRL facts for fast lookup by taxonomy+tag+unit.
 #[derive(Debug)]
 pub struct FactIndex {
-    /// Keyed by (taxonomy, tag, unit) → deduplicated, sorted facts.
-    facts: HashMap<(String, String, String), Vec<FactValue>>,
+    /// Keyed by (taxonomy, tag, unit) → raw facts as returned by EDGAR.
+    facts: HashMap<FactKey, Vec<FactValue>>,
+    /// Per tag: index into `facts[key]` of the best fact for each fiscal period,
+    /// chosen once here so per-metric resolution is a map lookup.
+    best_by_period: HashMap<FactKey, HashMap<FiscalPeriod, usize>>,
+    /// Periods that have real data, with the reported end date closest to the
+    /// nominal period end (so a cover-page date weeks later doesn't win).
+    annual_ends: BTreeMap<i32, (i64, NaiveDate)>,
+    quarterly_ends: BTreeMap<(i32, Quarter), (i64, NaiveDate)>,
     /// Already-resolved metric values for the current period (used by ratio computations).
     resolved_metrics: HashMap<StandardMetric, f64>,
-    /// Fiscal year end month.
-    #[allow(dead_code)]
-    fy_end_month: u32,
 }
 
 impl FactIndex {
     pub fn build(facts_response: &CompanyFactsResponse, company: &Company) -> Self {
-        let fy_end_month = detect_fiscal_year_end(company);
-        let mut facts: HashMap<(String, String, String), Vec<FactValue>> = HashMap::new();
+        let fye = FiscalYearEnd::from_company(company);
+        let mut facts: HashMap<FactKey, Vec<FactValue>> = HashMap::new();
+        let mut best_by_period = HashMap::new();
+        let mut annual_ends: BTreeMap<i32, (i64, NaiveDate)> = BTreeMap::new();
+        let mut quarterly_ends: BTreeMap<(i32, Quarter), (i64, NaiveDate)> = BTreeMap::new();
+        // Closest to the nominal end wins; ties go to the later date.
+        let closer = |slot: &mut (i64, NaiveDate), cand: (i64, NaiveDate)| {
+            if (Reverse(cand.0), cand.1) > (Reverse(slot.0), slot.1) {
+                *slot = cand;
+            }
+        };
 
         for (taxonomy, tags) in &facts_response.facts {
             for (tag, tag_data) in tags {
                 for (unit, values) in &tag_data.units {
                     let key = (taxonomy.clone(), tag.clone(), unit.clone());
+
+                    // Best fact per period: closest to the period end, then from a
+                    // periodic report, then most recently filed (restated values).
+                    let mut best: HashMap<FiscalPeriod, (usize, (Reverse<i64>, bool, &str))> =
+                        HashMap::new();
+                    for (i, fact) in values.iter().enumerate() {
+                        if fact.val.is_none() {
+                            continue;
+                        }
+                        let (Some(fp), Some(end)) = (fact_periods(fact, &fye), fact.end_date())
+                        else {
+                            continue;
+                        };
+                        let cand = (fp.distance_days, end);
+                        if let (true, Some(y)) = (fp.creates_annual, fp.annual) {
+                            closer(annual_ends.entry(y).or_insert(cand), cand);
+                        }
+                        if let (true, Some(yq)) = (fp.creates_quarter, fp.quarter) {
+                            closer(quarterly_ends.entry(yq).or_insert(cand), cand);
+                        }
+
+                        let rank = (
+                            Reverse(fp.distance_days),
+                            is_periodic_form(fact),
+                            fact.filed.as_str(),
+                        );
+                        let periods = fp
+                            .annual
+                            .map(FiscalPeriod::annual)
+                            .into_iter()
+                            .chain(fp.quarter.map(|(y, q)| FiscalPeriod::quarterly(y, q)));
+                        for period in periods {
+                            match best.get(&period) {
+                                Some((_, current)) if *current >= rank => {}
+                                _ => {
+                                    best.insert(period, (i, rank));
+                                }
+                            }
+                        }
+                    }
+                    let best: HashMap<FiscalPeriod, usize> =
+                        best.into_iter().map(|(p, (i, _))| (p, i)).collect();
+                    best_by_period.insert(key.clone(), best);
                     facts.insert(key, values.clone());
                 }
             }
@@ -40,8 +101,40 @@ impl FactIndex {
 
         Self {
             facts,
+            best_by_period,
+            annual_ends,
+            quarterly_ends,
             resolved_metrics: HashMap::new(),
-            fy_end_month,
+        }
+    }
+
+    /// The best fact for `period` under `spec`. With no unit on the spec, the
+    /// first common unit the tag has is used (same rule as `lookup_tag`).
+    fn fact_for_period(&self, spec: &TagSpec, period: &FiscalPeriod) -> Option<&FactValue> {
+        const COMMON_UNITS: [&str; 4] = ["USD", "shares", "USD/shares", "pure"];
+        let explicit;
+        let units: &[&str] = match &spec.unit {
+            Some(u) => {
+                explicit = [u.as_str()];
+                &explicit
+            }
+            None => &COMMON_UNITS,
+        };
+        for unit in units {
+            let key = (spec.taxonomy.clone(), spec.tag.clone(), unit.to_string());
+            if let Some(facts) = self.facts.get(&key) {
+                let i = *self.best_by_period.get(&key)?.get(period)?;
+                return facts.get(i);
+            }
+        }
+        None
+    }
+
+    /// Latest reported end date for a period that has data.
+    pub fn period_end(&self, period: &FiscalPeriod) -> Option<NaiveDate> {
+        match period.quarter {
+            None => self.annual_ends.get(&period.year).map(|&(_, d)| d),
+            Some(q) => self.quarterly_ends.get(&(period.year, q)).map(|&(_, d)| d),
         }
     }
 
@@ -81,53 +174,16 @@ impl FactIndex {
         self.resolved_metrics.clear();
     }
 
-    /// Get all unique fiscal periods present in the data for annual reporting.
+    /// Fiscal years with annual data, oldest first.
     pub fn annual_periods(&self) -> Vec<FiscalPeriod> {
-        let mut periods = std::collections::BTreeSet::new();
-
-        for facts in self.facts.values() {
-            for fact in facts {
-                if fact.is_annual() {
-                    if let Some(fy) = fact.fiscal_year {
-                        periods.insert(fy);
-                    }
-                }
-            }
-        }
-
-        periods
-            .into_iter()
-            .map(FiscalPeriod::annual)
-            .collect()
+        self.annual_ends.keys().map(|&y| FiscalPeriod::annual(y)).collect()
     }
 
-    /// Get all unique fiscal periods for quarterly reporting.
+    /// Fiscal quarters with quarterly (3-month) data, oldest first.
     pub fn quarterly_periods(&self) -> Vec<FiscalPeriod> {
-        use crate::models::period::Quarter;
-        let mut periods = std::collections::BTreeSet::new();
-
-        for facts in self.facts.values() {
-            for fact in facts {
-                if fact.is_quarterly() {
-                    if let (Some(fy), Some(fp)) = (fact.fiscal_year, fact.fiscal_period.as_deref()) {
-                        let q = match fp {
-                            "Q1" => Some(Quarter::Q1),
-                            "Q2" => Some(Quarter::Q2),
-                            "Q3" => Some(Quarter::Q3),
-                            "Q4" => Some(Quarter::Q4),
-                            _ => None,
-                        };
-                        if let Some(q) = q {
-                            periods.insert((fy, q));
-                        }
-                    }
-                }
-            }
-        }
-
-        periods
-            .into_iter()
-            .map(|(y, q)| FiscalPeriod::quarterly(y, q))
+        self.quarterly_ends
+            .keys()
+            .map(|&(y, q)| FiscalPeriod::quarterly(y, q))
             .collect()
     }
 
@@ -140,14 +196,8 @@ impl FactIndex {
         match resolution {
             MetricResolution::FirstMatch(specs) => {
                 for spec in specs {
-                    if let Some(facts) = self.lookup_tag(spec) {
-                        let deduped = dedup_facts(facts);
-                        let matching = find_period_match(&deduped, period);
-                        if let Some(fact) = matching {
-                            if let Some(val) = fact.val {
-                                return Some((val, Some(format!("{}:{}", spec.taxonomy, spec.tag))));
-                            }
-                        }
+                    if let Some(val) = self.fact_for_period(spec, period).and_then(|f| f.val) {
+                        return Some((val, Some(format!("{}:{}", spec.taxonomy, spec.tag))));
                     }
                 }
                 None
@@ -158,18 +208,13 @@ impl FactIndex {
                 let mut found_any = false;
                 let mut source = String::new();
                 for spec in specs {
-                    if let Some(facts) = self.lookup_tag(spec) {
-                        let deduped = dedup_facts(facts);
-                        if let Some(fact) = find_period_match(&deduped, period) {
-                            if let Some(val) = fact.val {
-                                total += val;
-                                found_any = true;
-                                if !source.is_empty() {
-                                    source.push_str(" + ");
-                                }
-                                source.push_str(&format!("{}:{}", spec.taxonomy, spec.tag));
-                            }
+                    if let Some(val) = self.fact_for_period(spec, period).and_then(|f| f.val) {
+                        total += val;
+                        found_any = true;
+                        if !source.is_empty() {
+                            source.push_str(" + ");
                         }
+                        source.push_str(&format!("{}:{}", spec.taxonomy, spec.tag));
                     }
                 }
                 if found_any {
@@ -180,14 +225,8 @@ impl FactIndex {
             }
 
             MetricResolution::Difference(a_spec, b_spec) => {
-                let a_val = self.lookup_tag(a_spec).and_then(|facts| {
-                    let deduped = dedup_facts(facts);
-                    find_period_match(&deduped, period).and_then(|f| f.val)
-                })?;
-                let b_val = self.lookup_tag(b_spec).and_then(|facts| {
-                    let deduped = dedup_facts(facts);
-                    find_period_match(&deduped, period).and_then(|f| f.val)
-                })?;
+                let a_val = self.fact_for_period(a_spec, period).and_then(|f| f.val)?;
+                let b_val = self.fact_for_period(b_spec, period).and_then(|f| f.val)?;
                 Some((
                     a_val - b_val,
                     Some(format!(
@@ -211,41 +250,6 @@ impl FactIndex {
             }
         }
     }
-}
-
-/// Find the fact that best matches a fiscal period.
-fn find_period_match<'a>(facts: &[&'a FactValue], period: &FiscalPeriod) -> Option<&'a FactValue> {
-    let target_fy = period.year;
-    let is_annual = period.quarter.is_none();
-
-    let matching: Vec<&&FactValue> = facts
-        .iter()
-        .filter(|f| {
-            let fy_match = f.fiscal_year == Some(target_fy);
-            let period_match = if is_annual {
-                f.fiscal_period.as_deref() == Some("FY")
-                    || (f.form.as_deref() == Some("10-K") && f.fiscal_period.is_none())
-            } else {
-                let target_q = match period.quarter {
-                    Some(crate::models::period::Quarter::Q1) => "Q1",
-                    Some(crate::models::period::Quarter::Q2) => "Q2",
-                    Some(crate::models::period::Quarter::Q3) => "Q3",
-                    Some(crate::models::period::Quarter::Q4) => "Q4",
-                    None => return false,
-                };
-                f.fiscal_period.as_deref() == Some(target_q)
-            };
-            fy_match && period_match
-        })
-        .collect();
-
-    // Prefer framed facts
-    let framed: Vec<&&FactValue> = matching.iter().filter(|f| f.frame.is_some()).copied().collect();
-    if let Some(best) = framed.last() {
-        return Some(best);
-    }
-
-    matching.last().copied().copied()
 }
 
 /// The standardization engine that converts raw XBRL facts into standardized financials.
@@ -328,7 +332,7 @@ impl StandardizationEngine {
             if !metrics.is_empty() {
                 annual.push(PeriodData {
                     period: period.clone(),
-                    end_date: None,
+                    end_date: index.period_end(period).map(|d| d.to_string()),
                     metrics,
                 });
             }
@@ -380,7 +384,7 @@ impl StandardizationEngine {
             if !metrics.is_empty() {
                 quarterly.push(PeriodData {
                     period: period.clone(),
-                    end_date: None,
+                    end_date: index.period_end(period).map(|d| d.to_string()),
                     metrics,
                 });
             }
