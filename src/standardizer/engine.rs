@@ -203,6 +203,19 @@ impl FactIndex {
                 None
             }
 
+            MetricResolution::Largest(specs) => specs
+                .iter()
+                .filter_map(|spec| {
+                    let val = self.fact_for_period(spec, period)?.val?;
+                    Some((val, spec))
+                })
+                .max_by(|a, b| a.0.total_cmp(&b.0))
+                .map(|(val, spec)| (val, Some(format!("{}:{}", spec.taxonomy, spec.tag)))),
+
+            MetricResolution::FirstOf(options) => options
+                .iter()
+                .find_map(|resolution| self.resolve_for_period(resolution, period)),
+
             MetricResolution::Sum(specs) => {
                 let mut total = 0.0;
                 let mut found_any = false;

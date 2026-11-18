@@ -269,3 +269,65 @@ fn test_52_53_week_fiscal_year() {
     assert_eq!(fin.quarterly.len(), 1);
     assert_eq!(fin.quarterly[0].get(&StandardMetric::Revenue), Some(39.3e9));
 }
+
+// ── Revenue / FCF resolution ───────────────────────────────────────────
+
+fn facts_with_tags(tags: Vec<(&str, f64)>) -> CompanyFactsResponse {
+    let mut gaap = serde_json::Map::new();
+    for (tag, val) in tags {
+        gaap.insert(
+            tag.to_string(),
+            serde_json::json!({ "label": tag, "description": null, "units": { "USD": [
+                fact(Some("2025-01-01"), "2025-12-31", val, 2025, "FY", "10-K", "2026-02-20")
+            ]}}),
+        );
+    }
+    serde_json::from_value(serde_json::json!({
+        "cik": 1053507, "entityName": "Test Co", "facts": { "us-gaap": gaap }
+    }))
+    .unwrap()
+}
+
+fn fy2025(facts: CompanyFactsResponse) -> edgar_lib::standardizer::output::PeriodData {
+    let fin = StandardizationEngine::new()
+        .standardize(&facts, &company_with_fye("1231"))
+        .unwrap();
+    fin.annual.into_iter().find(|p| p.period.year == 2025).unwrap()
+}
+
+#[test]
+fn test_lessor_revenue_uses_total_not_contract_revenue() {
+    // American Tower style: ASC 606 contract revenue excludes lease revenue.
+    let p = fy2025(facts_with_tags(vec![
+        ("RevenueFromContractWithCustomerExcludingAssessedTax", 0.94e9),
+        ("Revenues", 10.4e9),
+    ]));
+    assert_eq!(p.get(&StandardMetric::Revenue), Some(10.4e9));
+    assert_eq!(
+        p.metrics[&StandardMetric::Revenue].source_tag.as_deref(),
+        Some("us-gaap:Revenues")
+    );
+}
+
+#[test]
+fn test_revenue_falls_back_when_no_total_is_tagged() {
+    let p = fy2025(facts_with_tags(vec![("SalesRevenueGoodsNet", 5.0e9)]));
+    assert_eq!(p.get(&StandardMetric::Revenue), Some(5.0e9));
+}
+
+#[test]
+fn test_fcf_needs_capex() {
+    let without = fy2025(facts_with_tags(vec![
+        ("NetCashProvidedByUsedInOperatingActivities", 932e6),
+        ("Revenues", 1.19e9),
+    ]));
+    assert_eq!(without.get(&StandardMetric::FreeCashFlow), None);
+    assert_eq!(without.get(&StandardMetric::FreeCashFlowMargin), None);
+
+    let with = fy2025(facts_with_tags(vec![
+        ("NetCashProvidedByUsedInOperatingActivities", 932e6),
+        ("PaymentsToAcquirePropertyPlantAndEquipment", 170e6),
+        ("Revenues", 1.19e9),
+    ]));
+    assert_eq!(with.get(&StandardMetric::FreeCashFlow), Some(762e6));
+}

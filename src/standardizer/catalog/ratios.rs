@@ -62,13 +62,13 @@ pub fn definitions() -> Vec<MetricDefinition> {
         }),
         ratio_def(StandardMetric::FreeCashFlowMargin, |idx| {
             let ocf = idx.resolved(StandardMetric::OperatingCashFlow)?;
-            let capex = idx.resolved(StandardMetric::CapitalExpenditures).unwrap_or(0.0);
+            let capex = idx.resolved(StandardMetric::CapitalExpenditures)?;
             let rev = idx.resolved(StandardMetric::Revenue)?;
             div(ocf - capex.abs(), rev)
         }),
         ratio_def(StandardMetric::EbitdaMargin, |idx| {
             let oi = idx.resolved(StandardMetric::OperatingIncome)?;
-            let da = idx.resolved(StandardMetric::DepreciationAmortization).unwrap_or(0.0);
+            let da = idx.resolved(StandardMetric::DepreciationAmortization)?;
             let rev = idx.resolved(StandardMetric::Revenue)?;
             div(oi + da, rev)
         }),
@@ -77,7 +77,7 @@ pub fn definitions() -> Vec<MetricDefinition> {
         }),
         ratio_def(StandardMetric::FreeCashFlowPerShare, |idx| {
             let ocf = idx.resolved(StandardMetric::OperatingCashFlow)?;
-            let capex = idx.resolved(StandardMetric::CapitalExpenditures).unwrap_or(0.0);
+            let capex = idx.resolved(StandardMetric::CapitalExpenditures)?;
             let shares = idx.resolved(StandardMetric::SharesOutstandingBasic)?;
             div(ocf - capex.abs(), shares)
         }),
@@ -104,15 +104,17 @@ pub fn definitions() -> Vec<MetricDefinition> {
         ratio_def(StandardMetric::PayoutRatio, |idx| {
             div(idx.resolved(StandardMetric::DividendsPaid)?.abs(), idx.resolved(StandardMetric::NetIncome)?)
         }),
-        // Computed metrics
+        // Computed metrics. Capex and D&A are required, never defaulted to 0:
+        // nearly every company has both, so a missing value means the filer used
+        // a tag we don't map, and OCF - 0 would overstate FCF (and EBITDA).
         ratio_def(StandardMetric::FreeCashFlow, |idx| {
             let ocf = idx.resolved(StandardMetric::OperatingCashFlow)?;
-            let capex = idx.resolved(StandardMetric::CapitalExpenditures).unwrap_or(0.0);
+            let capex = idx.resolved(StandardMetric::CapitalExpenditures)?;
             Some(ocf - capex.abs())
         }),
         ratio_def(StandardMetric::Ebitda, |idx| {
             let oi = idx.resolved(StandardMetric::OperatingIncome)?;
-            let da = idx.resolved(StandardMetric::DepreciationAmortization).unwrap_or(0.0);
+            let da = idx.resolved(StandardMetric::DepreciationAmortization)?;
             Some(oi + da)
         }),
         ratio_def(StandardMetric::Ebit, |idx| {

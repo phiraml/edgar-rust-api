@@ -190,6 +190,16 @@ fn add_to_definitions(
                     specs.push(spec);
                 }
             }
+            // Keep the structure (e.g. revenue's Largest group) instead of
+            // flattening it into one first-match list.
+            MetricResolution::FirstOf(options) => {
+                let learned = MetricResolution::FirstMatch(vec![spec]);
+                if prepend {
+                    options.insert(0, learned);
+                } else {
+                    options.push(learned);
+                }
+            }
             _ => {
                 let existing_specs =
                     def.resolution.tag_specs().into_iter().cloned().collect::<Vec<_>>();
